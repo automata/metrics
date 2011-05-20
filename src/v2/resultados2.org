@@ -1,0 +1,101 @@
+#+TITLE: Análise de Compositores por Período
+#+AUTHOR: 
+#+OPTIONS: toc:nil
+
+* Características
+** Sacro x Profano
+Considera-se música sacra aquela ligada a ofícios religiosos, enquanto que a produção profana é aquela em que não há essa ligação. 
+
+** Duração curta x Longa
+Produção com ênfase em obras curtas ou longas (maiores que 20 minutos).
+
+** Harmonia x Contraponto
+Discurso musical baseado (com ênfase) no discurso harmônico ou
+no contraponto. A ênfase no discurso harmônico aqui
+considerado prioriza uma só melodia.
+
+** Vocal x Instrumental
+Produção prioritariamente vocal ou instrumental.
+
+** Razão x Emoção
+Preocupação com o conjunto das características da música ou apelo emocional.
+
+** Constância motívica x Variedade
+Equilíbrio encontrado para repetição/reutilização de motivos melódicos e para
+a utilização de novos materiais.
+
+** Ritmo x Poliritmo
+Presença de poliritmia (quiálteras de subdivisões diferentes).
+
+** Const. Tonal x Modulação
+Ritmo de variação de tonalidade em uma secção de peça.
+
+* Notas
+
+| Compositor     | S-P |   C-L | H-C |   V-I | N-D   | M-V |   R-P | T-M |
+|----------------+-----+-------+-----+-------+-------+-----+-------+-----|
+| 1) Bach        | 2.0 |   6.0 | 9.0 |   2.0 | *8.0* | 2.0 |   1.0 | 5.0 |
+| 2) Mozart      | 6.0 |   4.0 | 1.0 |   6.0 | *6.0* | 7.0 |   2.0 | 2.0 |
+| 3) Beethoven   | 7.0 |   8.0 | 2.5 |   8.0 | *5.0* | 4.0 |   4.0 | 7.0 |
+| 4) Chopin      | 9.0 | *3.0* | 3.0 |   9.0 | *5.5* | 8.0 |   7.0 | 8.0 |
+| 5) Brahms      | 6.0 |   6.0 | 4.0 | *7.0* | *4.5* | 6.5 | *5.0* | 7.0 |
+| 6) Stravinsky  | 8.0 |   7.0 | 6.0 | *7.0* | *8.0* | 5.0 |   8.0 | 5.0 |
+| 7) Stockhausen | 7.0 |   4.0 | 8.0 |   7.0 | *5.0* | 8.0 |   9.0 | 6.0 |
+
+* Matriz de Correlação
+
+|     |   S-P |   C-L |   H-C |   V-I |   N-D |   M-V |   R-P |   T-M |
+| S-P |   1.0 | -0.22 | -0.48 |  0.95 | -0.39 |  0.69 |  0.76 |  0.37 |
+| C-L | -0.22 |   1.0 |   0.1 | -0.15 |  0.22 | -0.74 |  -0.2 |  0.09 |
+| H-C | -0.48 |   0.1 |   1.0 | -0.58 |  0.47 | -0.37 |  0.18 |  0.09 |
+| V-I |  0.95 | -0.15 | -0.58 |   1.0 | -0.62 |  0.68 |  0.65 |   0.5 |
+| N-D | -0.39 |  0.22 |  0.47 | -0.62 |   1.0 | -0.61 | -0.23 | -0.44 |
+| M-V |  0.69 | -0.74 | -0.37 |  0.68 | -0.61 |   1.0 |   0.6 |  0.12 |
+| R-P |  0.76 |  -0.2 |  0.18 |  0.65 | -0.23 |   0.6 |   1.0 |  0.45 |
+| T-M |  0.37 |  0.09 |  0.09 |   0.5 | -0.44 |  0.12 |  0.45 |   1.0 |
+
+* Autovalores
+
+| Autovalor |       Valor |
+|-----------+-------------|
+|         1 | 51.13889085 |
+|         2 |   18.399836 |
+|         3 | 15.89492118 |
+|         4 | 10.24835136 |
+|         5 |  4.08532881 |
+|         6 |  0.23267181 |
+|         7 |          0. |
+
+* Contribuições de cada característica
+
+| Características |                C_1 |                C_2 |
+|-----------------+--------------------+--------------------|
+| S-P             | 16.525754968461332 | 4.0766395424150526 |
+| C-L             | 7.4914596976226395 | 18.707205119314175 |
+| H-C             | 8.8296961304835495 | 18.403433605321421 |
+| V-I             | 17.272916504205682 | 3.7951383008863879 |
+| N-D             |  12.68048219897665 | 4.2624011225807896 |
+| M-V             | 15.658827206283824 | 11.667117892269376 |
+| R-P             | 12.916471308915309 | 16.157726001664628 |
+| T-M             | 8.6243919850510053 |  22.93033841554816 |
+
+* Oposições (inovação)
+
+| Movimento Musical          |              W_{i,j} |                S_{i,j} |
+|----------------------------+----------------------+------------------------|
+| Bach \to Mozart            |  0.99999999999999989 | 5.2369115333442702e-16 |
+| Mozart \to Beethoven       |  0.59007230475630668 |     2.1701394155920082 |
+| Beethoven \to Chopin       | -0.11952016955511029 |     2.5737985445176159 |
+| Chopin \to Brahms          |  0.33856095460092911 |    0.43697862189129016 |
+| Brahms \to Stravinsky      |  0.34204825316049009 |     1.2119607469777283 |
+| Stravinsky \to Stockhausen |  0.44876907953599465 |     1.4120279905772009 |
+
+* Dialética
+
+| Tripla Musical                        |         D_{i \to k} |
+|---------------------------------------+---------------------|
+| Bach \to Mozart \to Beethoven         | 0.15241265495976331 |
+| Mozart \to Beethoven \to Chopin       | 0.35743935239030455 |
+| Beethoven \to Chopin \to Brahms       | 0.25593899443066082 |
+| Chopin \to Brahms \to Stravinsky      |  1.0384303391187353 |
+| Brahms \to Stravinsky \to Stockhausen | 0.70485214163314314 |

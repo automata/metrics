@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: musimetrics.aux
+The style file: aipnum4-1long.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: musimetricsNotes.bib
+Database file #2: musimetrics.bib
+Merlin.mbs v4.21 2009-07-09. 
+Warning--can't use both author and editor fields in Webern: try using @inbook instead
+You've used 13 entries,
+            3809 wiz_defined-function locations,
+            1358 strings with 14318 characters,
+and the built_in function-call counts, 7154 in all, are:
+= -- 400
+> -- 59
+< -- 15
++ -- 28
+- -- 15
+* -- 1021
+:= -- 635
+add.period$ -- 21
+call.type$ -- 13
+change.case$ -- 9
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 858
+empty$ -- 737
+format.name$ -- 46
+if$ -- 1331
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 144
+newline$ -- 147
+num.names$ -- 13
+pop$ -- 350
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 229
+stack$ -- 0
+substring$ -- 113
+swap$ -- 669
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 15
+warning$ -- 1
+while$ -- 17
+width$ -- 15
+write$ -- 207
+(There was 1 warning)

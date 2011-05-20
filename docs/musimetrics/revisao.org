@@ -1,0 +1,28 @@
+A Statistical Analysis of Special Cases of Creativity
+http://creativeeducation.metapress.com/content/r5207282v1x31837/fulltext.pdf
+
+Creative productivity, age, and stress: A biographical time-series analysis of 10 classical composers
+http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6X01-4NV6K6F-3&_user=5674931&_coverDate=11%2F30%2F1977&_rdoc=1&_fmt=high&_orig=gateway&_origin=gateway&_sort=d&_docanchor=&view=c&_searchStrId=1681706794&_rerunOrigin=scholar.google&_acct=C000049650&_version=1&_urlVersion=0&_userid=5674931&md5=0af42f0cba02e0f5a00c644e9028c2dc&searchtype=a
+
+COMPUTATIONAL ANALYSIS OF MUSICAL INFLUENCE: A MUSICOLOGICAL CASE STUDY USING MIR TOOLS
+http://ismir2010.ismir.net/proceedings/ismir2010-32.pdf
+
+Longitudinal Hit Ratios of Classical Composers: Reconciling “Darwinian” and Expertise Acquisition Perspectives on Lifespan Creativity
+http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B983F-4VT136N-6&_user=5674931&_coverDate=11%2F30%2F2008&_rdoc=1&_fmt=high&_orig=gateway&_origin=gateway&_sort=d&_docanchor=&view=c&_searchStrId=1681769929&_rerunOrigin=scholar.google&_acct=C000049650&_version=1&_urlVersion=0&_userid=5674931&md5=a0f92aadd19fabb8cd682470ac17cc0f&searchtype=a
+
+Performance time productivity and versatility estimates for 102 classical composers
+
+
+http://www.cogsci.northwestern.edu/cogsci2004/papers/paper194.pdf
+
+** researches
+
+Aaron Kozbelt
+
+* computatonal music
+
+Network motifs in music sequences
+http://arxiv.org/abs/1010.6091
+
+A Statistical Approach to Modeling Indian Classical Music Performance
+http://arxiv.org/abs/0809.3214

@@ -1,0 +1,14 @@
+* *metrics
+
+Sources of the Philosometrics and Musimetrics works.
+
+* Directories
+
+- docs/     papers and notes
+- src/      source (src/latest has the latest version)
+
+* Authors
+
+- Prof. Luciano da Fontoura Costa
+- Renato Fabbri
+- Vilson Vieira

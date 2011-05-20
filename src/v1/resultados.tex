@@ -1,0 +1,174 @@
+% Created 2010-12-16 Qui 16:41
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{t1enc}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Análise de Compositores por Período}
+\author{}
+\date{16 dezembro 2010}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Características}
+\label{sec-1}
+\subsection{Sacro x Profano}
+\label{sec-1_1}
+
+Considera-se música sacra aquela ligada a ofícios religiosos, enquanto que a produção profana é aquela em que não há essa ligação. 
+\subsection{Duração curta x Longa}
+\label{sec-1_2}
+
+Produção com ênfase em obras curtas ou longas (maiores que 20 minutos).
+\subsection{Harmonia x Contraponto}
+\label{sec-1_3}
+
+Discurso musical baseado (com ênfase) no discurso harmônico ou
+no contraponto. A ênfase no discurso harmônico aqui
+considerado prioriza uma só melodia.
+\subsection{Vocal x Instrumental}
+\label{sec-1_4}
+
+Produção prioritariamente vocal ou instrumental.
+\subsection{Razão x Emoção}
+\label{sec-1_5}
+
+Preocupação com o conjunto das características da música ou apelo emocional.
+\subsection{Constância motívica x Variedade}
+\label{sec-1_6}
+
+Equilíbrio encontrado para repetição/reutilização de motivos melódicos e para
+a utilização de novos materiais.
+\subsection{Ritmo x Poliritmo}
+\label{sec-1_7}
+
+Presença de poliritmia (quiálteras de subdivisões diferentes).
+\subsection{Const. Tonal x Modulação}
+\label{sec-1_8}
+
+Ritmo de variação de tonalidade em uma secção de peça.
+\section{Notas}
+\label{sec-2}
+
+
+
+\begin{center}
+\begin{tabular}{lrrrrrrrr}
+ Compositor      &  S-P  &  C-L  &  H-C  &  V-I  &  R-E  &  M-V  &  R-P  &  T-M  \\
+\hline
+ 1) Bach         &  2.0  &  6.0  &  9.0  &  2.0  &  7.0  &  2.0  &  1.0  &  5.0  \\
+ 2) Mozart       &  6.0  &  4.0  &  1.0  &  6.0  &  2.0  &  7.0  &  2.0  &  2.0  \\
+ 3) Beethoven    &  7.0  &  8.0  &  2.5  &  8.0  &  6.0  &  4.0  &  4.0  &  7.0  \\
+ 4) Chopin       &  9.0  &  2.0  &  3.0  &  9.0  &  9.0  &  8.0  &  7.0  &  8.0  \\
+ 5) Brahms       &  6.0  &  6.0  &  4.0  &  6.0  &  5.0  &  6.5  &  2.0  &  7.0  \\
+ 6) Stravinsky   &  8.0  &  7.0  &  6.0  &  6.0  &  4.0  &  5.0  &  8.0  &  5.0  \\
+ 7) Stockhausen  &  7.0  &  4.0  &  8.0  &  7.0  &  2.0  &  8.0  &  9.0  &  6.0  \\
+\end{tabular}
+\end{center}
+\section{Matriz de Correlação}
+\label{sec-3}
+
+
+
+\begin{center}
+\begin{tabular}{lrrrrrrrr}
+      &    S-P  &    C-L  &    H-C  &    V-I  &    R-E  &    M-V  &    R-P  &    T-M  \\
+ S-P  &    1.0  &  -0.29  &  -0.48  &   0.92  &    0.0  &   0.69  &   0.73  &   0.37  \\
+ C-L  &  -0.29  &    1.0  &   0.13  &  -0.31  &  -0.09  &  -0.73  &  -0.26  &  -0.02  \\
+ H-C  &  -0.48  &   0.13  &    1.0  &   -0.6  &  -0.01  &  -0.37  &   0.21  &   0.09  \\
+ V-I  &   0.92  &  -0.31  &   -0.6  &    1.0  &   0.09  &   0.69  &   0.57  &   0.48  \\
+ R-E  &    0.0  &  -0.09  &  -0.01  &   0.09  &    1.0  &  -0.29  &  -0.14  &   0.65  \\
+ M-V  &   0.69  &  -0.73  &  -0.37  &   0.69  &  -0.29  &    1.0  &   0.51  &   0.12  \\
+ R-P  &   0.73  &  -0.26  &   0.21  &   0.57  &  -0.14  &   0.51  &    1.0  &   0.32  \\
+ T-M  &   0.37  &  -0.02  &   0.09  &   0.48  &   0.65  &   0.12  &   0.32  &    1.0  \\
+\end{tabular}
+\end{center}
+\section{Autovalores}
+\label{sec-4}
+
+
+
+\begin{center}
+\begin{tabular}{rr}
+ Autovalor  &        Valor  \\
+\hline
+         1  &    45.603608  \\
+         2  &  21.66338372  \\
+         3  &  15.91142171  \\
+         4  &  12.55654568  \\
+         5  &   3.57841982  \\
+         6  &   0.68662107  \\
+         7  &           0.  \\
+\end{tabular}
+\end{center}
+\section{Contribuições de cada característica}
+\label{sec-5}
+
+
+
+\begin{center}
+\begin{tabular}{lrr}
+ Características  &         C$_1$  &         C$_2$  \\
+\hline
+ S-P              &   19.31242095  &   23.80663009  \\
+ C-L              &  -11.08169521  &  -13.66052548  \\
+ H-C              &   -9.44044448  &  -11.63733797  \\
+ V-I              &     19.311231  &   23.80516323  \\
+ R-E              &    0.55712785  &    0.68677753  \\
+ M-V              &   17.45701288  &    21.5194485  \\
+ R-P              &   14.21030572  &   17.51719749  \\
+ T-M              &     8.6297619  &   10.63800079  \\
+\end{tabular}
+\end{center}
+\section{Oposições (inovação)}
+\label{sec-6}
+
+
+
+\begin{center}
+\begin{tabular}{lrr}
+ Movimento Musical             &    W$_{\mathrm{i,j}}$  &      S$_{\mathrm{i,j}}$  \\
+\hline
+ Bach $\to$ Mozart             &   0.99999999999999989  &  4.5775667985222375e-16  \\
+ Mozart $\to$ Beethoven        &   0.61748202254077456  &       1.832431499774924  \\
+ Beethoven $\to$ Chopin        &  -0.54822746719862925  &      2.7147316115905609  \\
+ Chopin $\to$ Brahms           &   0.48951442543143231  &    0.095270519600319709  \\
+ Brahms $\to$ Stravinsky       &    1.4431337867867569  &     0.24568095299496595  \\
+ Stravinsky $\to$ Stockhausen  &   -3.4326682466786438  &     0.66846555038675481  \\
+\end{tabular}
+\end{center}
+\section{Dialética}
+\label{sec-7}
+
+
+
+\begin{center}
+\begin{tabular}{lr}
+ Tripla Musical                             &  D$_{\mathrm{i \to k}}$  \\
+\hline
+ Bach $\to$ Mozart $\to$ Beethoven          &    0.014292729473306504  \\
+ Mozart $\to$ Beethoven $\to$ Chopin        &     0.60353712414753946  \\
+ Beethoven $\to$ Chopin $\to$ Brahms        &     0.61165622741326542  \\
+ Chopin $\to$ Brahms $\to$ Stravinsky       &     0.45703307981380353  \\
+ Brahms $\to$ Stravinsky $\to$ Stockhausen  &      2.6916262595189764  \\
+\end{tabular}
+\end{center}
+
+\end{document}
