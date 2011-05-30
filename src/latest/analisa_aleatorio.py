@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
 import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats, random
 
-#compositores = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-#caracteristicas = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+_na = 20
+_nc = 20
 
-compositores = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
-
+agentes = ['Agent %i' % i for i in range(1, _na+1)]
+caracteristicas = ['Feature %i' % i for i in range(1, _nc+1)]
 
 # leitura da matriz de notas
 #nn = n.loadtxt('notas.txt')
 #nn = n.loadtxt('notas_filosofos.txt')
 
-nn = [[random.uniform(1,9) for x in range(8)] for y in range(7)]
+nn = n.array([[random.uniform(1,9) for x in range(_nc)] for y in range(_na)])
 
 for i in range(len(nn)):
-    print '%s & %s \\' % (compositores[i], ' & '.join([str(x) for x in nn[i]]))
+    print '%s & %s \\' % (agentes[i], ' & '.join([str(x) for x in nn[i]]))
 
 # cálculo da matriz de correlação
 # pré-processamento
@@ -25,18 +24,18 @@ for i in xrange(nn.shape[1]):
 #coeficientes de pearson
 covm=n.cov(nn.T,bias=True)
 stds=n.std(nn,0)
-pearson=n.zeros((8,8))
-for i in xrange(8):
-   for j in xrange(8):
+pearson=n.zeros((_nc,_nc))
+for i in xrange(_nc):
+   for j in xrange(_nc):
      pearson[i,j]=covm[i,j]/(stds[i]*stds[j])
 
 m = []
-colunas = [[x[i] for x in nn] for i in range(8)]
+colunas = [[x[i] for x in nn] for i in range(_nc)]
 correlacao = [stats.pearsonr(n.array(col), n.array(coluna))[0]
               for col in colunas
               for coluna in colunas]
-for i in range(8):
-    m.append(correlacao[i*8 : i*8 + 8])
+for i in range(_nc):
+    m.append(correlacao[i*_nc : i*_nc + _nc])
 # pearson == m
 
 print 'PEARSON'
@@ -64,7 +63,7 @@ print 'C2', [abs(x) for x in cc2]
 # oposições/inovação
 oposicao=[]
 inovacao=[]
-for i in xrange(1,len(compositores)):
+for i in xrange(1,len(agentes)):
    a=princ[i-1]
    b=n.sum(princ[:i+1],0)/(i+1) #meio
    c=princ[i]
@@ -93,7 +92,7 @@ for i in xrange(1,len(compositores)):
 
 # dialética
 dialeticas=[]
-for i in xrange(2,len(compositores)):
+for i in xrange(2,len(agentes)):
    # eq da reta ab (r1):
    a=princ[i-2]
    b=princ[i-1]
@@ -137,22 +136,7 @@ for i in xrange(princ.shape[0]):
     aat = n.copy(aaf)
     p.plot(x, y, 'o', color=cc)
 
-    if i == 0:
-        p.text(x-.7, y-.4, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 1:
-        p.text(x-.5, y+.2, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 2:
-        p.text(x-.5, y+.2, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 3:
-        p.text(x-.5, y-.5, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 4:
-        p.text(x-.4, y+.2, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 5:
-        p.text(x-.6, y+.2, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 6:
-        p.text(x+.2, y-.6, str(i+1) + ' ' + compositores[i], fontsize=12)
-    elif i == 7:
-        p.text(x-.1, y+.4, str(i+1) + ' ' + compositores[i], fontsize=12)
+    p.text(x, y, str(i+1) + ' ' + agentes[i], fontsize=12)
 
     if i != princ.shape[0] - 1:
         hw = .15
@@ -180,19 +164,19 @@ p.legend(loc='lower right')
 p.plot(princ[:,0],"bo")
 p.plot(princ[:,1],"go")
 p.savefig('g2.eps')
-
-######## PERTURBACAO
 """
+######## PERTURBACAO
+
 E_or=n.copy(E)
 NN=1000
-numeroDeCompositores=nn.shape[0]
+numeroDeAgentes=nn.shape[0]
 # distancias[original, ruido, amostra]
-distancias=n.zeros((numeroDeCompositores,numeroDeCompositores,NN))
+distancias=n.zeros((numeroDeAgentes,numeroDeAgentes,NN))
 autovals=n.zeros((NN,4))
 princ_or=T[:,:2]
 
 for foobar in xrange(NN):
-    nn = n.loadtxt('notas.txt')
+    #nn = n.loadtxt('notas.txt')
 
     ############
     # PERTURBACAO
@@ -202,23 +186,23 @@ for foobar in xrange(NN):
     nn+=dist
     ############
 
-    print foobar
+
     for i in xrange(nn.shape[1]):
       nn[:,i]=(nn[:,i]-nn[:,i].mean())/nn[:,i].std()
 
     T,P,E=pca.PCA_nipals(nn)
     autovals[foobar]=E[:4]
     princ=T[:,:2]
-    for i in xrange(numeroDeCompositores):
-        for j in xrange(numeroDeCompositores):
+    for i in xrange(numeroDeAgentes):
+        for j in xrange(numeroDeAgentes):
             distancias[i,j,foobar]= n.sum((princ_or[i]-princ[j])**2)**.5
 
-stds=n.zeros((numeroDeCompositores,numeroDeCompositores))
-means=n.zeros((numeroDeCompositores,numeroDeCompositores))
+stds=n.zeros((numeroDeAgentes,numeroDeAgentes))
+means=n.zeros((numeroDeAgentes,numeroDeAgentes))
 main_stds = []
 main_means = []
-for i in xrange(numeroDeCompositores):
-    for j in xrange(numeroDeCompositores):
+for i in xrange(numeroDeAgentes):
+    for j in xrange(numeroDeAgentes):
         stds[i,j]=distancias[i,j,:].std()
         means[i,j]=distancias[i,j,:].mean()
         if i == j:
@@ -235,4 +219,5 @@ medias=deltas.mean(0)
 desvios=deltas.std(0)
 print 'eigenvalues means', medias
 print 'eigenvalues stds', desvios
+
 """

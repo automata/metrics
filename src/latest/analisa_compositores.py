@@ -9,7 +9,7 @@ caracteristicas = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
 
 # leitura da matriz de notas
-nn = n.loadtxt('notas.txt')
+nn = n.loadtxt('notas_compositores.txt')
 #nn = n.loadtxt('notas_filosofos.txt')
 
 for i in range(len(nn)):
