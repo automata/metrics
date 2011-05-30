@@ -4,7 +4,6 @@ Sources of the Philosometrics and Musimetrics works.
 
 * Directories
 
-- docs/     papers and notes
 - src/      source (src/latest has the latest version)
 
 * Authors

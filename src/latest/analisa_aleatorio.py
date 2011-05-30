@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats, random
 
-_na = 20
-_nc = 20
+_na = 7
+_nc = 8
 
-agentes = ['Agent %i' % i for i in range(1, _na+1)]
+agentes = ['A%i' % i for i in range(1, _na+1)]
 caracteristicas = ['Feature %i' % i for i in range(1, _nc+1)]
 
 # leitura da matriz de notas
@@ -164,7 +164,7 @@ p.legend(loc='lower right')
 p.plot(princ[:,0],"bo")
 p.plot(princ[:,1],"go")
 p.savefig('g2.eps')
-"""
+
 ######## PERTURBACAO
 
 E_or=n.copy(E)
@@ -220,4 +220,4 @@ desvios=deltas.std(0)
 print 'eigenvalues means', medias
 print 'eigenvalues stds', desvios
 
-"""
+
