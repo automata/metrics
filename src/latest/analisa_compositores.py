@@ -1,19 +1,45 @@
 # -*- coding: utf-8 -*-
 import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats
 
-compositores = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-caracteristicas = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+#compositores = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+#caracteristicas = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
-#compositores = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-#caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+compositores = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 
 # leitura da matriz de notas
-nn = n.loadtxt('notas_compositores.txt')
-#nn = n.loadtxt('notas_filosofos.txt')
+#nn = n.loadtxt('notas_compositores.txt')
+nn = n.loadtxt('notas_filosofos.txt')
+
+print 'NOTAS'
 
 for i in range(len(nn)):
     print '%s & %s \\' % (compositores[i], ' & '.join([str(x) for x in nn[i]]))
+
+print 'NOTAS NORMALIZADAS'
+
+normalizada = []
+
+for i in range(len(nn)):
+    normalizada.append([(x - n.mean(nn))/n.std(nn) for x in nn[i]])
+    print '%s & %s \\' % (compositores[i], ' & '.join([str(x) for x in normalizada[i]]))
+
+normalizada = n.array(normalizada)
+
+print 'DISTANCIAS'
+
+def distancia(x,y):
+    print '%s -> %s = %s. soma = %s' % (compositores[x], 
+                                        compositores[y], 
+                                        str(n.sum(n.abs(nn[x,:] - nn[y,:]))), 
+                                        str(n.sum(n.abs(normalizada[x,:] - normalizada[y,:])))) 
+
+for i in range(0,len(nn)-1):
+    distancia(i, i+1)
+
+distancia(0,4)
+distancia(1,6)
 
 # cálculo da matriz de correlação
 # pré-processamento
@@ -176,7 +202,7 @@ p.legend(loc='lower right')
 p.plot(princ[:,0],"bo")
 p.plot(princ[:,1],"go")
 p.savefig('g2.eps')
-
+"""
 ######## PERTURBACAO
 
 E_or=n.copy(E)
@@ -231,3 +257,4 @@ medias=deltas.mean(0)
 desvios=deltas.std(0)
 print 'eigenvalues means', medias
 print 'eigenvalues stds', desvios
+"""

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats, random
 
-_na = 7
+_na = 100
 _nc = 8
 
 agentes = ['A%i' % i for i in range(1, _na+1)]
@@ -164,7 +164,7 @@ p.legend(loc='lower right')
 p.plot(princ[:,0],"bo")
 p.plot(princ[:,1],"go")
 p.savefig('g2.eps')
-
+"""
 ######## PERTURBACAO
 
 E_or=n.copy(E)
@@ -219,5 +219,5 @@ medias=deltas.mean(0)
 desvios=deltas.std(0)
 print 'eigenvalues means', medias
 print 'eigenvalues stds', desvios
-
+"""
 
