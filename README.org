@@ -1,10 +1,24 @@
 * *metrics
 
+* Introduction
+
 Sources of the Philosometrics and Musimetrics works.
 
 * Directories
 
 - src/      source (src/latest has the latest version)
+
+* Using
+
+  In the src/latest directory:
+
+  #+BEGIN_SRC sh
+$ python analisa_filosofos.py > output.txt     # to philosophers set
+$ python analisa_compositores.py > output.txt  # to composers set
+$ python analisa_aleatorio.py > output.txt     # to random set
+  #+END_SRC
+
+  The results are g1.eps, g2.eps and output.txt
 
 * Authors
 

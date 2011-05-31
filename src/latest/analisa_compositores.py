@@ -188,7 +188,7 @@ autovals=n.zeros((NN,4))
 princ_or=T[:,:2]
 
 for foobar in xrange(NN):
-    nn = n.loadtxt('notas.txt')
+    #nn = n.loadtxt('notas.txt')
 
     ############
     # PERTURBACAO
