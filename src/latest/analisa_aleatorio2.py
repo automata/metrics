@@ -1,59 +1,57 @@
 # -*- coding: utf-8 -*-
 import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats, random
 
-_na = 7
+_na = 10
 _nc = 8
 
-agentes = ['A%i' % i for i in range(1, _na+1)]
-caracteristicas = ['Feature %i' % i for i in range(1, _nc+1)]
+for _na in range(5,20):
+    agentes = ['A%i' % i for i in range(1, _na+1)]
+    caracteristicas = ['Feature %i' % i for i in range(1, _nc+1)]
 
-# leitura da matriz de notas
-#nn = n.loadtxt('notas.txt')
-#nn = n.loadtxt('notas_filosofos.txt')
-baz_max = 100
-s = 0
-for baz in range(baz_max):
-    nn = n.array([[random.uniform(1,9) for x in range(_nc)] for y in range(_na)])
+    baz_max = 100
+    s = 0
+    for baz in range(baz_max):
+        #nn = n.array([[random.uniform(1,9) for x in range(_nc)] for y in range(_na)])
+        nn = n.array([[random.gauss(5,5.0/3) for x in range(_nc)] for y in range(_na)])
 
-    #for i in range(len(nn)):
-    #print '%s & %s \\' % (agentes[i], ' & '.join([str(x) for x in nn[i]]))
+        #for i in range(len(nn)):
+        #print '%s & %s \\' % (agentes[i], ' & '.join([str(x) for x in nn[i]]))
     
-    # cálculo da matriz de correlação
-    # pré-processamento
-    for i in xrange(nn.shape[1]):
-        nn[:,i]=(nn[:,i]-nn[:,i].mean())/nn[:,i].std()
+        # cálculo da matriz de correlação
+        # pré-processamento
+        for i in xrange(nn.shape[1]):
+            nn[:,i]=(nn[:,i]-nn[:,i].mean())/nn[:,i].std()
 
-#coeficientes de pearson
-    covm=n.cov(nn.T,bias=True)
-    stds=n.std(nn,0)
-    pearson=n.zeros((_nc,_nc))
-    for i in xrange(_nc):
-        for j in xrange(_nc):
-            pearson[i,j]=covm[i,j]/(stds[i]*stds[j])
+        #coeficientes de pearson
+        covm=n.cov(nn.T,bias=True)
+        stds=n.std(nn,0)
+        pearson=n.zeros((_nc,_nc))
+        for i in xrange(_nc):
+            for j in xrange(_nc):
+                pearson[i,j]=covm[i,j]/(stds[i]*stds[j])
 
-    m = []
-    colunas = [[x[i] for x in nn] for i in range(_nc)]
-    correlacao = [stats.pearsonr(n.array(col), n.array(coluna))[0]
-                  for col in colunas
-                  for coluna in colunas]
-    for i in range(_nc):
-        m.append(correlacao[i*_nc : i*_nc + _nc])
-# pearson == m
+        m = []
+        colunas = [[x[i] for x in nn] for i in range(_nc)]
+        correlacao = [stats.pearsonr(n.array(col), n.array(coluna))[0]
+                      for col in colunas
+                      for coluna in colunas]
+        for i in range(_nc):
+            m.append(correlacao[i*_nc : i*_nc + _nc])
+        # pearson == m
 
-#print 'PEARSON'
+        #print 'PEARSON'
 
-#for linha in m:
-#    print [str(round(x, ndigits=2)) for x in linha]
+        #for linha in m:
+        #    print [str(round(x, ndigits=2)) for x in linha]
 
+        # cálculo PCA
+        T, P, E = pca.PCA_nipals(nn)
+        princ = T[:,:2]
 
-# cálculo PCA
-    T, P, E = pca.PCA_nipals(nn)
-    princ = T[:,:2]
-
-# cálculo dos autovalores %
-    print 'Autovalores:', E * 100, '\nSoma 2 primeiros:', E[0] + E[1]
-    s = s + (E[0] + E[1])
-print 'Média:', s/baz_max
+        # cálculo dos autovalores %
+        #print 'Autovalores:', E * 100, '\nSoma 2 primeiros:', E[0] + E[1]
+        s = s + (E[0] + E[1])
+    print 'na:', _na, 'Média:', s/baz_max
 """
 # contribuições
 c1 = P[0]

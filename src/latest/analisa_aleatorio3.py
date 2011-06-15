@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats, random as r
+import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats, random as r, scipy.stats.stats as sss
 
 #
 # Funções auxiliares
@@ -19,10 +19,15 @@ def truncated_gauss(a, b, mu, sigma):
 # Análise
 #
 
-for repete in range(1):
-    print '\nTESTE %s' % repete
+agentes_todos = [5,10,20,50,100,200,300,400,500,600,700,800,900,1000,1500,2000,2500,3000]
+_somas = []
+
+#for repete in range(1):
+for num_agentes in agentes_todos:
+    #print '\nTESTE %s' % repete
+    print '\nQTD AGENTES', num_agentes
     # número de agentes (medidas)
-    _na = 1000
+    _na = num_agentes
     # número de características (vars. aleatórias)
     _nc = 8
 
@@ -42,10 +47,20 @@ for repete in range(1):
     for i in range(len(nn)):
         print '%s & %s \\' % (agentes[i], ' & '.join([str(x) for x in nn[i]]))
 
+    print 'MEDIA', n.mean(nn)
+
     # cálculo da matriz de correlação
     # pré-processamento
     #for i in xrange(nn.shape[1]):
     #    nn[:,i]=(nn[:,i]-nn[:,i].mean())/nn[:,i].std()
+
+    print '\nZ-SCORES'
+    _zscores = sss.zscore(nn)
+    for i in range(len(_zscores)):
+        print [round(x, ndigits=2) for x in _zscores[i]]
+
+    # considerando agora notas standardizadas
+    nn = _zscores
 
     # pearson
     print '\nMATRIZ DE COVARIANCIA'
@@ -53,6 +68,7 @@ for repete in range(1):
     for i in range(len(covm)):
         print [round(x, ndigits=2) for x in covm[i]]
     print 'MEDIA', n.mean(n.abs(covm))
+
 
     def _cov(x, y):
         s = 0
@@ -125,6 +141,7 @@ for repete in range(1):
     #print T
     print '\nAUTOVALORES', [round(x, ndigits=2) for x in E * 100], 'SOMA', sum(E)
     print '\nSOMA DOIS PRIMEIROS', round(E[0] + E[1], ndigits=2)
+    _somas.append(round(E[0] + E[1], ndigits = 2))
 
     #print 'NOVO PCA'
     # def pca(data, nRedDim=0, normalise=1):
@@ -166,6 +183,10 @@ for repete in range(1):
     #print 'evals', evals, sum(evals)
     #print 'evecs', evecs
     
+print agentes_todos, _somas
+p.plot(agentes_todos, _somas)
+p.savefig('aleats_2.eps')
+
 ###############################################################################
 """
 # contribuições
