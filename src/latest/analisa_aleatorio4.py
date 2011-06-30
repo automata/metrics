@@ -32,17 +32,17 @@ for num_agentes in agentes_todos[:1]:
     # número de características (vars. aleatórias)
     _nc = 8
 
-    agentes = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-    caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+    #agentes = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+    #caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
-    #agentes = ['A%i' % i for i in range(1, _na+1)]
-    #caracteristicas = ['Feature %i' % i for i in range(1, _nc+1)]
+    agentes = ['A%i' % i for i in range(1, _na+1)]
+    caracteristicas = ['Feature %i' % i for i in range(1, _nc+1)]
 
     # matriz de notas
     #nn = n.loadtxt('notas_compositores.txt')
-    nn = n.loadtxt('notas_filosofos.txt')
+    #nn = n.loadtxt('notas_filosofos.txt')
     #nn = n.loadtxt('notas_aleatorias.txt')
-    #nn = n.array([[r.uniform(1,9) for x in range(_nc)] for y in range(_na)])
+    nn = n.array([[r.uniform(1,9) for x in range(_nc)] for y in range(_na)])
     #nn_lista = nn.tolist()
     #print 'QTD NOTAS'
     #print [sum([[int(round(z)) for z in x].count(y) for x in nn_lista]) for y in range(1,10)]
@@ -61,8 +61,8 @@ for num_agentes in agentes_todos[:1]:
 
     # cálculo da matriz de correlação
     # pré-processamento
-    #for i in xrange(nn.shape[1]):
-    #    nn[:,i]=(nn[:,i]-nn[:,i].mean())/nn[:,i].std()
+    for i in xrange(nn.shape[1]):
+        nn[:,i]=(nn[:,i]-nn[:,i].mean())/nn[:,i].std()
 
     # pearson
     print '\nMATRIZ DE COVARIANCIA'
