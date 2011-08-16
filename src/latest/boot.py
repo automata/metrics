@@ -24,8 +24,8 @@ for i in range(1000):
     # 4. se a < v => guarda v na lista
     if a < fv:
         novos.append(v)
-print sum(novos)
-p.hist(novos, normed=1, alpha=0.75)
+
+#p.hist(novos, normed=1, alpha=0.75)
 int_x = p.arange(minimo, maximo,0.1)
 p.plot(int_x, [f(x) for x in int_x])
 p.axis([minimo, maximo, 0, 0.6])
