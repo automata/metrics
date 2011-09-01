@@ -1,0 +1,31 @@
+autores: nome, universidade, instituto, email
+
+resumo (1800 carac)
+
+O uso da análise quantitativa nas artes e filosofia é geralmente subexplorada.
+Propomos através d
+
+A evolução das ciências,  
+
+Baseado em um método quantitativo já aplicado (1) para a análise da obra
+e história de filósofos, verificamos a aplicação desse mesmo método para
+a música. Sete compositores foram escolhidos e analisados com respeito a
+oito características principais presentes em suas obras. Ambas
+análises para a filosofia e a música foram comparadas e validadas.
+Diferenças em como se deu o desenvolvimento histórico em cada uma dessas áreas
+foram identificadas e discutidas.
+
+abstract
+
+Based on a quantitative method already applied to the analysis of
+philosophers works and history, we verified the application of same
+method to music. Seven music composers were analyzed with respect of
+eight main musical characteristics present on their life-work. In
+addition, both philosophical and musical analysis were compared and
+validated, revealing some differences on the historic development of
+these fields, specially with respect to innovation.
+
+
+referências
+
+palavras-chave

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 import numpy as n, pca_module as pca, pylab as p, scipy.stats as stats
 
-#compositores = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-#caracteristicas = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+compositores = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+caracteristicas = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
-compositores = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+#compositores = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+#caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 
 # leitura da matriz de notas
-#nn = n.loadtxt('notas_compositores.txt')
-nn = n.loadtxt('notas_filosofos.txt')
+nn = n.loadtxt('notas_compositores.txt')
+#nn = n.loadtxt('notas_filosofos.txt')
 
 print 'NOTAS'
 

@@ -106,57 +106,57 @@ def principal():
     #dados = n.loadtxt('notas_filosofos.txt')
 
     # Compositores:
-    # dados = n.loadtxt('notas_filosofos.txt')
-    # covar, autovetores, autovalores, autovalores_prop, dados_finais = pca(dados)
-    # print '\n\nautovetores', autovetores.T
-    # print '\nMatriz de covariância:\n', n.around(covar, decimals=2)
-    # print '\nMatriz de correlação de Pearson:\n', n.around(pearson(dados), decimals=2)
-    # print '\nAutovalores:\n', n.around(autovalores_prop, decimals=2)
-    # print '\nVariância dos Autovalores:\n', n.around(n.var(autovalores_prop), decimals=2)
-    # print '\nSoma dos dois primeiros:\n', round(autovalores_prop[0] + autovalores_prop[1], ndigits=2)
-    # print '\nDados finais:\n', n.around(dados_finais, decimals=2)
-    # c1 = dados_finais[:,0]
-    # c2 = dados_finais[:,1]
+    dados = n.loadtxt('notas_filosofos.txt')
+    covar, autovetores, autovalores, autovalores_prop, dados_finais = pca(dados)
+    print '\n\nautovetores', autovetores.T
+    print '\nMatriz de covariância:\n', n.around(covar, decimals=2)
+    print '\nMatriz de correlação de Pearson:\n', n.around(pearson(dados), decimals=2)
+    print '\nAutovalores:\n', n.around(autovalores_prop, decimals=2)
+    print '\nVariância dos Autovalores:\n', n.around(n.var(autovalores_prop), decimals=2)
+    print '\nSoma dos dois primeiros:\n', round(autovalores_prop[0] + autovalores_prop[1], ndigits=2)
+    print '\nDados finais:\n', n.around(dados_finais, decimals=2)
+    c1 = dados_finais[:,0]
+    c2 = dados_finais[:,1]
 
-    # p.clf()
-    # p.plot(c1, c2)
-    # p.xlim((-4,4))
-    # p.ylim((-4,4))
-    # p.savefig('pca.eps')
+    p.clf()
+    p.plot(c1, c2)
+    p.xlim((-4,4))
+    p.ylim((-4,4))
+    p.savefig('pca.eps')
 
     # Aleatórios:
     #num_agentes = [10,15,20,25,30,35,40,45,50,100, 150, 200, 250, 300, 350, 400, 450, 500, 1000]
-    num_agentes = [3]
-    num_vars = 8
-    a = []
-    autovalores_todos = {}
-    for i in num_agentes:
-        autovalores_todos[i] = []
-        for j in xrange(1):
-            # aqui eu jogo os valores sampleados
-            #print '\n\ndados toscos\n\n', dados
-            #print '\n\ndados monte carlo\n\n', montecarlo(10)
-            d = n.loadtxt('notas_filosofos.txt')
-            #dados = n.array([[r.uniform(1,9) for x in range(num_vars)] for y in range(i)])
-            dados = n.array(montecarlo(i))
-            print dados
-            covar, autovetores, autovalores, autovalores_prop, dados_finais = pca(dados)
-            print '\n*** Teste %s para %s agentes ***\n' % (j, i)
-            print '\nMatriz de covariância:\n', n.around(covar, decimals=2)
-            print '\nMatriz de correlação de Pearson:\n', n.around(pearson(dados), decimals=2)
-            print '\nAutovalores:\n', n.around(autovalores_prop, decimals=2)
-            print '\nVariância dos Autovalores:\n', n.around(n.var(autovalores_prop), decimals=2)
-            print '\nSoma dos dois primeiros:\n', round(autovalores_prop[0] + autovalores_prop[1], ndigits=2)
-            #a.append(autovalores_prop[0] + autovalores_prop[1])
-            autovalores_todos[i].append(autovalores_prop)
-    # analisa autovalores dos testes aleatórios...
-    for i in num_agentes:
-        print '\n\nPara os autovalores de % agentes:\n', i
-        print '\nMédia da soma dos dois primeiros:', n.mean([av[0] + av[1] for av in autovalores_todos[i]])
-        print '\nVariância dos autovalores:', [n.var(av) for av in autovalores_todos[i]]
-    # p.plot(num_agentes, a)
-    # p.savefig('foo.eps')
-    p.show()
+    # num_agentes = [3]
+    # num_vars = 8
+    # a = []
+    # autovalores_todos = {}
+    # for i in num_agentes:
+    #     autovalores_todos[i] = []
+    #     for j in xrange(1):
+    #         # aqui eu jogo os valores sampleados
+    #         #print '\n\ndados toscos\n\n', dados
+    #         #print '\n\ndados monte carlo\n\n', montecarlo(10)
+    #         d = n.loadtxt('notas_filosofos.txt')
+    #         #dados = n.array([[r.uniform(1,9) for x in range(num_vars)] for y in range(i)])
+    #         dados = n.array(montecarlo(i))
+    #         print dados
+    #         covar, autovetores, autovalores, autovalores_prop, dados_finais = pca(dados)
+    #         print '\n*** Teste %s para %s agentes ***\n' % (j, i)
+    #         print '\nMatriz de covariância:\n', n.around(covar, decimals=2)
+    #         print '\nMatriz de correlação de Pearson:\n', n.around(pearson(dados), decimals=2)
+    #         print '\nAutovalores:\n', n.around(autovalores_prop, decimals=2)
+    #         print '\nVariância dos Autovalores:\n', n.around(n.var(autovalores_prop), decimals=2)
+    #         print '\nSoma dos dois primeiros:\n', round(autovalores_prop[0] + autovalores_prop[1], ndigits=2)
+    #         #a.append(autovalores_prop[0] + autovalores_prop[1])
+    #         autovalores_todos[i].append(autovalores_prop)
+    # # analisa autovalores dos testes aleatórios...
+    # for i in num_agentes:
+    #     print '\n\nPara os autovalores de % agentes:\n', i
+    #     print '\nMédia da soma dos dois primeiros:', n.mean([av[0] + av[1] for av in autovalores_todos[i]])
+    #     print '\nVariância dos autovalores:', [n.var(av) for av in autovalores_todos[i]]
+    # # p.plot(num_agentes, a)
+    # # p.savefig('foo.eps')
+    # p.show()
         
 if __name__ == '__main__':
     principal()

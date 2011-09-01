@@ -10,9 +10,9 @@ caracteristicas = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 # leitura da matriz de notas
 #nn = n.loadtxt('notas.txt')
-#nn = n.loadtxt('notas_filosofos.txt')
+nn = n.loadtxt('notas_filosofos.txt')
 
-nn = [[random.uniform(1,9) for x in range(8)] for y in range(7)]
+#nn = [[random.uniform(1,9) for x in range(8)] for y in range(7)]
 
 for i in range(len(nn)):
     print '%s & %s \\' % (compositores[i], ' & '.join([str(x) for x in nn[i]]))
