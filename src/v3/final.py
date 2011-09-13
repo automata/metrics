@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 import numpy as n
 import pylab as p
+import pca_module as pca
 
-#arquivo_notas = 'notas_compositores.txt'
-#agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-#caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+# arquivo_notas = 'notas_compositores.txt'
+# agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+# caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+
+# arquivo_notas = 'notas_filosofos.txt'
+# agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+# caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 arquivo_notas = 'notas_diretores.txt'
 agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
@@ -13,8 +18,8 @@ caracs = ['I-F','F-R','F-H','L-D','H-A','R-A','T-M','A-M']
 # parâmetros
 minimo = 1.0
 maximo = 9.0
-qtd_aleatorios = 500000 # ***
-std = 1.3 # ***
+qtd_aleatorios = 800000 # ***
+std = 1.4 # ***
 # carregamos os dados das notas originais
 dados_orig = n.loadtxt(arquivo_notas)
 # calculamos os samples por boostrap
@@ -50,6 +55,7 @@ results= coin < pos
 pts_reais=pts[results]
 # unimos as duas matrizes de notas
 dados=n.vstack((dados_orig,pts_reais))
+copia_dados = n.copy(dados)
 print '\n*** Dimensões da tabela de notas:', dados.shape
 print '\n*** Tabela geral de notas:\n', dados
 
@@ -111,16 +117,54 @@ p.clf()
 ax = p.gca()
 aat = n.zeros(2)
 aaf = n.zeros(2)
+p.plot(princ[:,0], princ[:,1], '+', alpha=0.5, color="#999999", label="Bootstrap samples")        
 for i in xrange(princ_orig.shape[0]):
     cc = n.zeros(3) + float(i) / princ_orig.shape[0]
     x = princ_orig[i, 0]
     y = princ_orig[i, 1]
     aaf = n.sum(princ_orig[:i+1], 0) / (i+1)
-    p.plot(aaf[0], aaf[1], 'ro')
+    p.plot(aaf[0], aaf[1], 'o', color="#666666")
     if i != 0:
-        p.plot((aat[0], aaf[0]), (aat[1], aaf[1]), '--')
+        p.plot((aat[0], aaf[0]), (aat[1], aaf[1]), ':', color='#333333')
     aat = n.copy(aaf)
-    p.plot(x, y, 'o', color=cc)
+    p.plot(x, y, 'bo')
+    p.text(x, y, str(i+1), fontsize=12)
+    # if i == 0:
+    #     p.text(x-.7, y-.4, str(i+1) + ' ' + compositores[i], fontsize=12)
+    # elif i == 1:
+    #     p.text(x-.7, y+.2, str(i+1) + ' ' + compositores[i], fontsize=12)
+    # elif i == 2:
+    #     p.text(x, y+.2, str(i+1) + ' ' + compositores[i], fontsize=12)
+    # elif i == 3:
+    #     p.text(x-.5, y-.5, str(i+1) + ' ' + compositores[i], fontsize=12)
+    # elif i == 5:
+    #     p.text(x+.2, y-.3, str(i+1) + ' ' + compositores[i], fontsize=12)
+    # elif i == 6:
+    #     p.text(x-1.5, y+.15, str(i+1) + ' ' + compositores[i], fontsize=12)
+    # elif i == 7:
+    #     p.text(x-.5, y+.4, str(i+1) + ' ' + compositores[i], fontsize=12)
+
+p.plot(princ_orig[:,0], princ_orig[:,1], color="#000000", label="Original samples")
+# [p.text(c1_orig[i], c2_orig[i], str(i+1)) for i in range(len(c1_orig))]
+#p.xlim((-5,5))
+#p.ylim((-5,5))
+p.legend(loc='best')
+p.savefig('g1.eps')
+
+p.clf()
+ax = p.gca()
+aat = n.zeros(2)
+aaf = n.zeros(2)
+for i in xrange(princ_orig.shape[0]):
+    cc = n.zeros(3) + float(i) / princ_orig.shape[0]
+    x = princ_orig[i, 0]
+    y = princ_orig[i, 1]
+    aaf = n.sum(princ_orig[:i+1], 0) / (i+1)
+    p.plot(aaf[0], aaf[1], 'o', color="#666666")
+    if i != 0:
+        p.plot((aat[0], aaf[0]), (aat[1], aaf[1]), ':', color='#777777')
+    aat = n.copy(aaf)
+    p.plot(x, y, 'bo')
     p.text(x, y, str(i+1) + ' ' + agents[i], fontsize=12)
     # if i == 0:
     #     p.text(x-.7, y-.4, str(i+1) + ' ' + compositores[i], fontsize=12)
@@ -137,30 +181,35 @@ for i in xrange(princ_orig.shape[0]):
     # elif i == 7:
     #     p.text(x-.5, y+.4, str(i+1) + ' ' + compositores[i], fontsize=12)
 
-p.plot(princ[:,0], princ[:,1], 'rx')        
-p.plot(princ_orig[:,0], princ_orig[:,1], color="gray")
+p.plot(princ_orig[:,0], princ_orig[:,1], color="#000000")
 # [p.text(c1_orig[i], c2_orig[i], str(i+1)) for i in range(len(c1_orig))]
-p.xlim((-5,4))
-p.ylim((-3,4))
-p.savefig('g1.eps')
+p.xlim((-5,5))
+p.ylim((-5,5))
+p.savefig('g1_originais.eps')
 
 p.clf()
-p.plot(princ[:,0], label='First component')
-p.plot(princ[:,1], label='Second component')
+p.plot(princ_orig[:,0], label='First component')
+p.plot(princ_orig[:,1], label='Second component')
 p.legend(loc='lower right')
-p.plot(princ[:,0],"bo")
-p.plot(princ[:,1],"go")
+p.plot(princ_orig[:,0],"bo")
+p.plot(princ_orig[:,1],"go")
 p.savefig('g2.eps')
 
 # calculamos a contribuição de cada score de T (PCA) para sua formação
 # *cálculo dos loadings P
 c1 = autovetores[:,0]
 c2 = autovetores[:,1]
+c3 = autovetores[:,2]
+c4 = autovetores[:,3]
 cc1 = c1 / sum(abs(c1)) * 100
 cc2 = c2 / sum(abs(c2)) * 100
+cc3 = c3 / sum(abs(c3)) * 100
+cc4 = c4 / sum(abs(c4)) * 100
 print '\n*** Contribuições (autovetores) [P] (idem para todos e originais)\n'
 print 'C1', [abs(x) for x in cc1]
 print 'C2', [abs(x) for x in cc2]
+print 'C3', [abs(x) for x in cc3]
+print 'C4', [abs(x) for x in cc4]
 
 #
 # Oposição e Inovação
@@ -235,3 +284,49 @@ print '\n*** Dialéticas:\n', dialeticas
 #
 # Perturbação
 #
+
+nperturb = 1000
+# distancias[original, ruido, amostra]
+distancias = n.zeros((ncomp, ncomp, nperturb))
+autovals = n.zeros((nperturb, 4))
+
+for foobar in xrange(nperturb):
+    dist = n.random.randint(-2, 3, copia_dados.shape)
+    copia_dados += dist
+
+    for i in xrange(copia_dados.shape[1]):
+        copia_dados[:,i] = (copia_dados[:,i] - copia_dados[:,i].mean())/copia_dados[:,i].std()
+
+    # fazemos pca para dados considerando esses pontos aleatórios entre -2 e 2
+    # FIXME: substituir depois pca_nipals
+    T, P, E = pca.PCA_nipals(copia_dados)
+    autovals[foobar] = E[:4]
+    princ = T[:,:2]
+    for i in xrange(ncomp):
+        for j in xrange(ncomp):
+            distancias[i, j, foobar] = n.sum((princ_orig[i] - princ[j])**2)**.5
+
+stds = n.zeros((ncomp, ncomp))
+means = n.zeros((ncomp, ncomp))
+main_stds = []
+main_means = []
+print 'dados', copia_dados
+for i in xrange(ncomp):
+    for j in xrange(ncomp):
+        stds[i,j] = distancias[i,j,:].std()
+        means[i,j] = distancias[i,j,:].mean()
+        if i == j:
+          main_stds.append(stds[i,j])
+          main_means.append(means[i,j])
+n.savetxt("mean2_.txt",means,"%.2e")
+n.savetxt("stds2_.txt",stds,"%.2e")
+print 'main_means', main_means
+print 'main_stds', main_stds
+
+# Cálculo das médias e variâncias dos desvios dos primeiros 4 autovalores
+
+deltas = autovals - autovalores_prop[:4]
+medias = deltas.mean(0)
+desvios = deltas.std(0)
+print 'eigenvalues means', medias
+print 'eigenvalues stds', desvios
