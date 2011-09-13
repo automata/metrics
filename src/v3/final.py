@@ -18,7 +18,7 @@ caracs = ['I-F','F-R','F-H','L-D','H-A','R-A','T-M','A-M']
 # parâmetros
 minimo = 1.0
 maximo = 9.0
-qtd_aleatorios = 800000 # ***
+qtd_aleatorios = 1000000 # ***
 std = 1.4 # ***
 # carregamos os dados das notas originais
 dados_orig = n.loadtxt(arquivo_notas)
@@ -31,11 +31,18 @@ ncarac = 8
 pos=n.zeros(qtd_aleatorios)
 pts=n.zeros((qtd_aleatorios,ncarac))
 
+def seleciona(x):
+    if (x < 1):
+        return 1.0
+    if (x > 9):
+        return 9.0
+    return x
+
 # para cada ponto artificial
 for i in xrange(qtd_aleatorios):
     # calculamos um vetor de 8 notas gaussianas entre 1 e 9
-    #xs = n.random.normal(loc=5., scale=2.5, size=8)
-    xs = n.random.rand(ncarac)*8+1
+    xs = n.array([seleciona(x) for x in n.random.normal(loc=5., scale=3.5, size=8)])
+    #xs = n.random.rand(ncarac)*8+1
     # colocamos esse vetor na tabela de pontos artificiais (8 valores para cada linha i)
     pts[i]=xs
     # centralizando na média das distâncias
