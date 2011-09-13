@@ -41,8 +41,9 @@ def seleciona(x):
 # para cada ponto artificial
 for i in xrange(qtd_aleatorios):
     # calculamos um vetor de 8 notas gaussianas entre 1 e 9
-    xs = n.array([seleciona(x) for x in n.random.normal(loc=5., scale=3.5, size=8)])
-    #xs = n.random.rand(ncarac)*8+1
+    #xs = n.array([seleciona(x) for x in n.random.normal(loc=5., scale=4., size=8)])
+    #xs = n.array([seleciona(x) for x in n.random.rand(ncarac)*9])
+    xs = n.random.uniform(1,9,8)
     # colocamos esse vetor na tabela de pontos artificiais (8 valores para cada linha i)
     pts[i]=xs
     # centralizando na média das distâncias
@@ -291,7 +292,7 @@ print '\n*** Dialéticas:\n', dialeticas
 #
 # Perturbação
 #
-
+"""
 nperturb = 1000
 # distancias[original, ruido, amostra]
 distancias = n.zeros((ncomp, ncomp, nperturb))
@@ -337,3 +338,4 @@ medias = deltas.mean(0)
 desvios = deltas.std(0)
 print 'eigenvalues means', medias
 print 'eigenvalues stds', desvios
+"""
