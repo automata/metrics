@@ -1,12 +1,13 @@
-* *metrics
+* *-metrics
 
 * Introduction
 
-Sources of the Philosometrics and Musimetrics works.
+Sources for Philosometrics and Musimetrics works.
 
 * Directories
 
-- src/      source (src/latest has the latest version)
+- src/      source
+- txt/      tex files
 
 * Using
 
