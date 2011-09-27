@@ -350,6 +350,7 @@ between \emph{D-F} and \emph{N-M}.  Also interesting is the relatively
 high correlation between \emph{M-D} and \emph{D-F}, which seems to be
 directly implied by religious background.
 
+%%%%%%%%%% NOVAS COVARS, CONSIDERANDO BOOTSTRAP
 
 \begin{table}\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tableB}Pearson correlation coefficients between the eight philosophical characteristics.  The entries with absolute
@@ -359,13 +360,13 @@ value larger or equal than 0.35 have been emphasized.}
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|}
 
 - & R-E & E-E & M-D & T-A & H-R & D-P & D-F & N-M \\ \hline
-R-E & 1.00 & {\bf \emph{  0.37}} & {\bf \emph{  -0.55}} & 0.11 & -0.26 & {\bf \emph{  0.56}} & {\bf \emph{  -0.67}} & {\bf \emph{  -0.80}} \\
-E-E & -    & 1.00 & {\bf \emph{  -0.48}} & {\bf \emph{  0.67}} & 0.16 & {\bf \emph{  0.94}} & {\bf \emph{  -0.47}} & -0.27 \\
-M-D & -    & -    & 1.00 & {\bf \emph{  -0.49}} & {\bf \emph{  0.64}} & {\bf \emph{  -0.37}} & {\bf \emph{  0.70}} & {\bf \emph{  0.53}} \\
-T-A & -    & -    & -    & 1.00 & -0.05 & {\bf \emph{  0.49}}  & -0.06 & 0.09 \\
-H-R & -    & -    & -    & -    & 1.00 & 0.29 & 0.23 & 0.22 \\ 
-D-P & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  -0.57}}  & {\bf \emph{  -0.47}} \\
-D-F & -    & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  0.92}} \\
+R-E & 1.00 & 0.34 & -0.3 & -0.01 & -0.07 & {\bf \emph{  0.46}} & {\bf \emph{  -0.43}} & {\bf \emph{  -0.49}} \\
+E-E & -    & 1.00 & {\bf \emph{  -0.4}} & 0.25 & 0.12 & {\bf \emph{  0.71}} & {\bf \emph{  -0.48}} & -0.21 \\
+M-D & -    & -    & 1.00 & -0.23 & {\bf \emph{  0.47}} & -0.24 & {\bf \emph{  0.43}} & 0.21 \\
+T-A & -    & -    & -    & 1.00 & -0.09 & 0.13  & 0.16 & 0.24 \\
+H-R & -    & -    & -    & -    & 1.00 & 0.21 & -0.01 & -0.06 \\ 
+D-P & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  -0.52}}  & {\bf \emph{  -0.37}} \\
+D-F & -    & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  0.62}} \\
 N-M & -    & -    & -    & -    & -    & -    & -    & 1.00 \\
 
 \end{tabular}
@@ -381,6 +382,8 @@ properties of the philosophers can be well described and analysed
 while considering just two dimensions, yielding a planar philosophical
 space.
 
+%%%%%%%%% NOVOS VALORES, CONSIDIERANDO BOOTSTRAP
+
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tableC}New variances after PCA, in percentages.}
 
@@ -388,14 +391,14 @@ space.
 \begin{tabular}{|c||c|}
 \hline
 Eigenvalue & Value \\ \hline
-$\lambda_1$ &  51.26 \% \\
-$\lambda_2$ &  23.57 \% \\
-$\lambda_3$ &  16.70 \% \\
-$\lambda_4$ &  4.76 \% \\
-$\lambda_5$ &  2.64 \% \\
-$\lambda_6$ &  1.08 \% \\
-$\lambda_7$ &    0. \%    \\
-$\lambda_8$ &    0. \%    \\
+$\lambda_1$ &  39 \% \\
+$\lambda_2$ &  19 \% \\
+$\lambda_3$ &  17 \% \\
+$\lambda_4$ &   8 \% \\
+$\lambda_5$ &   6 \% \\
+$\lambda_6$ &   4 \% \\
+$\lambda_7$ &   3 \%    \\
+$\lambda_8$ &   3 \%    \\
 \hline
 
 \end{tabular}
@@ -415,6 +418,7 @@ the PCA projections and variances.  In other words, the assignment of
 the original measurements does not seem to be too critical for the
 results.
 
+%%%%% PRECISAMOS FAZER...
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tableD}Average and standard deviation of the 
@@ -462,27 +466,24 @@ possibilities for representing the philosophical space: to consider
 almost equally all these characteristics or to define two new
 philosophical features as given by the PCA.
 
+%%%%%%% NOVOS VALORES, CONSIDERANDO BOOTSTRAP
+
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:Deviates}Percentages of
 the contributions from each philosophical characteristic on the two new main axes.  }
-% array([ 14.6074195 ,  13.44183605, -14.67130339,   7.87275388,
-%         -4.57316477,  14.37937031, -15.96483015, -14.48932194])
-% array([ -7.29051446,  17.24860965,   6.30569758,  16.46460455,
-%         18.48059297,  14.86634087,   7.75594117,  11.58769875])
-% \begin{ruledtabular}
-\begin{tabular}{|c||c|c|}
+\begin{tabular}{|c||c|c|c|c|}
 \hline
-Philosophical & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} \\
-Characteristics & & \\
+Philosophical & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} & \multirow{2}{*}{$C_3$} & \multirow{2}{*}{$C_4$}\\
+Characteristics & & & & \\
 \hline
-R-E & 14.60 & 7.30  \\
-E-E & 13.44    & 17.25 \\
-M-D & 14.67    & 6.31 \\
-T-A & 7.87    & 16.46 \\
-H-R & 4.57    & 18.48 \\
-D-P & 14.37    & 14.87 \\
-D-F & 15.96    & 7.76 \\
-N-M & 14.48    & 11.59 \\
+R-E & 15.93   &  1.82 &  5.75 & 35.03 \\
+E-E & 17.08   &  4.62 & 15.58 & 12.00 \\
+M-D & 13.17   & 22.48 &  8.00 & 12.41 \\
+T-A &  1.30   & 22.71 & 18.77 & 15.09 \\
+H-R &  0.32   & 25.33 & 18.95 &  1.87 \\
+D-P & 18.13   &  4.16 & 13.20 &  0.21 \\
+D-F & 18.69   &  5.66 &  7.17 & 16.81 \\
+N-M & 15.35   & 13.18 & 12.56 &  6.54 \\
 \hline
 
 \end{tabular}
@@ -492,33 +493,39 @@ N-M & 14.48    & 11.59 \\
 The 2-dimensional projected space is presented in Figure
 \ref{fig:pca}, where the arrows follow the time sequence along with
 the chosen philosophers.  Recall that each of these arrows corresponds
-to a philosophical move.  Interestingly, the time-averages, also shown
-in this figure, exhibit relatively small displacements.
-Figure~\ref{fig:time} shows the two principal components in terms of
-time-slot.  The first component seems to have a period which is twice
-as small as that of the second component.  It is also clear from this
-figure that the philosophical states seem to have a period
-characterized by nearly the same values at the 1 and 6 time-slots.
+to a philosophical move.  
+
+%%%%%%% RETIREI, POIS RETIRAMOS NO MUSIMETRICS TAMBEM...
+
+% Interestingly, the time-averages, also shown
+% in this figure, exhibit relatively small displacements.
+% Figure~\ref{fig:time} shows the two principal components in terms of
+% time-slot.  The first component seems to have a period which is twice
+% as small as that of the second component.  It is also clear from this
+% figure that the philosophical states seem to have a period
+% characterized by nearly the same values at the 1 and 6 time-slots.
 
 \begin{figure}
         \begin{center}
-                \includegraphics[width=0.45\textwidth]{pca-filosofos___}
+                \includegraphics[width=0.45\textwidth]{pca_filosofos_novo}
         \end{center}
         \caption{\it 2-dimensional projected philosophical space.}
         \label{fig:pca}
 \end{figure}
 
-\begin{figure}
-        \begin{center}
-                \includegraphics[width=0.45\textwidth]{evolTemp_}
-        \end{center}
-        \caption{\it Time evolution of the two principal components.}
-        \label{fig:time}
-\end{figure}
+% \begin{figure}
+%         \begin{center}
+%                 \includegraphics[width=0.45\textwidth]{evoltemp_filosofos_novo}
+%         \end{center}
+%         \caption{\it Time evolution of the two principal components.}
+%         \label{fig:time}
+% \end{figure}
 
 
 Table \ref{tab:tableOI} gives the opposition and skewness indices
 for each of the six philosophical moves.
+
+%%%%%%%%% VALORES ALTERADOS, CONSIDERANDO BOOTSTRAP
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tableOI}Opposition and skewness indices for each
@@ -529,12 +536,12 @@ of the six philosophical moves.  }
 \hline
 Philosophical Move & $W_{i,j}$ & $s_{i,j}$ \\
 \hline \hline
-Plato $\rightarrow$ Aristotle &  1.0 & 0 \\
+Plato $\rightarrow$ Aristotle     &  1.0 & 0 \\
 Aristotle $\rightarrow$ Descartes & 0.8622 & 0.8656 \\
-Descartes $\rightarrow$ Espinoza & 0.9803 & 1.4930 \\
-Espinoza $\rightarrow$ Kant & 0.5693 & 0.4715 \\
-Kant $\rightarrow$ Nietzsche & 0.8021 & 0.8726 \\
-Nietzsche $\rightarrow$ Deleuze & 0.3647 & 0.3148 \\
+Descartes $\rightarrow$ Espinoza  & 0.9803 & 1.4930 \\
+Espinoza $\rightarrow$ Kant       & 0.5693 & 0.4715 \\
+Kant $\rightarrow$ Nietzsche      & 0.8021 & 0.8726 \\
+Nietzsche $\rightarrow$ Deleuze   & 0.3647 & 0.3148 \\
 \hline
 \end{tabular}
 % \end{ruledtabular}
