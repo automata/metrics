@@ -3,22 +3,22 @@ import numpy as n
 import pylab as p
 import pca_module as pca
 
-# arquivo_notas = 'notas_compositores.txt'
-# agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-# caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+arquivo_notas = 'notas_compositores.txt'
+agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
 # arquivo_notas = 'notas_filosofos.txt'
 # agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
 # caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
-arquivo_notas = 'notas_diretores.txt'
-agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
-caracs = ['I-F','F-R','F-H','L-D','H-A','R-A','T-M','A-M']
+# arquivo_notas = 'notas_diretores.txt'
+# agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
+# caracs = ['I-F','F-R','F-H','L-D','H-A','R-A','T-M','A-M']
 
 # parâmetros
 minimo = 1.0
 maximo = 9.0
-qtd_aleatorios = 1000000 # ***
+qtd_aleatorios = 2000000 # ***
 std = 1.4 # ***
 # carregamos os dados das notas originais
 dados_orig = n.loadtxt(arquivo_notas)
@@ -43,7 +43,8 @@ for i in xrange(qtd_aleatorios):
     # calculamos um vetor de 8 notas gaussianas entre 1 e 9
     #xs = n.array([seleciona(x) for x in n.random.normal(loc=5., scale=4., size=8)])
     #xs = n.array([seleciona(x) for x in n.random.rand(ncarac)*9])
-    xs = n.random.uniform(1,9,8)
+    #xs = n.array([seleciona(x) for x in n.random.uniform(1,10,8)])
+    xs = n.random.uniform(1, 9.1, 8)
     # colocamos esse vetor na tabela de pontos artificiais (8 valores para cada linha i)
     pts[i]=xs
     # centralizando na média das distâncias
