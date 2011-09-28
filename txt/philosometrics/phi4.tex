@@ -116,7 +116,15 @@ procedure with which the grades were assigned, the quantification of
 the main philosophers (and consequently of their views)
 characteristics paved the way to the application of sound concepts and
 methods from multivariate statistics~\cite{Papoulis, Wichern,
-Therrien} and pattern recognition~\cite{Duda, Costa}.  We checked for
+Therrien} and pattern recognition~\cite{Duda, Costa}.  Considering the
+small number of philosophers -- not interesting to statistical
+analysis -- we developed a bootstrap method to generate
+\emph{artifical philosophers}, representing the contemporaries
+philosophers of the representatives chosen. Those contemporaries were
+historically influenced by the representatives and this influence was
+modeled by a distribution probability. In this way, a larger data set
+was generated, considering 500 new philosophers highly influenced by
+the originals samples. We checked for
 correlations between the characteristics, and then applied principal
 component analysis (PCA)~\cite{Costa} to investigate the dispersion of
 the philosophical principles.  We also considered the time sequence of
@@ -234,6 +242,7 @@ of the middle-line.}.  Note that $0 \leq d_{i \rightarrow k} \leq
 1$.  The choice of counter-dialectics instead of dialectics is justified
 to maintain compatibility with the use of a distance from point
 to line as adopted for the definition of skewness.
+
 \begin{figure}
         \begin{center}
                 \includegraphics[width=0.35\textwidth]{dialetica_.eps}
@@ -333,19 +342,42 @@ Deleuze   & 5.5 &   7.5 &   1.0  &   8.  &   2.5 &   5.5 &   5.0 &   6.0 \\
 \end{ruledtabular}
 \end{table}
 
-This dataset defines an 8-dimensional philosophical space.  The
-Pearson correlation coefficients between the eight philosophical
-characteristics chosen are presented in Table \ref{tab:tableB}.  The
+This dataset defines an 8-dimensional philosophical space for the
+group of 7 representative philosophers, a small data set, not suitable
+for statistical analysis.
+To increase the number of philosophers we generated
+random scores. Not just the size of dataset was considered when
+including these \emph{artificial philosophers}, but a better
+representation of how philosophy was developed. Along the history, a reduced
+number of representatives influenced their contemporaries. We modeled
+this influence generating samples that follows a probability
+distribution based on the original scores. In this way, the generated
+samples are not totally random values but respected the influence of the 7
+representatives chosen.
+A bootstrap method was used to create each sample, generating a
+randomized score $\vec{r}$ that follows a probability distribution
+given by $p(\vec{r}) = \sum^n_{i=1} e^{\frac{d_i}{2\sigma^2}}$ where
+$d_i$ is the distance between a random score $\vec{r}$ and the
+original scores.
+Following the Monte Carlo method, we calculated $p(\vec{r})$ for each step
+and compared it with a random normalized value, selecting just the
+samples highly influenced by the originals. We considered $\sigma =
+1.4$ for this analysis, generating 500 samples using the bootstrap method.
+
+Table \ref{tab:tableB} presents the Pearson correlation coefficients
+between the eight philosophical characteristics chosen, already
+considering the samples obtained by the bootstrap method together with
+the original scores.  The
 coefficients with absolute value larger than 0.35 are emphasized.
 Strong positive or negative correlations can be observed for several
 pairs of characteristics.  For instance, the fact that a Pearson
-correlation coefficient of $-0.80$ was obtained for the pair of
+correlation coefficient of $-0.49$ was obtained for the pair of
 characteristics \emph{R-E} and \emph{N-M} indicates that philosophers
 who are rationalists strongly tend to be also mechanicists.  An even
-stronger correlation of $0.94$, now positive, is observed between
+stronger correlation of $0.71$, now positive, is observed between
 \emph{E-E} and \emph{D-P}, suggesting that existentialists also tend
 to be phenomenologists, as could be expected.  Other strong
-correlations were observed, including a Pearson coefficient of $0.92$
+correlations were observed, including a Pearson coefficient of $0.62$
 between \emph{D-F} and \emph{N-M}.  Also interesting is the relatively
 high correlation between \emph{M-D} and \emph{D-F}, which seems to be
 directly implied by religious background.
@@ -375,12 +407,11 @@ N-M & -    & -    & -    & -    & -    & -    & -    & 1.00 \\
 
 PCA was applied to this set of data, yielding the new variances given
 in Table \ref{tab:tableC} in terms of the percentages of the total
-variance.  It is clear that the two first PCA axes account for as much
-as $75\%$ of the total variance of the dataset in the original
+variance.  It is clear that the four first PCA axes account for
+$75\%$ of the total variance of the dataset in the original
 philosophical space.  It is therefore reasonable to say that the
-properties of the philosophers can be well described and analysed
-while considering just two dimensions, yielding a planar philosophical
-space.
+properties of the philosophers can be well described and analyzed
+while considering just four dimensions.
 
 %%%%%%%%% NOVOS VALORES, CONSIDIERANDO BOOTSTRAP
 
@@ -418,8 +449,6 @@ the PCA projections and variances.  In other words, the assignment of
 the original measurements does not seem to be too critical for the
 results.
 
-%%%%% PRECISAMOS FAZER...
-
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tableD}Average and standard deviation of the 
 deviations for each philosopher and for the first 
@@ -431,20 +460,20 @@ deviations for each philosopher and for the first
 
 Philosophers & $\mu_{\Delta}$ & $\sigma_{\Delta}$ \\
 \hline
-Plato     & 0.9688 & 0.5707 \\
-Aristotle & 1.7975 & 1.0990 \\
-Descartes & 1.0106 & 0.6179 \\
-Espinoza & 2.3583 & 1.9020 \\
-Kant & 0.8970 & 0.5071 \\
-Nietzsche & 1.2220 & 0.8562 \\
-Deleuze & 1.3474 & 0.7541 \\
+Plato          & 1.9240 & 0.8892 \\
+Aristotle      & 3.4881 & 1.0620 \\
+Descartes      & 3.0622 & 1.0425 \\
+Espinoza       & 1.9106 & 0.9045 \\
+Kant           & 1.7168 & 0.8564 \\
+Nietzsche      & 4.6066 & 1.0697 \\
+Deleuze        & 3.0132 & 1.0685 \\
 \hline \hline
 Eigenvalues & $\mu_{\Delta}$ & $\sigma_{\Delta}$ \\
 \hline
-$\lambda_1$ &  0.0449 & 0.0533 \\
-$\lambda_2$ &  0.0163 & 0.0372 \\
-$\lambda_3$ &  0.0129 & 0.0301 \\
-$\lambda_4$ &  0.0323 & 0.0231 \\
+$\lambda_1$ & -0.1750 & 0.0059 \\
+$\lambda_2$ & -0.0848 & 0.0040 \\
+$\lambda_3$ &  0.0070 & 0.0030 \\
+$\lambda_4$ &  0.0194 & 0.0029 \\
 \hline
 
 \end{tabular}
@@ -453,24 +482,24 @@ $\lambda_4$ &  0.0323 & 0.0231 \\
 
 It is particularly striking that the seeming complexity of the
 philosophical traits quantified in terms of the eight characteristics
-boiled down to no more than two dimensions for their representation.
+boiled down to no more than four dimensions for their representation.
 This is a direct consequence of the high Pearson correlation
 coefficients between several of those characteristics, meaning that
 most of them tend to be related.
 
 Also shown in Table \ref{tab:Deviates} are the normalized weights (as
-percentages) of the contributions of each original property on the two
+percentages) of the contributions of each original property on the four
 new main axes.  Most of the characteristics contribute almost equally
-in defining the two main axes.  Consequently, we now have two
+in defining the four main axes.  Consequently, we now have two
 possibilities for representing the philosophical space: to consider
-almost equally all these characteristics or to define two new
+almost equally all these characteristics or to define four new
 philosophical features as given by the PCA.
 
 %%%%%%% NOVOS VALORES, CONSIDERANDO BOOTSTRAP
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:Deviates}Percentages of
-the contributions from each philosophical characteristic on the two new main axes.  }
+the contributions from each philosophical characteristic on the four new main axes.  }
 \begin{tabular}{|c||c|c|c|c|}
 \hline
 Philosophical & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} & \multirow{2}{*}{$C_3$} & \multirow{2}{*}{$C_4$}\\
@@ -490,7 +519,7 @@ N-M & 15.35   & 13.18 & 12.56 &  6.54 \\
 % \end{ruledtabular}
 \end{table}
 
-The 2-dimensional projected space is presented in Figure
+Making possible to represent the philosophical development as a planar space, the 2-dimensional projected space is presented in Figure
 \ref{fig:pca}, where the arrows follow the time sequence along with
 the chosen philosophers.  Recall that each of these arrows corresponds
 to a philosophical move.  
@@ -536,7 +565,7 @@ of the six philosophical moves.  }
 \hline
 Philosophical Move & $W_{i,j}$ & $s_{i,j}$ \\
 \hline \hline
-Plato $\rightarrow$ Aristotle     &  1.0 & 0 \\
+Plato $\rightarrow$ Aristotle     & 1.0    & 0 \\
 Aristotle $\rightarrow$ Descartes & 0.8922 & 0.0145 \\
 Descartes $\rightarrow$ Espinoza  & 0.7838 & 1.1218 \\
 Espinoza $\rightarrow$ Kant       & 0.6548 & 0.7059 \\
@@ -551,7 +580,7 @@ Nietzsche $\rightarrow$ Deleuze   & 0.3235 & 1.9040 \\
 \caption{\label{tab:tableE} Counter-dialectics index for each
 of the five subsequent pairs of philosophical moves.  }
 
-[0.96803730723071457, 0.28711158365426898, 0.13848072832282979, 1.247639081905912, 0.054244226408707102]
+%[0.96803730723071457, 0.28711158365426898, 0.13848072832282979, 1.247639081905912, 0.054244226408707102]
 
 \begin{tabular}{|c||c|}
 \hline
@@ -613,7 +642,14 @@ several philosophers regarding eight principal attributes that have
 characterized philosophical thought.  In doing so, it became possible
 to apply several concepts from multivariate statistics and pattern
 recognition areas, and derive insights on the nature of philosophical
-thinking along its historical evolution.  The high Pearson correlation
+thinking along its historical evolution.  A bootstrap method was
+applied to create a better representation of the true history: not
+just the seven philosophers chosen were responsible to development of
+the whole philosophy history, other contemporaries gave their
+contribution but influenced by some representatives. The bootstrap
+method generated samples representing those contemporaries
+philosophers and the influence was modeled as a probability
+distribution. The high Pearson correlation
 coefficients between the eight selected philosophical features
 revealed strong interrelationships among them, which means that they
 tend to go together, possibly even implying one another.  Further
