@@ -117,13 +117,13 @@ the main philosophers (and consequently of their views)
 characteristics paved the way to the application of sound concepts and
 methods from multivariate statistics~\cite{Papoulis, Wichern,
 Therrien} and pattern recognition~\cite{Duda, Costa}.  Considering the
-small number of philosophers -- not interesting to statistical
+small number of philosophers -- which could bias the statistical
 analysis -- we developed a bootstrap method to generate
-\emph{artifical philosophers}, representing the contemporaries
-philosophers of the representatives chosen. Those contemporaries were
+\emph{artifical philosophers}, representing the contemporaries of the
+representatives chosen. Those individuals were
 historically influenced by the representatives and this influence was
 modeled by a distribution probability. In this way, a larger data set
-was generated, considering 500 new philosophers highly influenced by
+was generated, considering 500 new philosophers directly influenced by
 the originals samples. We checked for
 correlations between the characteristics, and then applied principal
 component analysis (PCA)~\cite{Costa} to investigate the dispersion of
@@ -346,9 +346,7 @@ This dataset defines an 8-dimensional philosophical space for the
 group of 7 representative philosophers, a small data set, not suitable
 for statistical analysis.
 To increase the number of philosophers we generated
-random scores. Not just the size of dataset was considered when
-including these \emph{artificial philosophers}, but a better
-representation of how philosophy was developed. Along the history, a reduced
+random scores. Along the history, a reduced
 number of representatives influenced their contemporaries. We modeled
 this influence generating samples that follows a probability
 distribution based on the original scores. In this way, the generated
@@ -361,7 +359,7 @@ $d_i$ is the distance between a random score $\vec{r}$ and the
 original scores.
 Following the Monte Carlo method, we calculated $p(\vec{r})$ for each step
 and compared it with a random normalized value, selecting just the
-samples highly influenced by the originals. We considered $\sigma =
+samples influenced by the originals. We considered $\sigma =
 1.4$ for this analysis, generating 500 samples using the bootstrap method.
 
 Table \ref{tab:tableB} presents the Pearson correlation coefficients

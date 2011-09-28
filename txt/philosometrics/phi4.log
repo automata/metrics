@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.5.26)  27 SEP 2011 23:25
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.5.26)  28 SEP 2011 17:55
 entering extended mode
  %&-line parsing enabled.
 **phi4
@@ -360,11 +360,11 @@ File: pca_filosofos_novo.eps Graphic file (type eps)
  <pca_filosofos_novo.eps> [4]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 607.
+ on input line 606.
 
 File: Dendrogram_.eps Graphic file (type eps)
 <Dendrogram_.eps>
-Overfull \hbox (9.0pt too wide) in paragraph at lines 621--622
+Overfull \hbox (9.0pt too wide) in paragraph at lines 619--620
  [] 
  []
 
@@ -379,12 +379,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4062 strings out of 493849
- 52469 string characters out of 1152846
+ 4063 strings out of 493849
+ 52479 string characters out of 1152846
  150255 words of memory out of 3000000
- 7251 multiletter control sequences out of 15000+50000
+ 7252 multiletter control sequences out of 15000+50000
  19244 words of font info for 70 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  35i,10n,27p,271b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on phi4.dvi (6 pages, 52548 bytes).
+Output written on phi4.dvi (6 pages, 52280 bytes).
