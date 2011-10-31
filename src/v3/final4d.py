@@ -3,13 +3,13 @@ import numpy as n
 import pylab as p
 import pca_module as pca
 
-arquivo_notas = 'notas_compositores.txt'
-agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+# arquivo_notas = 'notas_compositores.txt'
+# agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+# caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
-# arquivo_notas = 'notas_filosofos.txt'
-# agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-# caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+arquivo_notas = 'notas_filosofos.txt'
+agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 # arquivo_notas = 'notas_diretores.txt'
 # agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
@@ -102,7 +102,7 @@ principais_orig = n.dot(autovetores.T, dados[:7].T)
 # plotamos os projeções do pca (autovetores * tabela inteira ou subtabela) 
 dados_finaisT = dados_finais.T
 # só nos interessam os dois primeiros PCAs da tabela de scores (T)
-princ = dados_finaisT[:,:2]
+princ = dados_finaisT[:,:2]    # agora nos interessam os 4!
 c1 = dados_finaisT[:,0]
 c2 = dados_finaisT[:,1]
 c3 = dados_finaisT[:,2]
@@ -110,7 +110,7 @@ c4 = dados_finaisT[:,3]
 print '\n*** Componentes principais [T] (todos):\n', c1, c2, c3, c4
 # agora para as notas originais
 principais_origT = principais_orig.T
-princ_orig = principais_origT[:,:2]
+princ_orig = principais_origT[:,:4]    # agora nos interessam os 4!
 c1_orig = principais_origT[:,0]
 c2_orig = principais_origT[:,1]
 c3_orig = principais_origT[:,2]
@@ -272,19 +272,49 @@ for i in xrange(1, ncomp):
 dialeticas=[]
 for i in xrange(2, ncomp):
    # eq da reta ab (r1):
-   a=princ_orig[i-2]
-   b=princ_orig[i-1]
+   #a=princ_orig[i-2]
+   #b=princ_orig[i-1]
    
    # o hiperplano é no formato sum(a**2)+sum(b**2) = sum(2h*(a-b)), h[0-3] são as variáveis
    # precisamos falcular a distância dele à este ponto
-   f=princ_orig[i]
-   
+   #f=princ_orig[i]
+
+   # novo....... porém incerto... ou certo... talvez?
+
+    #       (__)
+    #       (oo)                       (__)         *     (__)
+    #        \/                        (oo)         |     (oo)
+    #    ____| \____            /-------\/    o=o=o=|------\/
+    #    ---/   --**           / |       /          |      |
+    # *____/    |___//        *  ||----||           ||----||
+    #     //--------/            ~~    ~~           ~~    ~~
+    #    //__                      Cow           Cow pooing
+    #    Cow marching            standing
+
+   # a: v1
+   # b: v2
+   # c: v3
+   # H: hiperplano "bissetriz" à a e b: H = a1*x1 + a2*x2 + a3*x3 + a4*x4 = b
+   # w: vetor normal à H: w = (a1, a2, a3, a4) localizado entre a e b
+   # distância de c à H: dist = sum(w*c) / sqrt(sum(w**2))
+   # ou seja... dist = (a1*c1 + a2*c2 + a3*c3 + a4*c4) / sqrt(a1**2 + a2**2 + a3**3)
+   a=princ_orig[i-2]
+   b=princ_orig[i-1]
+   c=princ_orig[i]
+   #w = n.sum(princ_orig[:i-1],0)/(i-1) # meio
+   w=(a+b)/2
+   print 'a', a, 'b', b, 'c', c, 'w', w
+   print '---'
+   dist = n.sum(w*c) / n.sqrt(n.sum(w**2))
+
+   # isso o greenkobold fez: e mais um pouco alí de cima...
+
    # generalizando a fórmula em http://mathworld.wolfram.com/Point-PlaneDistance.html
    # para 4D:
    # d = n.sum(a**2)+n.sum(b**2)
    # a,b,c = 2*(a-b)
    # portanto:
-   dist =  n.nan_to_num((n.sum(2*(a-b)*f + a**2 + b**2)) / (n.sum(2*(a-b))**.5))
+   #dist =  n.nan_to_num((n.sum(2*(a-b)*f + a**2 + b**2)) / (n.sum(2*(a-b))**.5))
    
    
    #gama=(b[1]-a[1])/(b[0]-a[0])
@@ -302,7 +332,7 @@ for i in xrange(2, ncomp):
 
    ## d em r2xr3
    #d1=(neta2-neta3)/(gama3-gama2)
-   #d2=gama3*d1+neta3
+   #d2=gama3*d1+ne-0ta3
 
    ## distancia entre f e d
    #dist=n.sqrt((f[0]-d1)**2+(f[1]-d2)**2)
@@ -311,6 +341,8 @@ for i in xrange(2, ncomp):
 print '\n*** Oposição:\n', oposicao
 print '\n*** Inovação:\n', inovacao
 print '\n*** Dialéticas:\n', dialeticas
+dialeticas = n.array(n.abs(dialeticas))
+print ( (dialeticas-dialeticas.min())/(dialeticas.max()-dialeticas.min()) )
 
 #
 # Perturbação
