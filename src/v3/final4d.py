@@ -279,8 +279,6 @@ for i in xrange(2, ncomp):
    # precisamos falcular a distância dele à este ponto
    #f=princ_orig[i]
 
-   # novo....... porém incerto... ou certo... talvez?
-
     #       (__)
     #       (oo)                       (__)         *     (__)
     #        \/                        (oo)         |     (oo)
@@ -302,10 +300,11 @@ for i in xrange(2, ncomp):
    b=princ_orig[i-1]
    c=princ_orig[i]
    #w = n.sum(princ_orig[:i-1],0)/(i-1) # meio
-   w=(a+b)/2
+   w=a+(a+b)/2
    print 'a', a, 'b', b, 'c', c, 'w', w
    print '---'
    dist = n.sum(w*c) / n.sqrt(n.sum(w**2))
+   #dist = n.dot(-w,c) / n.sqrt(n.sum(w**2))
 
    # isso o greenkobold fez: e mais um pouco alí de cima...
 
