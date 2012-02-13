@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 import numpy as n
 import pylab as p
-import pca_module as pca
+#import pca_module as pca
 
-# arquivo_notas = 'notas_compositores.txt'
-# agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-# caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+arquivo_notas = 'notas_compositores.txt'
+agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
-arquivo_notas = 'notas_filosofos.txt'
-agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+#arquivo_notas = 'notas_filosofos.txt'
+#agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+#caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 # arquivo_notas = 'notas_diretores.txt'
 # agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
@@ -230,15 +230,17 @@ print 'princ', princ
 # para todos
 oposicao=[]
 inovacao=[]
+# princ_orig tem os 4 componentes principais
+# princ tem apenas os 2 primeiros componentes principais
 for i in xrange(1, ncomp):
-    a=princ_orig[i-1]
-    b=n.sum(princ_orig[:i+1],0)/(i+1) # meio
-    c=princ_orig[i]
+    a=princ_orig[i-1]    # conforme no artigo... a eh vi
+    b=n.sum(princ_orig[:i+1],0)/(i+1) # meio   ... b eh a (average state)
+    c=princ_orig[i] # ... c eh um vj
 
-    Di=2*(b-a)
-    Mij=c-a
+    Di=2*b-a # ... Di = 2 * a - vi
+    Mij=c-a # ... Mij = vj - vi
 
-    opos=n.sum(Di*Mij)/n.sum(Di**2)
+    opos=n.dot(Mij,Di)/n.sum(Di**2)  # ... Wij = < Mij , Di > / || Di || ^ 2
     oposicao.append(opos)
 
     ########## Cálculo de inovação ##################
@@ -296,14 +298,19 @@ for i in xrange(2, ncomp):
    # w: vetor normal à H: w = (a1, a2, a3, a4) localizado entre a e b
    # distância de c à H: dist = sum(w*c) / sqrt(sum(w**2))
    # ou seja... dist = (a1*c1 + a2*c2 + a3*c3 + a4*c4) / sqrt(a1**2 + a2**2 + a3**3)
-   a=princ_orig[i-2]
-   b=princ_orig[i-1]
-   c=princ_orig[i]
+   a=princ_orig[i-2] # thesis
+   b=princ_orig[i-1] # antithesis
+   c=princ_orig[i]   # synthesis
+   dist = n.abs( (b[0]-a[0])*c[0] + (b[1]-a[1])*c[1] + (b[2]-a[2])*c[2] + (b[3]-a[3])*c[3] +
+                 (-((b[0]**2 - a[0]**2)/2)
+                  -((b[1]**2 - a[1]**2)/2)
+                  -((b[2]**2 - a[2]**2)/2)
+                  -((b[3]**2 - a[3]**2)/2)) ) / n.sqrt( (b[0]-a[0])**2 + (b[1]-a[1])**2 + (b[2]-a[2])**2 + (b[3]-a[3])**2 )
    #w = n.sum(princ_orig[:i-1],0)/(i-1) # meio
-   w=a+(a+b)/2
-   print 'a', a, 'b', b, 'c', c, 'w', w
-   print '---'
-   dist = n.sum(w*c) / n.sqrt(n.sum(w**2))
+   #w=a+(a+b)/2
+   #print 'a', a, 'b', b, 'c', c, 'w', w
+   #print '---'
+   #dist = n.sum(w*c) / n.sqrt(n.sum(w**2))
    #dist = n.dot(-w,c) / n.sqrt(n.sum(w**2))
 
    # isso o greenkobold fez: e mais um pouco alí de cima...
