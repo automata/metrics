@@ -16,7 +16,8 @@
 
 \preprint{AIP/123-QED}
 
-\title[Can the music be analyzed quantitatively?]{Can the music be analyzed quantitatively?}
+%% \title[Can the music be analyzed quantitatively?]{Can the music be analyzed quantitatively?}
+\title[Can the music pathways convey quantitative analisys?]{Can the music convey quantitative analisys?}
 
 \author{Vilson Vieira}
  \homepage{http://automata.cc}
@@ -78,12 +79,13 @@ Webern~\cite{Webern}, ``[...] ever since music has been written most great artis
 have striven to make this unity ever clearer. Everything that has
 happened aims at this [...]''. Along this process we can identify
 a constantly heritage of style from one composer to another as
-``a gradual development from its
-predecessor'', contrasting with the necessity for innovation: 
-``It is only by experiment that progress is possible; it is the man
+a gradual development from its
+predecessor, contrasting with the necessity for innovation. Quoting
+Lovelock: 
+``[...] by experiment that progress is possible; it is the man
 with the forward-looking type of mind [...] who forces man out of the
 rut of 'what was good enough for my father is good enough for me'.''~\cite{Lovelock}.
-Development in music follows a dichotomy: while composers aims on
+Thus, development in music follows a dichotomy: while composers aims on
 innovation, creating their own styles, their technique is based on the
 works of their predecessors, in a master-apprentice tradition.
 
@@ -142,7 +144,7 @@ theorists~\cite{Webern, Lovelock}.
 \section{Mathematical Description}
 
 A sequence $S$ of $P$ music composers was chosen based on their
-relevance as representative of each period of the classical music history.
+relevance at each period of the classical music history.
 As done for philosophers~\cite{Fabbri}, the set of $C$ measurements
 define a $C-$dimensional space henceforth referred as the \emph{musical space}.  
 The characteristic vector $\vec{v_i}$ of each composer $i$ defines a respective
@@ -177,7 +179,7 @@ characteristics are listed below:
 {\bf \em{ Sacred - Secular}} (\emph{S-P}): the sacred or religious music is
 composed through religious influence or used for its purposes. \textit{Masses},
 \textit{motets} and hymns, dedicated to the Christian liturgy, are well known examples~\cite{Lovelock}. Secular
-music has no relation with religion including
+music has no or little relation with religion and includes
 popular songs like Italian madrigals and German \textit{lieds}~\cite{BennettHistory}. 
 
 {\bf \em{ Short duration - Long duration}} (\emph{S-L}): compositions are
@@ -215,7 +217,7 @@ constantly found in Romanticism and the works of 20th-century composers like Str
 
 {\bf \em{ Harmonic Stability - Harmonic Variety}} (\emph{T-M}):
 rate of tonality change along a piece or its stability. After the highly
-polyphonic development in Renaissance, Beethoven is credited as the
+polyphonic development in Renaissance, Webern regarded Beethoven as the
 composer who returned to the maximum exploration of harmonic variety~\cite{Webern}.
 
 \section{Results and Discussion}
@@ -234,7 +236,7 @@ each composer related with its historical period.
 
 \begin{table}[ht]
 \caption{\label{tab:table0} The sequence of music composers ordered chronologically
-with the outstanding period their represents.}
+with the period each represent.}
 
 \begin{tabular}{|l||l|}
 \hline
@@ -260,7 +262,7 @@ numerical values between 1 and 9. Values more close of 1 reveals the
 composer tended to the first element of each characteristic pair, and
 vice versa. We emphasize that the focus of this work is not on the specific 
 characteristics used or their attributed numerical values,
-which can be disputed, but on the quantitative analysis techniques employed.
+which can be disputed, but on the techniques employed for the quantitative analysis.
 
 \begin{table}[ht]
 \caption{\label{tab:tableA}Quantification of the
@@ -284,25 +286,25 @@ eight music characteristics for each of the seven composers.}
 \end{ruledtabular}
 \end{table}
 
-This data set defines an 8-dimensional musical space, each dimension
-corresponding of one characteristic considering the group of 7 composers. 
-Such small data set is not adequate to statistical analysis. The analysis of this set would
+This data set defines an 8-dimensional musical space where each dimension
+corresponds to a characteristic that aplies to all 7 composers. 
+Such small data set is not adequate to statistical analysis and the imediate analysis of this set would
 be highly biased by the small sample.
 
 \subsection{Bootstrap method for sampling \emph{artificial composers}}
 
 To simulate a more realistic musical trajectory, we used a bootstrap
-method for generating \emph{artificial composers} contemporaries of the seven chosen.
+method for generating \emph{artificial composers} contemporaries of those seven chosen.
 
 The bootstrap routine generated randomized scores $\vec{r}$. The
 values are not totally random, following a probability distribution
 that models the original $n = 7$ scores, given by 
 $p(\vec{r}) = \sum^n_{i=1} e^{\frac{d_i}{2\sigma^2}}$
 where $d_i$ is the distance between a random score $\vec{r}$
-and the original scores. For each step a
+and the original score chart. For each step a
 value $p(\vec{r})$ is generated and compared with a random normalized value,
 characterizing the Monte Carlo~\cite{Robert2011} method to choose a set of samples. This
-samples simulates new randomized composers scores -- while respecting the
+samples simulates new randomized composers score charts -- while respecting the
 historical influence of the main 7 original exponents. Higher
 values of $p(\vec{r})$ imply a stronger influence of the original scores
 over $\vec{r}$. For the analysis
@@ -310,9 +312,9 @@ we used 1000 bootstrap samples obtained by the bootstrap process
 together with the original scores,
 considering $\sigma = 1.1$. %%% FIXME: por que foi escolhido esse valor?
 
-The Pearson correlation coefficients between the eight musical
+Pearson correlation coefficients between the eight musical
 characteristics chosen are presented in Table \ref{tab:tableB}.
-The coefficients with absolute value larger than 0.5 are emphasized.
+Emphasized coefficients have absolute values larger than 0.5.
 
 \begin{table}[ht]
 \caption{\label{tab:tableB}Pearson correlation coefficients between
@@ -351,8 +353,9 @@ PCA was applied to this set of data, yielding the new variances given
 in Table \ref{tab:tableC} in terms of percentages of total variance.
 We can note the concentration of variance along the four
 first PCA axes, a common effect also observed while analyzing
-philosophers characteristics~\cite{Fabbri}. This means we could
-consider just four dimensions.
+philosophers characteristics~\cite{Fabbri}. This usualy means we could
+consider just four dimensions but as we will see ahead our measurements
+differs considerably with the inclusion of all eight components.
 
 \begin{table}[ht]
 \caption{\label{tab:tableC}New variances after PCA, in percentages for
@@ -378,14 +381,14 @@ $\lambda_8$ &   3 \% \\
 \subsection{Perturbations robustness of the original scores}
 
 As done for philosophers analysis, we performed 1000 perturbations of
-the original scores by adding the values -2, -1, 0, 1 and 2 with
+the original scores by adding to each score the values -2, -1, 0, 1 and 2 with
 uniform probability. In other words, we wanted to test if scoring
 errors could be sufficient to cause relevant effects
 on the PCA projections. Interestingly, the values of average and
 standard deviation for both original and perturbed positions listed in Table
 \ref{tab:tableD} show relatively small changes. It is therefore
 reasonable to say small errors in the values assigned as scores of composers
-characteristics did not affected too much its quantification.
+characteristics does not affected too much its quantification.
 %% FIXME: explicar melhor o porque a media dos desviso sendo baixa garante o metodo
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
@@ -501,12 +504,13 @@ master-apprentice
 tradition present in music: the composers tend to build their own
 works confirming their precursors legacy. This reveals a crucial difference
 considering the \textit{memory treatment} along the development of
-philosophy and music: while a philosopher was influenced by the
-opposition of ideas from his two predecessors, composers were commonly
+philosophy and music: using the same techniques this article does~\cite{Fabbri},
+we could verify that a philosopher was influenced by the
+opposition of ideas from his two predecessors, while here composers were commonly
 influenced by their direct predecessor. Therefore, we can argue that philosophy
 presents a \textit{memory-2} state, while music presents
 \textit{memory-1}, considering \textit{memory-N} being the number $N$
-of past generations those influenced a philosopher or
+of past generations that influenced a philosopher or
 composer. Considering the linearity of musical movements we can
 identify the abscissa as a ``time axis'' representing the development
 of music along the history, with some composers
@@ -521,7 +525,7 @@ opposition as far as innovation is concerned. Dialectics is also analyzed on Tab
 \ref{tab:tableE} where we identified an alternation of values along
 the pairs of subsequent musical movements: the first value of
 counter-dialectics is greater than the second, that is lesser than the
-third and so on. There is no strong
+third and so on. There is no permanent strong
 dialectics, but a continuous variation.
 
 \begin{table}[ht]
@@ -566,7 +570,7 @@ Musical Triple & $d_{i \rightarrow k}$ \\
 \section{Comparisons with Philosophers Analysis}
 
 The results of composers analysis when compared with philosophers~\cite{Fabbri}
-reveals surprising results. It is important to note we preserved the
+reveals surprising results. It is important to note that we preserved the
 number of characteristics and performed the same bootstrap method to
 generate a larger set of samples, making possible this
 comparison. The variances after PCA (Table \ref{tab:varphi}) concentrates in the four
@@ -575,7 +579,7 @@ with the philosophical one in Figure \ref{fig:phipca} we
 identify opposite movements along all the philosophy history in contrast
 to music. This reveals a notorious characteristic of the way
 philosophers seem to have evolved their ideas, driven by opposition, while
-composers tend to be more influenced by their predecessors.
+composers tend to be more influenced by their predecessors in a direct manner.
 
 \begin{table}[ht]
 \caption{\label{tab:varphi}New variances after PCA for philosophers
@@ -608,9 +612,9 @@ $\lambda_8$ &   2 \% \\
 
 The opposition and skewness indices for philosophers listed in Table
 \ref{tab:tablephiOI} endorses the minor role of opposition in
-composers. We can observe strong opposition and rather small skewness 
+composers at the period considered. We can observe strong opposition and rather small skewness 
 in philosophical moves contrasted to small opposition and strong skewness in
-musical movements. Also, the oscillating dialectics of both are out of
+musical movements. Also, the dialectics of both are out of
 phase, indicating transfer latency. 
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
@@ -697,29 +701,29 @@ Motivated by the understanding of how innovation evolves in music
 history, we extended a quantitative method
 recently applied to the study of philosophical
 characteristics~\cite{Fabbri} and compared the results. Statistical
-methods have been commonly applied to the study of music features and
+methods is nowadays commonly used for the study of music features and
 composers productivity, but analysis of
-composers characteristics along the music history has been less
+composers characteristics modification along the music history has been less
 explored. The method differs on the
 aspect of how the characteristics concerning composers are treated:
 scores are assigned to each feature common in musical
 works. These scores reveal not the
 exact profile of composers, but a tendency of how their
-techniques relate one another. To make the simulation more
+techniques are usually present. To make the simulation more
 realistic, we considered not just the small number of 7 composers, but
 derived other 500 new ``artificial composers'' through a bootstrap
 method. A larger data set made possible the statistical analysis,
 considering not just the original scored composers, but other samples
-those respect the historical tendency of the formers, modeled by a
+that respect the historical tendency of the formers, modeled by a
 probabilistic distribution.
 In order to investigate the
-relationship between this scoring we applied Pearson correlation
+relationship between this scorings we applied Pearson correlation
 analysis. The results demonstrated a strong correlation between some
 characteristics, which allows us to group this values, creating a
 reduced number of features that summarizes the most important
 characteristics. PCA was also applied to these components, reducing
-the complex space to a planar graph where the most interesting
-properties were identified. 
+the complex space to a planar graph where some of the most interesting
+properties can be visualized. 
 
 Historical landmarks in music are
 well-defined in the planar space, like the isolation of Bach, Mozart
@@ -728,7 +732,7 @@ proximity between Beethoven and Brahms and the distance from Bach and Mozart, th
 Stravinsky and the vanguard of contemporary composers
 like Stockhausen. Even not so visible relations, like the trend to return to the
 maximum domain of polyphony -- present on Renaissance -- by Beethoven
-could also be clearly observable, demonstrating the time nature of the
+could also be clearly observable, demonstrating the chronological nature of the
 space. 
 
 The dichotomy between
@@ -760,29 +764,28 @@ composers shows \textit{memory-1} -- inheriting the style of their direct
 predecessor. 
 The
 analysis of both dialectics values also shown surprising
-results: while on philosophy the dialectics indices are arranged on a
+results: on philosophy the dialectics indices are arranged on a
 increasing series -- showing a strong influence of
-dialectics to philosophy development -- the same dialectics indices on
-music exhibits a constantly variation. This behavior presumably indicates a
-constantly quest for coherence by the composers, a fact notably observed by
-the studies of Anton Webern~\cite{Webern}.
+dialectics to philosophy development -- the dialectics indices on
+music exhibits the same pattern, but with a lag, an offset. This behavior presumably indicates a
+constant quest for coherence by the composers, a fact notably observed by
+the studies of Anton Webern~\cite{Webern} should have somewhat the same
+kernel and a lattency between the effects.
 
-The quantitative methodology initially applied to the analysis of philosophy~\cite{Fabbri}
-proved to be extensible to other fields of knowledge like
-music, reflecting with considerable efficiency, specific details
-concerning each field. 
+Another resulto is that the quantitative methodology initially applied to the analysis of philosophy~\cite{Fabbri}
+proved to be extensible to other fields of knowledge -- in this case music --
+reflecting with considerable efficiency details concerning the specific field. 
 
 Computational analysis of music scores could be
 applied to automate the quantification of composers characteristics, like
 identification of melodic and harmonic patterns or the presence or not of
 polyrhythms, motivic and harmonic stability~\cite{Correa}. More composers could be
 inserted in the set for the analysis of a wider time-line, possibly
-including more representatives of each music periods. 
+including more representatives of each music period.
 
 While taking the first
-steps on the direction of a quantitative approach to arts and philosophy
-we believe that an understanding of the creative process could also
-be eventually quantified. We want to end this work going back to Webern,
+steps on the direction of a quantitative approach to analising arts and philosophy
+we aim at quantifying the creative process. We want to end this work going back to Webern,
 who early envisioned these relations: ``It is clear that where relatedness and unity are omnipresent,
 comprehensibility is also guaranteed. And all the rest is
 dilettantism, nothing else, for all time, and always has been. That's
