@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
+
+# esse eh o arquivo final para calculo de todos os resultados do metrics
+
 import numpy as n
 import pylab as p
-#import pca_module as pca
+import pca_module as pca
 
-arquivo_notas = 'notas_compositores.txt'
-agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+# arquivo_notas = 'notas_compositores.txt'
+# agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+# caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
-#arquivo_notas = 'notas_filosofos.txt'
-#agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-#caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+arquivo_notas = 'notas_filosofos.txt'
+agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 # arquivo_notas = 'notas_diretores.txt'
 # agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
@@ -18,16 +21,15 @@ caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 # parâmetros
 minimo = 1.0
 maximo = 9.0
-qtd_aleatorios = 1 # ***
-std = 0.4 # ***
+qtd_aleatorios = 8000000 # ***
+std = 1.1 # ***
 # carregamos os dados das notas originais
 dados_orig = n.loadtxt(arquivo_notas)
 # calculamos os samples por boostrap
 ncomp = 7
 ncarac = 8
-
-# repetimos até termos a quantidade que queremos de aleatorios
-#while (len(dados_boot) < qtd_aleatorios/7):
+print '*** arquivo_notas:', arquivo_notas, 'qtd_aleatorios:', qtd_aleatorios, 'std:', std
+# repetimos ateh qtd_aleatorios
 pos=n.zeros(qtd_aleatorios)
 pts=n.zeros((qtd_aleatorios,ncarac))
 
@@ -77,7 +79,7 @@ for i in xrange(ncarac):
    for j in xrange(ncarac):
      pearson[i,j]=matriz_cov[i,j]/(stds[i]*stds[j])
 
-print '\n*** Pearson (igual matriz covar.):\n'
+print '\n*** Pearson (igual matriz covar.):\n ###TABLE III. Pearson correlation coefficients between the eight musical characteristics.'
 for linha in pearson:
     print [str(round(x, ndigits=2)) for x in linha]
 
@@ -91,7 +93,7 @@ autovalores_prop = [av/n.sum(autovalores) for av in autovalores]
 print '\n*** Autovetores (raw):\n', n.around(autovetores, decimals=2)
 print '\n*** Autovalores (raw):\n', n.around(autovalores, decimals=2)
 print '\n*** Autovalores prop (raw):\n', n.around(autovalores_prop, decimals=2)
-print '\n*** Autovalores (var. %):\n', [x*100 for x in n.around(autovalores_prop, decimals=2)]
+print '\n*** Autovalores (var. %) ###TABLE IV### New variances after PCA, in percentages for scores on III.:\n', [x*100 for x in n.around(autovalores_prop, decimals=2)]
 # calculamos os componentes principais para todos os dados
 dados_finais = n.dot(autovetores.T, dados.T)
 print '\n*** Dados finais:\n', dados_finais
@@ -102,7 +104,7 @@ principais_orig = n.dot(autovetores.T, dados[:7].T)
 # plotamos os projeções do pca (autovetores * tabela inteira ou subtabela) 
 dados_finaisT = dados_finais.T
 # só nos interessam os dois primeiros PCAs da tabela de scores (T)
-princ = dados_finaisT[:,:2]    # agora nos interessam os 4!
+princ = dados_finaisT[:,:8]    # agora nos interessam os 4! ... ou 8
 c1 = dados_finaisT[:,0]
 c2 = dados_finaisT[:,1]
 c3 = dados_finaisT[:,2]
@@ -110,7 +112,7 @@ c4 = dados_finaisT[:,3]
 print '\n*** Componentes principais [T] (todos):\n', c1, c2, c3, c4
 # agora para as notas originais
 principais_origT = principais_orig.T
-princ_orig = principais_origT[:,:4]    # agora nos interessam os 4!
+princ_orig = principais_origT[:,:8]    # agora nos interessam os 4! ... ou 8
 c1_orig = principais_origT[:,0]
 c2_orig = principais_origT[:,1]
 c3_orig = principais_origT[:,2]
@@ -194,13 +196,13 @@ p.xlim((-5,5))
 p.ylim((-5,5))
 p.savefig('g1_originais.eps')
 
-p.clf()
-p.plot(princ_orig[:,0], label='First component')
-p.plot(princ_orig[:,1], label='Second component')
-p.legend(loc='lower right')
-p.plot(princ_orig[:,0],"bo")
-p.plot(princ_orig[:,1],"go")
-p.savefig('g2.eps')
+# p.clf()
+# p.plot(princ_orig[:,0], label='First component')
+# p.plot(princ_orig[:,1], label='Second component')
+# p.legend(loc='lower right')
+# p.plot(princ_orig[:,0],"bo")
+# p.plot(princ_orig[:,1],"go")
+# p.savefig('g2.eps')
 
 
 ######## plot
@@ -210,17 +212,31 @@ p.savefig('g2.eps')
 # *cálculo dos loadings P
 c1 = autovetores[:,0]
 c2 = autovetores[:,1]
-#c3 = autovetores[:,2]
-#c4 = autovetores[:,3]
+c3 = autovetores[:,2]
+c4 = autovetores[:,3]
+c5 = autovetores[:,4]
+c6 = autovetores[:,5]
+c7 = autovetores[:,6]
+c8 = autovetores[:,7]
+
 cc1 = c1 / sum(abs(c1)) * 100
 cc2 = c2 / sum(abs(c2)) * 100
 cc3 = c3 / sum(abs(c3)) * 100
 cc4 = c4 / sum(abs(c4)) * 100
-print '\n*** Contribuições (autovetores) [P] (idem para todos e originais)\n'
+cc5 = c5 / sum(abs(c5)) * 100
+cc6 = c6 / sum(abs(c6)) * 100
+cc7 = c7 / sum(abs(c7)) * 100
+cc8 = c8 / sum(abs(c8)) * 100
+
+print '\n*** Contribuições (autovetores) [P] (idem para todos e originais) ###TABLE VI.### Percentages of the contributions from each musical characteristic on the four new main axes.\n'
 print 'C1', [abs(x) for x in cc1]
 print 'C2', [abs(x) for x in cc2]
-#print 'C3', [abs(x) for x in cc3]
-#print 'C4', [abs(x) for x in cc4]
+print 'C3', [abs(x) for x in cc3]
+print 'C4', [abs(x) for x in cc4]
+print 'C5', [abs(x) for x in cc5]
+print 'C6', [abs(x) for x in cc6]
+print 'C7', [abs(x) for x in cc7]
+print 'C8', [abs(x) for x in cc8]
 
 #
 # Oposição e Inovação
@@ -237,10 +253,10 @@ for i in xrange(1, ncomp):
     b=n.sum(princ_orig[:i+1],0)/(i+1) # meio   ... b eh a (average state)
     c=princ_orig[i] # ... c eh um vj
 
-    Di=2*b-a # ... Di = 2 * a - vi
+    Di=2*(b-a) # ... Di = 2 * a - vi
     Mij=c-a # ... Mij = vj - vi
 
-    opos=n.dot(Mij,Di)/n.sum(Di**2)  # ... Wij = < Mij , Di > / || Di || ^ 2
+    opos=n.sum(Di*Mij)/n.sum(Di**2)  # ... Wij = < Mij , Di > / || Di || ^ 2
     oposicao.append(opos)
 
     ########## Cálculo de inovação ##################
@@ -272,6 +288,8 @@ for i in xrange(1, ncomp):
 #
 
 dialeticas=[]
+dialeticas2d=[]
+dialeticasTodos=[]
 for i in xrange(2, ncomp):
    # eq da reta ab (r1):
    #a=princ_orig[i-2]
@@ -301,11 +319,31 @@ for i in xrange(2, ncomp):
    a=princ_orig[i-2] # thesis
    b=princ_orig[i-1] # antithesis
    c=princ_orig[i]   # synthesis
+   # dialetica para 4d
    dist = n.abs( (b[0]-a[0])*c[0] + (b[1]-a[1])*c[1] + (b[2]-a[2])*c[2] + (b[3]-a[3])*c[3] +
                  (-((b[0]**2 - a[0]**2)/2)
                   -((b[1]**2 - a[1]**2)/2)
                   -((b[2]**2 - a[2]**2)/2)
                   -((b[3]**2 - a[3]**2)/2)) ) / n.sqrt( (b[0]-a[0])**2 + (b[1]-a[1])**2 + (b[2]-a[2])**2 + (b[3]-a[3])**2 )
+
+   # dialetica para 2d
+   dist2d = n.abs( (b[0]-a[0])*c[0] + (b[1]-a[1])*c[1] +
+                 (-((b[0]**2 - a[0]**2)/2)
+                  -((b[1]**2 - a[1]**2)/2)) ) / n.sqrt( (b[0]-a[0])**2 + (b[1]-a[1])**2)
+
+   # dialetica para 8d
+   distTodos = n.abs( (b[0]-a[0])*c[0] + (b[1]-a[1])*c[1] + (b[2]-a[2])*c[2] + (b[3]-a[3])*c[3] + (b[4]-a[4])*c[4] + (b[5]-a[5])*c[5] + (b[6]-a[6])*c[6] + (b[7]-a[7])*c[7] +
+                 (-((b[0]**2 - a[0]**2)/2)
+                  -((b[1]**2 - a[1]**2)/2)
+                  -((b[2]**2 - a[2]**2)/2)
+                  -((b[3]**2 - a[3]**2)/2)
+                  -((b[4]**2 - a[4]**2)/2)
+                  -((b[5]**2 - a[5]**2)/2)
+                  -((b[6]**2 - a[6]**2)/2)
+                  -((b[7]**2 - a[7]**2)/2))) / n.sqrt( (b[0]-a[0])**2 + (b[1]-a[1])**2 + (b[2]-a[2])**2 + (b[3]-a[3])**2 + (b[4]-a[4])**2 + (b[5]-a[5])**2 + (b[6]-a[6])**2 + (b[7]-a[7])**2)
+
+
+   
    #w = n.sum(princ_orig[:i-1],0)/(i-1) # meio
    #w=a+(a+b)/2
    #print 'a', a, 'b', b, 'c', c, 'w', w
@@ -343,62 +381,70 @@ for i in xrange(2, ncomp):
    ## distancia entre f e d
    #dist=n.sqrt((f[0]-d1)**2+(f[1]-d2)**2)
    dialeticas.append(dist)
+   dialeticas2d.append(dist2d)
+   dialeticasTodos.append(distTodos)
 
+print '\n###TABLE VII. TABLE VIII###.\n'
 print '\n*** Oposição:\n', oposicao
 print '\n*** Inovação:\n', inovacao
 print '\n*** Dialéticas:\n', dialeticas
-dialeticas = n.array(n.abs(dialeticas))
-print ( (dialeticas-dialeticas.min())/(dialeticas.max()-dialeticas.min()) )
+print '\n*** Dialéticas 2d:\n', dialeticas2d
+print '\n*** Dialéticas Todos (8d):\n', dialeticasTodos
+#dialeticas = n.array(n.abs(dialeticas))
+#print ( (dialeticas-dialeticas.min())/(dialeticas.max()-dialeticas.min()) )
 
 #
 # Perturbação
 #
 
-# nperturb = 1000
-# # distancias[original, ruido, amostra]
-# distancias = n.zeros((ncomp, ncomp, nperturb))
-# autovals = n.zeros((nperturb, 4))
-# princ_orig = princ_orig[:,:2]
-# princ = princ[:,:2]
+nperturb = 1000
+# distancias[original, ruido, amostra]
+distancias = n.zeros((ncomp, ncomp, nperturb))
+autovals = n.zeros((nperturb, 8))  # agora para 8d
+princ_orig = princ_orig[:,:8]
+princ = princ[:,:8]
 
-# for foobar in xrange(nperturb):
-#     dist = n.random.randint(-2, 3, copia_dados.shape)
-#     copia_dados += dist
+for foobar in xrange(nperturb):
+    dist = n.random.randint(-2, 3, copia_dados.shape)
+    copia_dados += dist
 
-#     for i in xrange(copia_dados.shape[1]):
-#         copia_dados[:,i] = (copia_dados[:,i] - copia_dados[:,i].mean())/copia_dados[:,i].std()
+    for i in xrange(copia_dados.shape[1]):
+        copia_dados[:,i] = (copia_dados[:,i] - copia_dados[:,i].mean())/copia_dados[:,i].std()
 
-#     # fazemos pca para dados considerando esses pontos aleatórios entre -2 e 2
-#     # FIXME: substituir depois pca_nipals
-#     T, P, E = pca.PCA_nipals(copia_dados)
-#     autovals[foobar] = E[:4]
-#     princ = T[:,:2]
-#     for i in xrange(ncomp):
-#         for j in xrange(ncomp):
-#             distancias[i, j, foobar] = n.sum((princ_orig[i] - princ[j])**2)**.5
+    # fazemos pca para dados considerando esses pontos aleatórios entre -2 e 2
+    # FIXME: substituir depois pca_nipals
+    T, P, E = pca.PCA_nipals(copia_dados)
+    autovals[foobar] = E[:8]
+    princ = T[:,:8]
+    for i in xrange(ncomp):
+        for j in xrange(ncomp):
+            distancias[i, j, foobar] = n.sum((princ_orig[i] - princ[j])**2)**.5
 
-# stds = n.zeros((ncomp, ncomp))
-# means = n.zeros((ncomp, ncomp))
-# main_stds = []
-# main_means = []
-# print 'dados', copia_dados
-# for i in xrange(ncomp):
-#     for j in xrange(ncomp):
-#         stds[i,j] = distancias[i,j,:].std()
-#         means[i,j] = distancias[i,j,:].mean()
-#         if i == j:
-#           main_stds.append(stds[i,j])
-#           main_means.append(means[i,j])
-# n.savetxt("mean2_.txt",means,"%.2e")
-# n.savetxt("stds2_.txt",stds,"%.2e")
-# print 'main_means', main_means
-# print 'main_stds', main_stds
+stds = n.zeros((ncomp, ncomp))
+means = n.zeros((ncomp, ncomp))
+main_stds = []
+main_means = []
+print 'dados', copia_dados
+for i in xrange(ncomp):
+    for j in xrange(ncomp):
+        stds[i,j] = distancias[i,j,:].std()
+        means[i,j] = distancias[i,j,:].mean()
+        if i == j:
+          main_stds.append(stds[i,j])
+          main_means.append(means[i,j])
+n.savetxt("mean2_.txt",means,"%.2e")
+n.savetxt("stds2_.txt",stds,"%.2e")
 
-# # Cálculo das médias e variâncias dos desvios dos primeiros 4 autovalores
+print '###TABLE V.### Average and standard deviation of the deviations for each composer and for the 8 eigenvalues.'
 
-# deltas = autovals - autovalores_prop[:4]
-# medias = deltas.mean(0)
-# desvios = deltas.std(0)
-# print 'eigenvalues means', medias
-# print 'eigenvalues stds', desvios
+print 'main_means', main_means
+print 'main_stds', main_stds
+
+# Cálculo das médias e variâncias dos desvios dos primeiros 4 autovalores
+
+deltas = autovals - autovalores_prop[:8]
+medias = deltas.mean(0)
+desvios = deltas.std(0)
+print 'eigenvalues means', medias
+print 'eigenvalues stds', desvios
 

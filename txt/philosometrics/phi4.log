@@ -1,17 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.5.26)  28 SEP 2011 17:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.11)  13 FEB 2012 15:18
 entering extended mode
  %&-line parsing enabled.
 **phi4
 (./phi4.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
-ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
-9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
-skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
-orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
-, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+yphenation, portuguese, loaded.
 (/usr/share/texmf-texlive/tex/latex/revtex/revtex4-1.cls
 Document Class: revtex4-1 2009/10/08:11:23 4.1g (http://publish.aps.org/revtex4
 / for documentation)
@@ -379,12 +373,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4063 strings out of 493849
- 52479 string characters out of 1152846
- 150255 words of memory out of 3000000
- 7252 multiletter control sequences out of 15000+50000
+ 4063 strings out of 495042
+ 52479 string characters out of 1181920
+ 149274 words of memory out of 3000000
+ 7159 multiletter control sequences out of 15000+50000
  19244 words of font info for 70 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
+ 30 hyphenation exceptions out of 8191
  35i,10n,27p,271b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on phi4.dvi (6 pages, 52280 bytes).
+Output written on phi4.dvi (6 pages, 52276 bytes).

@@ -11,18 +11,47 @@ Sources for Philosometrics and Musimetrics works.
 
 * Using
 
-  In the src/latest directory:
+  In the src/v3 directory, uncomment the desired lines to your data set
+  on file final4d.py and run:
 
   #+BEGIN_SRC sh
-$ python analisa_filosofos.py > output.txt     # to philosophers set
-$ python analisa_compositores.py > output.txt  # to composers set
-$ python analisa_aleatorio.py > output.txt     # to random set
+$ python final4d.py > output.txt
   #+END_SRC
 
-  The results are g1.eps, g2.eps and output.txt
+  The results are g1.eps and output.txt. Check the manuscripts for details
+  about results interpretation.
+
+  An interesting file is valida_metricas2d.py. It explains how point-to-line
+  was implemented and generalized to point-to-hiperplane, used at dialetics
+  calculation.
+
+* Last Results
+
+  Last interesting results are:
+
+  - src/v3/interessantes/10 for composers
+  - src/v3/interessantes_filosofos/1 for philosophers
+
+  These results were used to the last versions of manuscripts:
+
+  - txt/musimetrics/musimetrics.(tex,pdf)
+  - txt/philosometrics/phi4.(tex,pdf)
+
+* References
+
+Good references to point-hiperplane distance calc:
+
+- http://www.ualberta.ca/MATH/gauss/fcm/LinAlg/InRn/DotPrdct/DstncePntHprpln.htm
+- http://www.ualberta.ca/MATH/gauss/fcm/LinAlg/InRn/DotPrdct/DstncePntHprpln_exrcss.htm
+- http://www.ualberta.ca/MATH/gauss/fcm/LinAlg/InRn/DotPrdct/DstncePntHprplnExrcs1a_fullsltn.htm
 
 * Authors
 
-- Prof. Luciano da Fontoura Costa
-- Renato Fabbri
-- Vilson Vieira
+Instituto de Fisica de Sao Carlos - IFSC
+Universidade de Sao Paulo - USP
+
+- Prof. Luciano da Fontoura Costa <ldfcosta@gmail.com>
+- Renato Fabbri <renato.fabbri@gmail.com>
+- Vilson Vieira <vilson@void.cc>
+
+2011/2012

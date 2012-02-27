@@ -16,7 +16,7 @@
 
 \preprint{AIP/123-QED}
 
-\title[Musimetrics]{Musimetrics}
+\title[Can the music be analyzed quantitatively?]{Can the music be analyzed quantitatively?}
 
 \author{Vilson Vieira}
  \homepage{http://automata.cc}
@@ -49,12 +49,10 @@ analyzed.
 A bootstrap method was
 applied to simulate hundreds of artificial composers
 influenced by the seven representatives chosen.
-Applying dimensionality
-reduction we obtained a planar space
-used to quantify non-numeric relations like dialectics, opposition
+Afterwards we quantify non-numeric relations like dialectics, opposition
 and innovation.
 Composers differences on style and technique were represented
-as geometrical distances in the planar space, making it possible to
+as geometrical distances in the feature space, making it possible to
 quantify, for example, how much Bach and Stockhausen differ from other composers or how
 much Beethoven influenced Brahms.
 In addition, we compared the results with a prior investigation
@@ -65,7 +63,6 @@ Instead, supporting an observation already considered by music
 theorists, strong influences were identified between
 subsequent composers, implying inheritance and suggesting a stronger
 master-disciple evolution when compared to the philosophy analysis.
-e  
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b} % PACS, the Physics and Astronomy
@@ -75,7 +72,7 @@ e
 
 \section{\label{sec:level1}Introduction}
 
-Along the history of music, composers developed their own styles along a
+In the history of music, composers developed their own styles along a
 continuous search for coherence or unity. In the words of Anton
 Webern~\cite{Webern}, ``[...] ever since music has been written most great artists
 have striven to make this unity ever clearer. Everything that has
@@ -90,7 +87,7 @@ Development in music follows a dichotomy: while composers aims on
 innovation, creating their own styles, their technique is based on the
 works of their predecessors, in a master-apprentice tradition.
 
-Other fields -- like philosophy -- demonstrate
+Other fields like philosophy demonstrate
 a well-defined trend when considering innovation: unlike music, the
 quest for difference seems to drive philosophical
 changes~\cite{Deleuze}. Recently, this observation became more evident with
@@ -151,6 +148,8 @@ define a $C-$dimensional space henceforth referred as the \emph{musical space}.
 The characteristic vector $\vec{v_i}$ of each composer $i$ defines a respective
 \emph{composer state} in the musical space.  
 
+%% FIXME: acrescentar as equacoes
+
 For the set of
 $P$ composers, we used the same elements defined for philosophers
 ~\cite{Fabbri}: \emph{average state at time $i$}, named $\vec{a_i}$;
@@ -162,6 +161,7 @@ The dialectics is quantified between a triple of successive composers
  $i, j$ and $k$ of the given set $P$.
 
 %%% colocar 2 a 3 figuras (ou figura resumo) e tabela de equações
+%%% talvez aqui seria interessante relembrar os calculos, mostrando tambem as figuras
 
 \section{Musical Characteristics}
 
@@ -258,7 +258,9 @@ characteristics was performed jointly by the authors of this
 article and is shown in Table \ref{tab:tableA}. The scores were
 numerical values between 1 and 9. Values more close of 1 reveals the
 composer tended to the first element of each characteristic pair, and
-vice versa. 
+vice versa. We emphasize that the focus of this work is not on the specific 
+characteristics used or their attributed numerical values,
+which can be disputed, but on the quantitative analysis techniques employed.
 
 \begin{table}[ht]
 \caption{\label{tab:tableA}Quantification of the
@@ -301,12 +303,12 @@ and the original scores. For each step a
 value $p(\vec{r})$ is generated and compared with a random normalized value,
 characterizing the Monte Carlo~\cite{Robert2011} method to choose a set of samples. This
 samples simulates new randomized composers scores -- while respecting the
-historical influence of the main 7 original exponents. Higher the
-value of $p(\vec{r})$, greater the influence of the original scores
+historical influence of the main 7 original exponents. Higher
+values of $p(\vec{r})$ imply a stronger influence of the original scores
 over $\vec{r}$. For the analysis
-we used 500 bootstrap samples obtained by the bootstrap process
+we used 1000 bootstrap samples obtained by the bootstrap process
 together with the original scores,
-considering $\sigma = 1.4$.
+considering $\sigma = 1.1$. %%% FIXME: por que foi escolhido esse valor?
 
 The Pearson correlation coefficients between the eight musical
 characteristics chosen are presented in Table \ref{tab:tableB}.
@@ -319,15 +321,15 @@ The coefficients with absolute value larger than 0.5 are emphasized.
 \begin{ruledtabular}
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|}
 
--   &  S-P  &  S-L  &  H-C    &  V-I   &  N-D    &  M-V           &  R-P            &  T-M  \\ \hline
-S-P & -     &  -0.15 &  -0.03 &  \textbf{0.63}  &  -0.14  &  0.10   &  \textbf{0.52}   &  -0.1 \\
-S-L & -     &  -     &  -0.05 &  -0.15 &  0.14  &  -0.39  &  -0.09  &  0.26 \\
-H-C & -     &  -     &  -     &  -0.16 &  0.23  &  -0.02  &  0.41   &  0.09 \\
-V-I & -     &  -     &  -     &  -     &  -0.3 &  0.17   &  0.4   &  -0.04 \\
-N-D & -     &  -     &  -     &  -     &  -     &  -0.25  &  0.01  &  -0.24 \\
-M-V & -     &  -     &  -     &  -     &  -     &  -      &  0.14   &  -0.04 \\
-R-P & -     &  -     &  -     &  -     &  -     &  -      &  -      &  0.03 \\
-T-M & -     &  -     &  -     &  -     &  -     &  -      &  -      &  - \\
+-   &  S-P  &  S-L   &  H-C   &  V-I            &  N-D  &  M-V    &  R-P           &  T-M  \\ \hline
+S-P & -     &  -0.16 &  -0.08 &  \textbf{0.71}  & -0.17 &  0.19   &  \textbf{0.54} &  -0.17 \\
+S-L & -     &  -     &  -0.14 &  -0.17          &  0.19  &  -0.49  &  -0.19         &  0.36 \\
+H-C & -     &  -     &  -     &  -0.21          &  0.25  &  -0.07  &  0.44          &  -0.03 \\
+V-I & -     &  -     &  -     &  -              & -0.36 &  0.22   &  0.44          &  -0.07 \\
+N-D & -     &  -     &  -     &  -              &  -    &  -0.24  &  -0.02          &  -0.24 \\
+M-V & -     &  -     &  -     &  -              &  -    &  -      &  0.33          &  -0.13 \\
+R-P & -     &  -     &  -     &  -              &  -    &  -      &  -             &  -0.06 \\
+T-M & -     &  -     &  -     &  -              &  -    &  -      &  -             &  - \\
 
 \end{tabular}
 \end{ruledtabular}
@@ -335,12 +337,12 @@ T-M & -     &  -     &  -     &  -     &  -     &  -      &  -      &  - \\
 
 We can identify some interesting relations between the pairs of
 characteristics that reflect important facts in music history. For
-instance, the Pearson correlation coefficient of 0.63 was obtained for
+instance, the Pearson correlation coefficient of 0.71 was obtained for
 the pairs S-P (Sacred or Secular) and V-I (Vocal or Instrumental),
 which indicate that sacred music tends to be more vocal than
-instrumental. The coefficient of 0.52 also shows it does not commonly use polyrhythms as we can see
+instrumental. The coefficient of 0.54 also shows it does not commonly use polyrhythms as we can see
 analysing the pairs S-P and R-P (Rhythmic Simplicity or Complexity).
-Negative coefficients of -0.3 for the pairs V-I and N-D
+Negative coefficients of -0.36 for the pairs V-I and N-D
 (Non-discursive or Discursive) indicated that composers who used
 just voices on their compositions also preferred to use programmatic
 musics techniques like baroque rhetoric.
@@ -360,14 +362,14 @@ consider just four dimensions.
 \hline
 Eigenvalue  & Value     \\ \hline
 
-$\lambda_1$ &  29 \% \\
-$\lambda_2$ &  19 \% \\
-$\lambda_3$ &  17 \% \\
+$\lambda_1$ &  32 \% \\
+$\lambda_2$ &  20 \% \\
+$\lambda_3$ &  16 \% \\
 $\lambda_4$ &  14 \% \\
 $\lambda_5$ &   7 \% \\
-$\lambda_6$ &   6 \% \\
-$\lambda_7$ &   4 \% \\
-$\lambda_8$ &   4 \% \\
+$\lambda_6$ &   5 \% \\
+$\lambda_7$ &   3 \% \\
+$\lambda_8$ &   3 \% \\
 \hline
 
 \end{tabular}
@@ -384,11 +386,12 @@ standard deviation for both original and perturbed positions listed in Table
 \ref{tab:tableD} show relatively small changes. It is therefore
 reasonable to say small errors in the values assigned as scores of composers
 characteristics did not affected too much its quantification.
+%% FIXME: explicar melhor o porque a media dos desviso sendo baixa garante o metodo
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tableD}Average and standard deviation of the 
-deviations for each composer and for the first 
-4 eigenvalues.}
+deviations for each composer and for the 
+8 eigenvalues.}
 
 % \begin{ruledtabular}
 \begin{tabular}{|c||c|c|}
@@ -397,20 +400,24 @@ deviations for each composer and for the first
 Composers & $\mu_{\Delta}$ & $\sigma_{\Delta}$ \\
 \hline
 
-Monteverdi     & 2.7627 & 1.0403 \\
-Bach           & 3.5934 & 1.0795 \\
-Mozart         & 2.1883 & 0.9748 \\
-Beethoven      & 1.4753 & 0.7161 \\
-Brahms         & 1.4911 & 0.7379 \\
-Stravinsky     & 1.6808 & 0.8159 \\
-Stockhausen    & 2.7166 & 1.0387 \\
+Monteverdi     & 3.7009 & 0.8557 \\
+Bach           & 5.3738 & 0.9567 \\
+Mozart         & 4.5378 & 0.8414 \\
+Beethoven      & 3.4932 & 0.7845 \\
+Brahms         & 3.0286 & 0.6652 \\
+Stravinsky     & 3.7165 & 0.8214 \\
+Stockhausen    & 4.3046 & 0.9326 \\
 \hline \hline
 Eigenvalues & $\mu_{\Delta}$ & $\sigma_{\Delta}$ \\
 \hline
-$\lambda_1$ &  -0.1327 & 0.0057 \\
-$\lambda_2$ &  -0.0461 & 0.0040 \\
-$\lambda_3$ &  -0.0315 & 0.0035 \\
-$\lambda_4$ &  -0.0169 & 0.0030 \\
+$\lambda_1$ &  -0.1808 & 0.0048 \\
+$\lambda_2$ &  -0.0646 & 0.0029 \\
+$\lambda_3$ &  -0.0279 & 0.0024 \\
+$\lambda_4$ &  -0.0124 & 0.0022 \\
+$\lambda_5$ &  -0.0537 & 0.0023 \\
+$\lambda_6$ &  -0.0700 & 0.0025 \\
+$\lambda_7$ &  -0.0823 & 0.0029 \\
+$\lambda_8$ &  -0.0796 & 0.0033 \\
 \hline
 
 \end{tabular}
@@ -419,28 +426,28 @@ $\lambda_4$ &  -0.0169 & 0.0030 \\
 \subsection{Results}
 
 Table \ref{tab:Deviates} shows the normalized weights
-of the contributions of each original property on the four
-new main axes. Most of the characteristics contribute almost equally
-in defining the first two main axes.
+of the contributions of each original property on the eight
+axes. Most of the characteristics contribute almost equally
+in defining the axes. 
 
 \begin{table}[ht]
 \caption{\label{tab:Deviates}Percentages of
-the contributions from each musical characteristic on the four
+the contributions from each musical characteristic on the eight
 new main axes.}
 
-\begin{tabular}{|c||c|c|c|c|}
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
 \hline
-Musical         & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} & \multirow{2}{*}{$C_3$} & \multirow{2}{*}{$C_4$}\\
-Characteristics & & & & \\
+Musical         & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} & \multirow{2}{*}{$C_3$} & \multirow{2}{*}{$C_4$} & \multirow{2}{*}{$C_5$} & \multirow{2}{*}{$C_6$} & \multirow{2}{*}{$C_7$} & \multirow{2}{*}{$C_8$}\\
+Charac. & & & & & & & & \\
 \hline
- S-P              &  21.79  &   5.60  &  6.05 & 11.88   \\
- S-L              &  11.96  &   7.80  & 23.99 &  8.00  \\
- H-C              &   0.85  &  27.99  &  5.24 & 16.80  \\
- V-I              &  21.92  &   3.41  &  9.10 &  9.69  \\
- N-D              &   2.56  &   0.20  & 25.73 & 20.24  \\
- M-V              &  18.07  &  21.67  &  3.58 &  4.04  \\
- R-P              &  12.36  &  11.50  & 13.73 & 17.60  \\
- T-M              &  10.44  &  21.80  & 12.54 & 11.71  \\
+ S-P              &  18.97  &   5.89  & 11.08 & 11.56 &  13.18  &  39.18  &  7.68 &  0.27 \\
+ S-L              &  13.11  &  10.36  & 20.00 &  2.75 &   7.37  &   0.43  & 25.80 & 16.37 \\
+ H-C              &   1.95  &  23.60  & 11.02 & 15.18 &  22.75  &   3.66  &  5.74 & 15.95 \\
+ V-I              &  18.89  &  12.58  &  6.51 &  7.14 &  11.94  &  42.04  &  3.67 &  2.17 \\
+ N-D              &   6.30  &  13.77  & 11.24 & 26.69 &   1.23  &   1.58  & 23.07 &  7.35 \\
+ M-V              &  17.27  &   9.61  & 15.95 &  6.93 &  31.66  &   2.00  &  5.98 &  3.36 \\
+ R-P              &  14.49  &   5.58  & 14.59 & 12.74 &  10.11  &   1.64  &  7.65 & 32.78 \\
+ T-M              &   8.96  &  18.56  &  9.56 & 16.97 &   1.73  &   9.44  & 20.36 & 21.72 \\
 \hline
 \end{tabular}
 % \end{ruledtabular}
@@ -527,11 +534,11 @@ Musical Move & $W_{i,j}$ & $s_{i,j}$ \\
 \hline \hline
 
  Monteverdi $\to$ Bach             &   1.0     &  0.      \\
- Bach $\to$ Mozart                 &   1.2780  &  0.4831  \\
- Mozart $\to$ Beethoven            &   0.2827  &  0.4519  \\
- Beethoven $\to$ Brahms            &  -0.1396  &  0.9676  \\
- Brahms $\to$ Stravinsky           &  -0.1421  &  0.6887  \\
- Stravinsky $\to$ Stockhausen      &  -0.3566  &  1.3891  \\
+ Bach $\to$ Mozart                 &   1.0183  &  1.9592  \\
+ Mozart $\to$ Beethoven            &   0.5110  &  2.8769  \\
+ Beethoven $\to$ Brahms            &   0.2619  &  1.7917  \\
+ Brahms $\to$ Stravinsky           &   0.4668  &  2.7545  \\
+ Stravinsky $\to$ Stockhausen      &   0.2492  &  3.1942  \\
 
 \hline
 \end{tabular}
@@ -539,18 +546,18 @@ Musical Move & $W_{i,j}$ & $s_{i,j}$ \\
 
 \begin{table}[ht]
 \caption{\label{tab:tableE} Counter-dialectics index for each
-of the five subsequent pairs of musical moves.}
+of the five subsequent pairs of musical moves considering the 8 components.}
 
 \begin{tabular}{|c||c|}
 \hline
 Musical Triple & $d_{i \rightarrow k}$ \\
 \hline \hline
 
- Monteverdi $\to$ Bach $\to$ Mozart          &     3.5573  \\
- Bach $\to$ Mozart $\to$ Beethoven           &     0.2097  \\
- Mozart $\to$ Beethoven $\to$ Brahms         &     0.6479  \\
- Beethoven $\to$ Brahms $\to$ Stravinsky     &     0.4472  \\
- Brahms $\to$ Stravinsky $\to$ Stockhausen   &     0.5721  \\
+ Monteverdi $\to$ Bach $\to$ Mozart          & 1.9743 \\
+ Bach $\to$ Mozart $\to$ Beethoven           & 1.1121 \\
+ Mozart $\to$ Beethoven $\to$ Brahms         & 1.1655 \\
+ Beethoven $\to$ Brahms $\to$ Stravinsky     & 0.2517 \\
+ Brahms $\to$ Stravinsky $\to$ Stockhausen   & 0.2559 \\
 
 \hline
 \end{tabular}
@@ -578,20 +585,18 @@ composers tend to be more influenced by their predecessors.
 \hline
 Eigenvalue  & Value     \\ \hline
 
-$\lambda_1$ &  39 \% \\
-$\lambda_2$ &  19 \% \\
-$\lambda_3$ &  17 \% \\
-$\lambda_4$ &   8 \% \\
-$\lambda_5$ &   6 \% \\
+$\lambda_1$ &  40 \% \\
+$\lambda_2$ &  23 \% \\
+$\lambda_3$ &  13 \% \\
+$\lambda_4$ &  10 \% \\
+$\lambda_5$ &   5 \% \\
 $\lambda_6$ &   4 \% \\
 $\lambda_7$ &   3 \% \\
-$\lambda_8$ &   3 \% \\
+$\lambda_8$ &   2 \% \\
 \hline
 
 \end{tabular}
 \end{table}
-
-%%%%%%5 TROCAR
 
 \begin{figure}
   \begin{center}
@@ -617,11 +622,11 @@ of the six philosophical moves.}
 Philosophical Move & $W_{i,j}$ & $s_{i,j}$ \\
 \hline \hline
 Plato $\rightarrow$ Aristotle     & 1.0    & 0.0 \\
-Aristotle $\rightarrow$ Descartes & 0.8922 & 0.0145 \\
-Descartes $\rightarrow$ Espinoza  & 0.7838 & 1.1218 \\
-Espinoza $\rightarrow$ Kant       & 0.6548 & 0.7059 \\
-Kant $\rightarrow$ Nietzsche      & 1.5124 & 1.4479 \\
-Nietzsche $\rightarrow$ Deleuze   & 0.3235 & 1.9040 \\
+Aristotle $\rightarrow$ Descartes & 0.8735 & 1.1203 \\
+Descartes $\rightarrow$ Espinoza  & 0.9122 & 2.4681 \\
+Espinoza $\rightarrow$ Kant       & 0.6021 & 1.6987 \\
+Kant $\rightarrow$ Nietzsche      & 1.1248 & 2.9963 \\
+Nietzsche $\rightarrow$ Deleuze   & 0.3512 & 2.5239 \\
 \hline
 \end{tabular}
 \end{table}
@@ -641,17 +646,17 @@ influenced by their old masters.
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tablephiE} Counter-dialectics index for each
-of the five subsequent pairs of philosophical moves.}
+of the five subsequent pairs of philosophical moves, considering 2, 4 and 8 principal components.}
 
 \begin{tabular}{|c||c|}
 \hline
 Philosophical Triple & $d_{i \rightarrow k}$ \\
 \hline \hline
-Plato $\rightarrow$ Aristotle $\rightarrow$ Descartes    & 0.968 \\
-Aristotle $\rightarrow$ Descartes $\rightarrow$ Espinoza & 0.287 \\
-Descartes $\rightarrow$ Espinoza $\rightarrow$ Kant      & 0.138 \\
-Espinoza $\rightarrow$ Kant $\rightarrow$ Nietzsche      & 1.247 \\
-Kant $\rightarrow$ Nietzsche $\rightarrow$ Deleuze       & 0.054 \\
+Plato $\rightarrow$ Aristotle $\rightarrow$ Descartes    & 3.083 \\
+Aristotle $\rightarrow$ Descartes $\rightarrow$ Espinoza & 1.840 \\
+Descartes $\rightarrow$ Espinoza $\rightarrow$ Kant      & 1.208 \\
+Espinoza $\rightarrow$ Kant $\rightarrow$ Nietzsche      & 1.204 \\
+Kant $\rightarrow$ Nietzsche $\rightarrow$ Deleuze       & 0.349 \\
 \hline
 \end{tabular}
 % \end{ruledtabular}

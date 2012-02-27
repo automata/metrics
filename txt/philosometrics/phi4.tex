@@ -360,7 +360,7 @@ original scores.
 Following the Monte Carlo method, we calculated $p(\vec{r})$ for each step
 and compared it with a random normalized value, selecting just the
 samples influenced by the originals. We considered $\sigma =
-1.4$ for this analysis, generating 500 samples using the bootstrap method.
+1.1$ for this analysis, generating 1000 samples using the bootstrap method.
 
 Table \ref{tab:tableB} presents the Pearson correlation coefficients
 between the eight philosophical characteristics chosen, already
@@ -369,13 +369,13 @@ the original scores.  The
 coefficients with absolute value larger than 0.35 are emphasized.
 Strong positive or negative correlations can be observed for several
 pairs of characteristics.  For instance, the fact that a Pearson
-correlation coefficient of $-0.49$ was obtained for the pair of
+correlation coefficient of $-0.44$ was obtained for the pair of
 characteristics \emph{R-E} and \emph{N-M} indicates that philosophers
 who are rationalists strongly tend to be also mechanicists.  An even
-stronger correlation of $0.71$, now positive, is observed between
+stronger correlation of $0.72$, now positive, is observed between
 \emph{E-E} and \emph{D-P}, suggesting that existentialists also tend
 to be phenomenologists, as could be expected.  Other strong
-correlations were observed, including a Pearson coefficient of $0.62$
+correlations were observed, including a Pearson coefficient of $0.55$
 between \emph{D-F} and \emph{N-M}.  Also interesting is the relatively
 high correlation between \emph{M-D} and \emph{D-F}, which seems to be
 directly implied by religious background.
@@ -390,13 +390,13 @@ value larger or equal than 0.35 have been emphasized.}
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|}
 
 - & R-E & E-E & M-D & T-A & H-R & D-P & D-F & N-M \\ \hline
-R-E & 1.00 & 0.34 & -0.3 & -0.01 & -0.07 & {\bf \emph{  0.46}} & {\bf \emph{  -0.43}} & {\bf \emph{  -0.49}} \\
-E-E & -    & 1.00 & {\bf \emph{  -0.4}} & 0.25 & 0.12 & {\bf \emph{  0.71}} & {\bf \emph{  -0.48}} & -0.21 \\
-M-D & -    & -    & 1.00 & -0.23 & {\bf \emph{  0.47}} & -0.24 & {\bf \emph{  0.43}} & 0.21 \\
-T-A & -    & -    & -    & 1.00 & -0.09 & 0.13  & 0.16 & 0.24 \\
-H-R & -    & -    & -    & -    & 1.00 & 0.21 & -0.01 & -0.06 \\ 
-D-P & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  -0.52}}  & {\bf \emph{  -0.37}} \\
-D-F & -    & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  0.62}} \\
+R-E & 1.00 & 0.38 & -0.25 & 0.14 & 0.08 & {\bf \emph{  0.5}} & {\bf \emph{  -0.43}} & {\bf \emph{  -0.44}} \\
+E-E & -    & 1.00 & {\bf \emph{  -0.51}} & 0.19 & 0.1 & {\bf \emph{  0.72}} & {\bf \emph{  -0.54}} & -0.24 \\
+M-D & -    & -    & 1.00 & -0.41 & {\bf \emph{  0.45}} & -0.28 & {\bf \emph{  0.43}} & -0.08 \\
+T-A & -    & -    & -    & 1.00 & -0.22 & 0.06  & 0.15 & 0.32 \\
+H-R & -    & -    & -    & -    & 1.00 & 0.3 & -0.18 & -0.27 \\ 
+D-P & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  -0.58}}  & {\bf \emph{  -0.43}} \\
+D-F & -    & -    & -    & -    & -    & -    & 1.00 & {\bf \emph{  0.55}} \\
 N-M & -    & -    & -    & -    & -    & -    & -    & 1.00 \\
 
 \end{tabular}
@@ -406,7 +406,7 @@ N-M & -    & -    & -    & -    & -    & -    & -    & 1.00 \\
 PCA was applied to this set of data, yielding the new variances given
 in Table \ref{tab:tableC} in terms of the percentages of the total
 variance.  It is clear that the four first PCA axes account for
-$75\%$ of the total variance of the dataset in the original
+$85\%$ of the total variance of the dataset in the original
 philosophical space.  It is therefore reasonable to say that the
 properties of the philosophers can be well described and analyzed
 while considering just four dimensions.
@@ -421,13 +421,13 @@ while considering just four dimensions.
 \hline
 Eigenvalue & Value \\ \hline
 $\lambda_1$ &  39 \% \\
-$\lambda_2$ &  19 \% \\
-$\lambda_3$ &  17 \% \\
-$\lambda_4$ &   8 \% \\
+$\lambda_2$ &  24 \% \\
+$\lambda_3$ &  12 \% \\
+$\lambda_4$ &  10 \% \\
 $\lambda_5$ &   6 \% \\
 $\lambda_6$ &   4 \% \\
 $\lambda_7$ &   3 \%    \\
-$\lambda_8$ &   3 \%    \\
+$\lambda_8$ &   2 \%    \\
 \hline
 
 \end{tabular}
@@ -458,20 +458,20 @@ deviations for each philosopher and for the first
 
 Philosophers & $\mu_{\Delta}$ & $\sigma_{\Delta}$ \\
 \hline
-Plato          & 1.9240 & 0.8892 \\
-Aristotle      & 3.4881 & 1.0620 \\
-Descartes      & 3.0622 & 1.0425 \\
-Espinoza       & 1.9106 & 0.9045 \\
-Kant           & 1.7168 & 0.8564 \\
-Nietzsche      & 4.6066 & 1.0697 \\
-Deleuze        & 3.0132 & 1.0685 \\
+Plato          & 1.9841 & 0.8914 \\
+Aristotle      & 3.3162 & 1.0611 \\
+Descartes      & 3.1031 & 1.0619 \\
+Espinoza       & 1.9033 & 0.8974 \\
+Kant           & 1.7758 & 0.8351 \\
+Nietzsche      & 4.4916 & 1.1215 \\
+Deleuze        & 3.2258 & 0.9990 \\
 \hline \hline
 Eigenvalues & $\mu_{\Delta}$ & $\sigma_{\Delta}$ \\
 \hline
-$\lambda_1$ & -0.1750 & 0.0059 \\
-$\lambda_2$ & -0.0848 & 0.0040 \\
-$\lambda_3$ &  0.0070 & 0.0030 \\
-$\lambda_4$ &  0.0194 & 0.0029 \\
+$\lambda_1$ & -0.2443 & 0.0063 \\
+$\lambda_2$ & -0.1071 & 0.0036 \\
+$\lambda_3$ &  0.0163 & 0.0026 \\
+$\lambda_4$ &  0.0272 & 0.0025 \\
 \hline
 
 \end{tabular}
@@ -503,14 +503,14 @@ the contributions from each philosophical characteristic on the four new main ax
 Philosophical & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} & \multirow{2}{*}{$C_3$} & \multirow{2}{*}{$C_4$}\\
 Characteristics & & & & \\
 \hline
-R-E & 15.93   &  1.82 &  5.75 & 35.03 \\
-E-E & 17.08   &  4.62 & 15.58 & 12.00 \\
-M-D & 13.17   & 22.48 &  8.00 & 12.41 \\
-T-A &  1.30   & 22.71 & 18.77 & 15.09 \\
-H-R &  0.32   & 25.33 & 18.95 &  1.87 \\
-D-P & 18.13   &  4.16 & 13.20 &  0.21 \\
-D-F & 18.69   &  5.66 &  7.17 & 16.81 \\
-N-M & 15.35   & 13.18 & 12.56 &  6.54 \\
+R-E & 14.68   &  1.32 &  5.15 & 31.95 \\
+E-E & 18.11   &  8.13 &  5.35 & 14.39 \\
+M-D & 10.14   & 23.93 & 10.17 &  4.70 \\
+T-A &  1.28   & 23.04 & 20.61 &  7.20 \\
+H-R &  5.05   & 21.31 & 24.45 &  9.10 \\
+D-P & 19.39   &  1.52 &  9.09 &  5.48 \\
+D-F & 13.39   & 16.15 & 11.94 & 14.70 \\
+N-M & 13.71   &  4.55 & 13.20 & 12.45 \\
 \hline
 
 \end{tabular}
@@ -564,11 +564,11 @@ of the six philosophical moves.  }
 Philosophical Move & $W_{i,j}$ & $s_{i,j}$ \\
 \hline \hline
 Plato $\rightarrow$ Aristotle     & 1.0    & 0 \\
-Aristotle $\rightarrow$ Descartes & 0.8922 & 0.0145 \\
-Descartes $\rightarrow$ Espinoza  & 0.7838 & 1.1218 \\
-Espinoza $\rightarrow$ Kant       & 0.6548 & 0.7059 \\
-Kant $\rightarrow$ Nietzsche      & 1.5124 & 1.4479 \\
-Nietzsche $\rightarrow$ Deleuze   & 0.3235 & 1.9040 \\
+Aristotle $\rightarrow$ Descartes & 0.8748 & 1.0700 \\
+Descartes $\rightarrow$ Espinoza  & 0.9081 & 2.1161 \\
+Espinoza $\rightarrow$ Kant       & 0.5961 & 1.3673 \\
+Kant $\rightarrow$ Nietzsche      & 1.1913 & 2.9391 \\
+Nietzsche $\rightarrow$ Deleuze   & 0.3467 & 2.2336 \\
 \hline
 \end{tabular}
 % \end{ruledtabular}
@@ -584,11 +584,11 @@ of the five subsequent pairs of philosophical moves.  }
 \hline
 Philosophical Triple & $d_{i \rightarrow k}$ \\
 \hline \hline
-Plato $\rightarrow$ Aristotle $\rightarrow$ Descartes &  0.9680 \\
-Aristotle $\rightarrow$ Descartes $\rightarrow$ Espinoza & 0.2871 \\
-Descartes $\rightarrow$ Espinoza $\rightarrow$ Kant & 0.1384 \\
-Espinoza $\rightarrow$ Kant $\rightarrow$ Nietzsche & 1.2476 \\
-Kant $\rightarrow$ Nietzsche $\rightarrow$ Deleuze  & 0.0542 \\
+Plato $\rightarrow$ Aristotle $\rightarrow$ Descartes &  3.2254 \\
+Aristotle $\rightarrow$ Descartes $\rightarrow$ Espinoza & 2.0566 \\
+Descartes $\rightarrow$ Espinoza $\rightarrow$ Kant & 1.1283 \\
+Espinoza $\rightarrow$ Kant $\rightarrow$ Nietzsche & 0.8842 \\
+Kant $\rightarrow$ Nietzsche $\rightarrow$ Deleuze  & 0.0099 \\
 \hline
 \end{tabular}
 % \end{ruledtabular}
