@@ -6,13 +6,13 @@ import numpy as n
 import pylab as p
 import pca_module as pca
 
-# arquivo_notas = 'notas_compositores.txt'
-# agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
-# caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
+arquivo_notas = 'notas_compositores.txt'
+agents = ['Monteverdi', 'Bach', 'Mozart', 'Beethoven', 'Brahms', 'Stravinsky', 'Stockhausen']
+caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 
-arquivo_notas = 'notas_filosofos.txt'
-agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
-caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
+# arquivo_notas = 'notas_filosofos.txt'
+# agents = ['Plato', 'Aristotle', 'Descartes', 'Espinoza', 'Kant', 'Nietzsche', 'Deleuze']
+# caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 
 # arquivo_notas = 'notas_diretores.txt'
 # agents = ['Griffith','Eisenstein','Hichcock','Welles','Felini','Kubrick','Spielberg']
@@ -21,8 +21,8 @@ caracs = ['R-E', 'E-E', 'M-D', 'T-A', 'H-R', 'D-P', 'D-F', 'N-M']
 # parâmetros
 minimo = 1.0
 maximo = 9.0
-qtd_aleatorios = 8000000 # ***
-std = 1.1 # ***
+qtd_aleatorios = 5000000 # *** change this values to change the distribution
+std = 1.1 # *** change this values to change the distribution
 # carregamos os dados das notas originais
 dados_orig = n.loadtxt(arquivo_notas)
 # calculamos os samples por boostrap

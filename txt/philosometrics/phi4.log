@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.11)  13 FEB 2012 15:18
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.25)  29 FEB 2012 20:20
 entering extended mode
  %&-line parsing enabled.
 **phi4
@@ -350,15 +350,19 @@ it/10 D-P\OT1/cmr/m/n/10 ): Phe-
  []
 
 [3]
+Overfull \hbox (25.22688pt too wide) in paragraph at lines 504--521
+ []$[]$ 
+ []
+
 File: pca_filosofos_novo.eps Graphic file (type eps)
- <pca_filosofos_novo.eps> [4]
+<pca_filosofos_novo.eps> [4]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
  on input line 606.
 
 File: Dendrogram_.eps Graphic file (type eps)
 <Dendrogram_.eps>
-Overfull \hbox (9.0pt too wide) in paragraph at lines 619--620
+Overfull \hbox (9.0pt too wide) in paragraph at lines 620--621
  [] 
  []
 
@@ -381,4 +385,4 @@ Here is how much of TeX's memory you used:
  30 hyphenation exceptions out of 8191
  35i,10n,27p,271b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on phi4.dvi (6 pages, 52276 bytes).
+Output written on phi4.dvi (6 pages, 53948 bytes).
