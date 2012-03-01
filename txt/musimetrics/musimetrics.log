@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.25)  29 FEB 2012 12:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.25)  29 FEB 2012 21:31
 entering extended mode
  %&-line parsing enabled.
 **musimetrics
@@ -295,16 +295,21 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 \openout3 = `musimetricsNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 67.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+
+Class revtex4-1 Warning: Assuming \noaffiliation for Luciano da Fontoura Costa.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 $[]$[]$\OT1/cmtt/m/n/8 http : / / www . estudiolivre . org / el-[]user . php ? 
 view \ _user = gk$\OT1/cmr/m/n/8 ;
  []
@@ -314,33 +319,34 @@ File: phil-space-desc_.eps Graphic file (type eps)
  <phil-space-desc_.eps>
 File: dialetica_.eps Graphic file (type eps)
  <dialetica_.eps> [2]
-Overfull \hbox (27.08063pt too wide) in alignment at lines 315--329
+Overfull \hbox (27.08063pt too wide) in alignment at lines 322--336
  [] [] [] [] [] [] [] [] [] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 338.
+(Font)              using `OT1/cmss/bx/n' instead on input line 345.
 
 [3]
-Overfull \hbox (13.83084pt too wide) in alignment at lines 370--383
+Overfull \hbox (13.83084pt too wide) in alignment at lines 377--390
  [] [] [] [] [] [] [] [] [] 
  []
 
-File: g1.eps Graphic file (type eps)
-<g1.eps> [4]
+[4]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 566.
+ on input line 519.
 
-[5]
+File: g1.eps Graphic file (type eps)
+<g1.eps> [5]
 File: g1filosofos.eps Graphic file (type eps)
  <g1filosofos.eps>
 File: compara_dialeticas2.eps Graphic file (type eps)
  <compara_dialeticas2.eps> [6]
 File: Clust_Compositores.eps Graphic file (type eps)
- <Clust_Compositores.eps>
-Underfull \hbox (badness 1132) in paragraph at lines 775--784
+
+<Clust_Compositores.eps>
+Underfull \hbox (badness 1132) in paragraph at lines 782--791
 \OT1/cmr/m/n/10 Stock-hausen, the prox-im-ity be-tween Beethoven and
  []
 
@@ -360,12 +366,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4103 strings out of 495042
- 53365 string characters out of 1181920
- 135542 words of memory out of 3000000
- 7196 multiletter control sequences out of 15000+50000
+ 4102 strings out of 495042
+ 53355 string characters out of 1181920
+ 134542 words of memory out of 3000000
+ 7195 multiletter control sequences out of 15000+50000
  19234 words of font info for 70 fonts, out of 3000000 for 9000
  30 hyphenation exceptions out of 8191
  35i,13n,32p,808b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on musimetrics.dvi (8 pages, 68524 bytes).
+Output written on musimetrics.dvi (8 pages, 68692 bytes).

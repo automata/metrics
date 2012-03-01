@@ -21,7 +21,7 @@ caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 # parâmetros
 minimo = 1.0
 maximo = 9.0
-qtd_aleatorios = 5000000 # *** change this values to change the distribution
+qtd_aleatorios = 8000000 # *** change this values to change the distribution
 std = 1.1 # *** change this values to change the distribution
 # carregamos os dados das notas originais
 dados_orig = n.loadtxt(arquivo_notas)
