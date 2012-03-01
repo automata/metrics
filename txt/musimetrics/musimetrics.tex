@@ -173,7 +173,7 @@ Musical move & $\vec{M_{i,j}} = \vec{v_j} - \vec{v_i}$ \\ \\
 
 Opposition index & $W_{i,j} = \frac{\left< \vec{M_{i,j}}, \vec{D_i}\right>}{||\vec{D_i}||^2}$ \\ \\
 
-Skewness index & $s_{i,j} = \sqrt{\frac{(\vec{v_i}-\vec{v_j})^2(\vec{a_i}-\vec{v_i})^2 - (\vec{v_i}-\vec{v_j})^2(\vec{a_i}-\vec{v_i})^2}{(\vec{a_i}-\vec{v_i})^2}}$ \\ \\
+Skewness index & $s_{i,j} = \sqrt{\frac{|\vec{v_i}-\vec{v_j}|^2|\vec{a_i}-\vec{v_i}|^2 - [(\vec{v_i}-\vec{v_j}) . (\vec{a_i}-\vec{v_i})]^2}{|\vec{a_i}-\vec{v_i}|^2}}$ \\ \\
 
 Counter-dialectics \\ index & $d_{i \rightarrow k} = \frac{\left< \vec{v_j} - \vec{v_i}, \vec{v_k} \right> + \frac{\vec{v_i}^2 - \vec{v_j}^2}{2}}{\sqrt{(\vec{v_j}-\vec{v_i})^2}}$ \\ \\ 
 
@@ -314,24 +314,26 @@ vice versa. We emphasize that the focus of this work is not on the specific
 characteristics used or their attributed numerical values,
 which can be disputed, but on the techniques employed for the quantitative analysis.
 
+
 \begin{table}[ht]
+
 \caption{\label{tab:tableA}Quantification of the
 eight music characteristics for each of the seven composers.}
 
 \begin{ruledtabular}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
-
+\footnotesize
 % Composer    & S-P & S-L & H-C & V-I & N-D & M-V & R-P & T-M  \\
-Composer    & $S$-$S_c$ & $D_s$-$D_l$ & $H$-$C$ & $V$-$I$ & $D_n$-$D$ & $M_s$-$M_v$ & $R_s$-$R_c$ & $H_s$-$H_v$  \\
+\footnotesize Composer    & \tiny  $S$-$S_c$ & \tiny  $D_s$-$D_l$ & \tiny  $H$-$C$ & \tiny  $V$-$I$ & \tiny  $D_n$-$D$ & \tiny  $M_s$-$M_v$ & \tiny  $R_s$-$R_c$ & \tiny  $H_s$-$H_v$  \\
 \hline
- Monteverdi   & 3.0 & 8.0 & 5.0 & 3.0 & 7.0 & 5.0 & 3.0 & 7.0  \\
- Bach         & 2.0 & 6.0 & 9.0 & 2.0 & 8.0 & 2.0 & 1.0 & 5.0  \\
- Mozart       & 6.0 & 4.0 & 1.0 & 6.0 & 6.0 & 7.0 & 2.0 & 2.0  \\
- Beethoven    & 7.0 & 8.0 & 2.5 & 8.0 & 5.0 & 4.0 & 4.0 & 7.0  \\
+ \footnotesize Monteverdi   & 3.0 & 8.0 & 5.0 & 3.0 & 7.0 & 5.0 & 3.0 & 7.0  \\
+ \footnotesize Bach         & 2.0 & 6.0 & 9.0 & 2.0 & 8.0 & 2.0 & 1.0 & 5.0  \\
+ \footnotesize Mozart       & 6.0 & 4.0 & 1.0 & 6.0 & 6.0 & 7.0 & 2.0 & 2.0  \\
+ \footnotesize Beethoven    & 7.0 & 8.0 & 2.5 & 8.0 & 5.0 & 4.0 & 4.0 & 7.0  \\
 % Chopin & 9.0 & 3.0 & 3.0 & 9.0 & 5.5 & 8.0 & 7.0 & 8.0 \\
- Brahms       & 6.0 & 6.0 & 4.0 & 7.0 & 4.5 & 6.5 & 5.0 & 7.0  \\
- Stravinsky   & 8.0 & 7.0 & 6.0 & 7.0 & 8.0 & 5.0 & 8.0 & 5.0  \\
- Stockhausen  & 7.0 & 4.0 & 8.0 & 7.0 & 5.0 & 8.0 & 9.0 & 6.0  \\
+ \footnotesize Brahms       & 6.0 & 6.0 & 4.0 & 7.0 & 4.5 & 6.5 & 5.0 & 7.0  \\
+ \footnotesize Stravinsky   & 8.0 & 7.0 & 6.0 & 7.0 & 8.0 & 5.0 & 8.0 & 5.0  \\
+ \footnotesize Stockhausen  & 7.0 & 4.0 & 8.0 & 7.0 & 5.0 & 8.0 & 9.0 & 6.0  \\
 
 \end{tabular}
 \end{ruledtabular}
@@ -377,7 +379,7 @@ Emphasized coefficients have absolute values larger than 0.5.
 \begin{tabular}{|l||c|c|c|c|c|c|c|c|}
 
 %-   &  S-P  &  S-L   &  H-C   &  V-I            &  N-D  &  M-V    &  R-P           &  T-M  \\ \hline
--   & $S$-$S_c$ & $D_s$-$D_l$ & $H$-$C$ & $V$-$I$ & $D_n$-$D$ & $M_s$-$M_v$ & $R_s$-$R_c$ & $H_s$-$H_v$ \\ \hline
+-    & \tiny  $S$-$S_c$ & \tiny  $D_s$-$D_l$ & \tiny  $H$-$C$ & \tiny  $V$-$I$ & \tiny  $D_n$-$D$ & \tiny  $M_s$-$M_v$ & \tiny  $R_s$-$R_c$ & \tiny  $H_s$-$H_v$  \\ \hline
 $S$-$S_c$ & -     &  -0.2 &  -0.06 &  \textbf{0.69}  & -0.18 &  0.19   &  \textbf{0.56} &  -0.16 \\
 $D_s$-$D_l$ & -     &  -     &  -0.14 &  -0.13          &  0.2  &  -0.48  &  -0.2         &  0.37 \\
 $H$-$C$ & -     &  -     &  -     &  -0.23          &  0.26  &  0.05  &  0.46          &  0.03 \\
@@ -551,36 +553,13 @@ could present even more detachment if we had considered
 vanguard characteristics -- e.g. timbre exploration by using
 electronic devices~\cite{Lovelock} -- not
 shared by his precursors.
-In general, the musical movements had minor opposition and,
-remembering the beginning of this work, it reflects the
-master-apprentice
-tradition present in music: the composers tend to build their own
-works confirming their precursors legacy. 
-This reveals a crucial difference %FIXME: Retirar memória... não faz mais sentido
-considering the \textit{memory treatment} along the development of
-philosophy and music: using the same techniques this article does~\cite{Fabbri},
-we could verify that a philosopher was influenced by the
-opposition of ideas from his two predecessors, while here composers were commonly
-influenced by their direct predecessor. Therefore, we can argue that philosophy
-presents a \textit{memory-2} state, while music presents
-\textit{memory-1}, considering \textit{memory-N} being the number $N$
-of past generations that influenced a philosopher or
-composer. Considering the linearity of musical movements we can
-identify the abscissa as a ``time axis'' representing the development
-of music along the history, with some composers
-like Beethoven returning to Monteverdi and others advancing to the
-modern age like Stravinsky and Stockhausen.
 
 To complement the analysis, Table \ref{tab:tableOI} gives the
 opposition and skewness indices for each of the six musical moves,
 showing the movements are driven by rather small opposition and strong
-skewness. In other words, most musical moves do not benefit from
-opposition as far as innovation is concerned. Dialectics is also analyzed on Table
-\ref{tab:tableE} where we identified an alternation of values along
-the pairs of subsequent musical movements: the first value of
-counter-dialectics is greater than the second, that is lesser than the %FIXME: nao é mais o caso...
-third and so on. There is no permanent strong
-dialectics, but a continuous variation.
+skewness. In other words, most musical moves seems to seek more innovation
+than opposition. Dialectics is also analyzed on Table
+\ref{tab:tableE} and will play a key role in the next section.
 
 \begin{table}[ht]
 \caption{\label{tab:tableOI}Opposition and skewness indices for each
@@ -621,6 +600,25 @@ Musical Triple & $d_{i \rightarrow k}$ \\
 \end{tabular}
 \end{table}
 
+Complementing the analysis we performed Wards hierarchical
+clustering. This algorithm clusters the original scores taking into
+account their distance. The generated dendrogram in
+Figure \ref{fig:dendrogram} shows the composers
+considering their similarity. The representation supports the
+observations discussed previously. It is interesting to note the cluster
+formed by Beethoven and Brahms, reflecting their heritage. Stravinsky
+and Stockhausen forms another cluster and Mozart remains in isolation,
+as like Bach and Monteverdi. Both relations were also present in the
+planar space shown at Figure \ref{fig:pca}.
+
+\begin{figure}[ht]
+        \begin{center}
+          \includegraphics[width=0.45\textwidth]{Clust_Compositores.eps}
+        \end{center}
+        \caption{\it Wards hierarchical clustering of the seven composers.}
+        \label{fig:dendrogram}
+\end{figure}
+
 \section{Comparisons with Philosophers Analysis}
 
 The results of composers analysis when compared with philosophers~\cite{Fabbri}
@@ -632,8 +630,30 @@ first new axis, similar to the variances for composers shown at Table \ref{tab:t
 with the philosophical one in Figure \ref{fig:phipca} we
 identify opposite movements along all the philosophy history in contrast
 to music. This reveals a notorious characteristic of the way
-philosophers seem to have evolved their ideas, driven by opposition, while
-composers tend to be more influenced by their predecessors in a direct manner.
+philosophers seem to have evolved their ideas, driven by opposition ($W_{i,j}$), while
+composers tend to be more influenced by their predecessors as far as their dialectics measures are
+concerned ($1/d_{i \rightarrow k}$).
+
+In general, the musical movements had minor opposition and,
+remembering the beginning of this work, it reflects the
+master-apprentice
+tradition present in music: the composers tend to build their own
+works confirming their precursors legacy, resulting in a greater
+dialectics then the philosophers related measures.
+This reveals a crucial difference %FIXME: Retirar memória... não faz mais sentido
+considering the \textit{memory treatment} along the development of
+philosophy and music: using the same techniques this article does~\cite{Fabbri},
+we could verify that a philosopher was influenced by the
+opposition of ideas from his direct predecessors, while here composers were commonly
+influenced by their predecessors. Therefore, we can argue that philosophy
+presents a \textit{memory-1} state, while music presents
+\textit{memory-2}, considering \textit{memory-N} being the number $N$
+of past generations whose influence on a philosopher or
+composer is being considered. Considering the linearity of musical movements we can
+identify the abscissa as a ``time axis'' representing the development
+of music along the history, with some composers
+like Beethoven returning to Monteverdi and others advancing to the
+modern age like Stravinsky and Stockhausen.
 
 \begin{table}[ht]
 \caption{\label{tab:varphi}New variances after PCA for philosophers
@@ -668,8 +688,9 @@ The opposition and skewness indices for philosophers listed in Table
 \ref{tab:tablephiOI} endorses the minor role of opposition in
 composers at the period considered. We can observe strong opposition and rather small skewness 
 in philosophical moves contrasted to small opposition and strong skewness in
-musical movements. Also, the dialectics of both are out of
-phase, indicating transfer latency. 
+musical movements. Also, the dialectics presents a
+phase difference suggesting knownledge and aesthetics 
+transfer latency between each of these human fields.
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
 \caption{\label{tab:tablephiOI}Opposition and skewness indices for each
@@ -690,14 +711,12 @@ Nietzsche $\rightarrow$ Deleuze   & 0.3584 & 2.4890 \\
 \end{table}
 
 When comparing dialectics, other curious facts arise: the dialectics
-indices in Table \ref{tab:tablephiE} are considerably stronger philosophical moves than for
-composers. Both indices are also shown in Figure
-\ref{fig:comparingdialectics} where we can see a constantly decrease
-of counter-dialectics, contrasting the continuously variation of the
-indices when considering the composers. This makes possible to argue
-that dialectics is stronger in philosophy than in music where a
-constantly return to the origins are clearly visible on some
-composers. This reveals the nature of the
+indices in Table \ref{tab:tableE} are considerably stronger moves than for
+philosophers. Both indices are also shown in Figure
+\ref{fig:comparingdialectics} where we can see a constant decrease
+of counter-dialectics. [EXPLANATION] This makes it possible to argue
+that dialectics is stronger in music where a
+constantly return to the origins are clearly visible. This reveals the nature of the
 musical development, based on the search for a unity. Using the words
 of Webern, the search for the ``comprehensibility'' but always
 influenced by their old masters.
@@ -729,24 +748,6 @@ Kant $\rightarrow$ Nietzsche $\rightarrow$ Deleuze       & 0.2705 \\
         \label{fig:comparingdialectics}
 \end{figure}
 
-Complementing the analysis we performed Wards hierarchical
-clustering. This algorithm clusters the original scores taking into
-account their distance. The generated dendrogram in
-Figure \ref{fig:dendrogram} shows the composers
-considering their similarity. The representation supports the
-observations discussed previously. It is interesting to note the cluster
-formed by Beethoven and Brahms, reflecting their heritage. Stravinsky
-and Stockhausen forms another cluster and Mozart remains in isolation,
-as like Bach and Monteverdi. Both relations were also present in the
-planar space shown at Figure \ref{fig:pca}.
-
-\begin{figure}[ht]
-        \begin{center}
-          \includegraphics[width=0.45\textwidth]{Clust_Compositores.eps}
-        \end{center}
-        \caption{\it Wards hierarchical clustering of the seven composers.}
-        \label{fig:dendrogram}
-\end{figure}
 
 
 \section{Concluding Remarks}
@@ -765,11 +766,13 @@ works. These scores reveal not the
 exact profile of composers, but a tendency of how their
 techniques are usually present. To make the simulation more
 realistic, we considered not just the small number of 7 composers, but
-derived other 500 new ``artificial composers'' through a bootstrap
+derived other 1000 new ``artificial composers'' through a bootstrap
 method. A larger data set made possible the statistical analysis,
 considering not just the original scored composers, but other samples
-that respect the historical tendency of the formers, modeled by a
-probabilistic distribution.
+that respect the historical presence of the formers. This other thousand
+composers were modeled by a
+probabilistic distribution, and avoided a tendentious analisys caused by
+the use of scarce samples: only 7 composers.
 In order to investigate the
 relationship between this scorings we applied Pearson correlation
 analysis. The results demonstrated a strong correlation between some
@@ -809,13 +812,13 @@ Along the analysis we noticed interesting differences when comparing
 composers with philosophers. While on philosophy the
 innovation is notably marked by opposition of each philosophers ideas,
 it is less present for music composers. The lack of strong %%FIXME: Retirar memória... não faz mais sentido
-opposition movements in musical space indicates the music innovation is driven by
+opposition movements and proeminent presence of dialectics in musical space indicates the music innovation is driven by
 a constant heritage of each composer from his predecessor. We
 represented this characteristic referring to a \textit{memory state}
-where philosophers shows \textit{memory-2} -- each philosopher was
-influenced by the opposite ideas of its two predecessors -- while
-composers shows \textit{memory-1} -- inheriting the style of their direct
-predecessor. 
+where philosophers shows \textit{memory-1} -- each philosopher was
+influenced by the opposite ideas of its predecessor -- while
+composers shows \textit{memory-2} -- inheriting the style of their
+both direct predecessors.
 The
 analysis of both dialectics values also shown surprising
 results: on philosophy the dialectics indices are arranged on a
@@ -826,7 +829,7 @@ constant quest for coherence by the composers, a fact notably observed by
 the studies of Anton Webern~\cite{Webern} should have somewhat the same
 kernel and a lattency between the effects.
 
-Another resulto is that the quantitative methodology initially applied to the analysis of philosophy~\cite{Fabbri}
+Another result is that the quantitative methodology initially applied to the analysis of philosophy~\cite{Fabbri}
 proved to be extensible to other fields of knowledge -- in this case music --
 reflecting with considerable efficiency details concerning the specific field. 
 
@@ -837,9 +840,11 @@ polyrhythms, motivic and harmonic stability~\cite{Correa}. More composers could 
 inserted in the set for the analysis of a wider time-line, possibly
 including more representatives of each music period.
 
-While taking the first
-steps on the direction of a quantitative approach to analising arts and philosophy
-we aim at quantifying the creative process. We want to end this work going back to Webern,
+% While taking the first
+% steps on the direction of a quantitative approach to analising arts and philosophy
+% our aim is to quantify creativity evolution.
+
+We want to end this work going back to Webern,
 who early envisioned these relations: ``It is clear that where relatedness and unity are omnipresent,
 comprehensibility is also guaranteed. And all the rest is
 dilettantism, nothing else, for all time, and always has been. That's
