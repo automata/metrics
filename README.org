@@ -25,12 +25,12 @@ $ python final4d.py > output.txt
   was implemented and generalized to point-to-hiperplane, used at dialetics
   calculation.
 
-* Last Results
+* Results
 
   Last interesting results are:
 
-  - src/v3/interessantes/10 for composers
-  - src/v3/interessantes_filosofos/1 for philosophers
+  - src/v3/results_feb29/composers for composers
+  - src/v3/results_feb29/philosophers for philosophers
 
   These results were used to the last versions of manuscripts:
 

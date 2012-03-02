@@ -16,7 +16,7 @@
 
 \preprint{AIP/123-QED}
 
-\title[Can the music be analyzed in a quantitative manner?]{Can the music be analyzed in a quantitative manner?}
+\title[Can the evolution of music be analyzed in a quantitative manner?]{Can the evolution of music be analyzed in a quantitative manner?}
 
 \author{Vilson Vieira}
  \homepage{http://automata.cc}
@@ -64,11 +64,10 @@ quantify, for example, how much Bach and Stockhausen differ from other composers
 much Beethoven influenced Brahms.
 In addition, we compared the results with a prior investigation
 on
-philosophy~\cite{Fabbri}. The influence of dialectics, strong on
-philosophy, was not remarkable on music.
-Instead, supporting an observation already considered by music
+philosophy~\cite{Fabbri}. The opposition, strong on
+philosophy, was not remarkable on music. Supporting an observation already considered by music
 theorists, strong influences were identified between
-subsequent composers, implying inheritance and suggesting a stronger
+composers by the quantification of dialectics, implying inheritance and suggesting a stronger
 master-disciple evolution when compared to the philosophy analysis.
 \end{abstract}
 
@@ -90,7 +89,7 @@ predecessor, contrasting with the necessity for innovation. Quoting
 Lovelock: 
 ``[...] by experiment that progress is possible; it is the man
 with the forward-looking type of mind [...] who forces man out of the
-rut of 'what was good enough for my father is good enough for me'.''~\cite{Lovelock}.
+rut of `what was good enough for my father is good enough for me'.''~\cite{Lovelock}.
 Thus, development in music follows a dichotomy: while composers aims on
 innovation, creating their own styles, their technique is based on the
 works of their predecessors, in a master-apprentice tradition.
@@ -140,7 +139,7 @@ characteristics, allowing us to compare the results from both fields.
 The
 results present contrasting historical facts, recognized along
 the history of music, quantified by application of
-distance metrics which allowed us formalize
+distance metrics which allowed us to formalize
 concepts like dialectics, innovation and opposition, resulting in
 interpretations of music development which are
 compatible with perspectives from musicians and
@@ -151,39 +150,39 @@ theorists~\cite{Webern, Lovelock}.
 A sequence $S$ of $P$ music composers was chosen based on their
 relevance at each period of the classical music history.
 As done for philosophers~\cite{Fabbri}, the set of $C$ measurements
-define a $C-$dimensional space henceforth referred as the \emph{musical space}.  
-The characteristic vector $\vec{v_i}$ of each composer $i$ defines a respective
+define a $C$-dimensional space henceforth referred as the \emph{musical space}.  
+The characteristic vector $\vec{v}_i$ of each composer $i$ defines a respective
 \emph{composer state} in the musical space. For the set of
-$P$ composers, we defined the same relations adapted for philosophers
-~\cite{Fabbri}, sumarized in Table \ref{tab:tableRelations}. 
+$C$ composers, we defined the same relations adapted for philosophers~\cite{Fabbri}, 
+sumarized in Table \ref{tab:tableRelations}. 
 
 \begin{table}
-\caption{\label{tab:tableRelations}Description of mathematical relations defined for composers.}
+\caption{\label{tab:tableRelations}Description of mathematical relations defined for each composer $i$, $j$ and $k$ given a set of $C$ composers as a time-sequence $S$.}
 
 \begin{ruledtabular}
 \begin{tabular}{ll}
 
-\\ Average state & $\vec{a_i} = \frac{1}{i}\sum_{k=1}^i\vec{v_k}.$ \\ \\
+\\ Average state & $\vec{a}_i = \frac{1}{i}\sum_{k=1}^i\vec{v}_k.$ \\ \\
 
-Opposite state & $\vec{r_i} = \vec{v_i} + 2(\vec{a_i} - \vec{v_i})  = 2 \vec{a_i} - \vec{v_i}$  \\ \\
+Opposite state & $\vec{r}_i = \vec{v}_i + 2(\vec{a}_i - \vec{v}_i)  = 2 \vec{a}_i - \vec{v}_i$  \\ \\
 
-Opposition vector & $\vec{D_i}=\vec{r_i} - \vec{v_i}$ \\ \\
+Opposition vector & $\vec{D}_i=\vec{r}_i - \vec{v}_i$ \\ \\
 
-Musical move & $\vec{M_{i,j}} = \vec{v_j} - \vec{v_i}$ \\ \\
+Musical move & $\vec{M}_{i,j} = \vec{v}_j - \vec{v}_i$ \\ \\
 
-Opposition index & $W_{i,j} = \frac{\left< \vec{M_{i,j}}, \vec{D_i}\right>}{||\vec{D_i}||^2}$ \\ \\
+Opposition index & $W_{i,j} = \frac{\left< \vec{M}_{i,j}, \vec{D}_i\right>}{||\vec{D}_i||^2}$ \\ \\
 
-Skewness index & $s_{i,j} = \sqrt{\frac{|\vec{v_i}-\vec{v_j}|^2|\vec{a_i}-\vec{v_i}|^2 - [(\vec{v_i}-\vec{v_j}) . (\vec{a_i}-\vec{v_i})]^2}{|\vec{a_i}-\vec{v_i}|^2}}$ \\ \\
+Skewness index & $s_{i,j} = \sqrt{\frac{|\vec{v}_i-\vec{v}_j|^2|\vec{a}_i-\vec{v}_i|^2 - [(\vec{v}_i-\vec{v}_j) . (\vec{a}_i-\vec{v}_i)]^2}{|\vec{a}_i-\vec{v}_i|^2}}$ \\ \\
 
-Counter-dialectics \\ index & $d_{i \rightarrow k} = \frac{\left< \vec{v_j} - \vec{v_i}, \vec{v_k} \right> + \frac{\vec{v_i}^2 - \vec{v_j}^2}{2}}{\sqrt{(\vec{v_j}-\vec{v_i})^2}}$ \\ \\ 
+Counter-dialectics \\ index & $d_{i \rightarrow k} = \frac{\left< \vec{v}_j - \vec{v}_i, \vec{v}_k \right> + \frac{\vec{v}_i^2 - \vec{v}_j^2}{2}}{\sqrt{(\vec{v}_j-\vec{v}_i)^2}}$ \\ \\ 
 
-%Counter-dialectics \\index & $\rho_{i \rightarrow k} = \frac{d_{i \rightarrow k}}{|| \vec{M_{i,j}}||}$ \\ \\
+%Counter-dialectics \\index & $\rho_{i \rightarrow k} = \frac{d_{i \rightarrow k}}{|| \vec{M}_{i,j}||}$ \\ \\
 
 \end{tabular}
 \end{ruledtabular}
 \end{table}
 
-It is important to note some details about these relations. Given a set of $C$ composers as a time-sequence $S$, the \emph{average state} at time $i$ is defined. The \emph{opposite state} is defined as the ``counterpoint'' of a musical state $\vec{v_i}$, considering its average state: everything running along the opposite direction of $\vec{v_i}$ are understood as opposition. In other words, any displacement from $\vec{v_i}$ along the direction $\vec{r_i}$ is a \emph{contrary move}, and any displacement from $\vec{v_i}$ along the direction $-\vec{r_i}$ is an \emph{emphasis move}. Given a musical state $\vec{v_i}$ and its opposite state $\vec{r_i}$, we can define the \emph{opposition vector} $\vec{D_i}$. These details are better understood analyzing Figure \ref{fig.1}.
+It is important to note some details about these relations. Given a set of $C$ composers as a time-sequence $S$, the \emph{average state} at time $i$ is defined. The \emph{opposite state} is defined as the ``counterpoint'' of a musical state $\vec{v}_i$, considering its average state: everything running along the opposite direction of $\vec{v}_i$ are understood as opposition. In other words, any displacement from $\vec{v}_i$ along the direction $\vec{r}_i$ is a \emph{contrary move}, and any displacement from $\vec{v}_i$ along the direction $-\vec{r}_i$ is an \emph{emphasis move}. Given a musical state $\vec{v}_i$ and its opposite state $\vec{r}_i$, we can define the \emph{opposition vector} $\vec{D}_i$. These details are better understood analyzing Figure \ref{fig.1}.
 
 \begin{figure}
         \begin{center}
@@ -193,15 +192,15 @@ It is important to note some details about these relations. Given a set of $C$ c
         \label{fig.1}
 \end{figure}
 
-Considering the time-sequence $S$ we defined relations between pairs of composers. The \emph{musical move} implied by two successive composers at time $i$ and $j$ corresponds to the $\vec{M_{i,j}}$ vector extending from $\vec{v_i}$ to $\vec{v_j}$. Given the musical move we can quantify the intensity of opposition by the projection of $\vec{M_{i,j}}$ along the opposition vector $\vec{D_i}$, normalized, yelding the \emph{opposition index}. Considering the same musical move, the \emph{skewness index} is the distance between $\vec{v_j}$ and the line $L_i$ defined by the vector $\vec{D_i}$, and therefore quantifies how much the new
+Considering the time-sequence $S$ we defined relations between pairs of composers. The \emph{musical move} implied by two successive composers at time $i$ and $j$ corresponds to the $\vec{M}_{i,j}$ vector extending from $\vec{v}_i$ to $\vec{v}_j$. Given the musical move we can quantify the intensity of opposition by the projection of $\vec{M}_{i,j}$ along the opposition vector $\vec{D}_i$, normalized, yelding the \emph{opposition index}. Considering the same musical move, the \emph{skewness index} is the distance between $\vec{v}_j$ and the line $L_i$ defined by the vector $\vec{D}_i$, and therefore quantifies how much the new
 musical state departs from the respective opposition move.
 
-A relationship between a triple of successive composers can also be defined. Considering $i$, $j$ and $k$ being respectively understood as the \emph{thesis}, \emph{antithesis} and \emph{synthesis}, we defined the \emph{dialectics index} by the distance between the musical state $\vec{v_k}$ and the middle line $ML_{i,j}$ defined by the thesis and antithesis, as shown in Figure \ref{fig.2}. In higher dimensional philosophical spaces,
+A relationship between a triple of successive composers can also be defined. Considering $i$, $j$ and $k$ being respectively understood as the \emph{thesis}, \emph{antithesis} and \emph{synthesis}, we defined the \emph{counter-dialectics index} by the distance between the musical state $\vec{v}_k$ and the middle line $ML_{i,j}$ defined by the thesis and antithesis, as shown in Figure \ref{fig.2}. In higher dimensional philosophical spaces,
 the middle-hyperplane defined by the points which are at equal
-distances to both $\vec{v_i}$ and $\vec{v_j}$ should be used instead
-of the middle line $ML_{i,j}$. The proposed equation for dialectics scales to hyperplanes.
+distances to both $\vec{v}_i$ and $\vec{v}_j$ should be used instead
+of the middle line $ML_{i,j}$. The proposed equation for counter-dialectics scales to hyperplanes.
 
-The \emph{counter-dialectics index} is suggested and used instead of dialectics index to maintain compatibility with the use of a distance from point to line as adopted for the definition of skewness.
+The counter-dialectics index is suggested and used instead of dialectics index to maintain compatibility with the use of a distance from point to line as adopted for the definition of skewness.
 
 \begin{figure}
         \begin{center}
@@ -219,8 +218,8 @@ The \emph{counter-dialectics index} is suggested and used instead of dialectics 
 
 To create the musical space we derived eight variables corresponding to
 distinct characteristics commonly found in music compositions. The
-characteristics are related with the basic elements of music -- melody,
-harmony, rhythm, timbre, form and tessitura~\cite{BennettHistory} -- and
+characteristics are related with the basic elements of music --- melody,
+harmony, rhythm, timbre, form and tessitura~\cite{BennettHistory} --- and
 non-musical issues like historical events that have influenced the
 compositions, for example, the
 presence of Church. All the eight
@@ -243,8 +242,8 @@ vertical combination of notes, while counterpoint focuses on
 horizontal combinations~\cite{BennettHistory}.
 
 {\bf \em{ Vocal - Instrumental}} ($V$-$I$): compositions using just vocals
-(e.g. \emph{cantata}) or exclusively instruments
-(e.g. \emph{sonata}). It is interesting to note the use of
+(e.g.\ \emph{cantata}) or exclusively instruments
+(e.g.\ \emph{sonata}). It is interesting to note the use of
 vocals over instruments on Sacred compositions~\cite{Lovelock}.
 
 {\bf \em{ Non-discursive - Discursive}} ($D_n$-$D$): compositions
@@ -261,8 +260,8 @@ between repetition, reuse and variation of melodic motives. Bach is noticeable b
 constantly inventive use of new materials by Mozart~\cite{Webern}.
 
 {\bf \em{ Rhythmic Simplicity - Rhythmic Complexity}} ($R_s$-$R_c$): presence or not of polyrhythms, the
-use of independent rhythms at the same time -- also known as
-\textit{rhythmic counterpoint}\cite{BennettHistory} -- a characteristic
+use of independent rhythms at the same time --- also known as
+\textit{rhythmic counterpoint}\cite{BennettHistory} --- a characteristic
 constantly found in Romanticism and the works of 20th-century composers like Stravinsky.
 
 {\bf \em{ Harmonic Stability - Harmonic Variety}} ($H_s$-$H_v$):
@@ -357,7 +356,7 @@ where $d_i$ is the distance between a random score $\vec{r}$
 and the original score chart. For each step a
 value $p(\vec{r})$ is generated and compared with a random normalized value,
 characterizing the Monte Carlo~\cite{Robert2011} method to choose a set of samples. This
-samples simulates new randomized composers score charts -- while respecting the
+samples simulates new randomized composers score charts --- while respecting the
 historical influence of the main 7 original exponents. Higher
 values of $p(\vec{r})$ imply a stronger influence of the original scores
 over $\vec{r}$. For the analysis
@@ -395,12 +394,12 @@ $H_s$-$H_v$ & -     &  -     &  -     &  -              &  -    &  -      &  -  
 
 We can identify some interesting relations between the pairs of
 characteristics that reflect important facts in music history. For
-instance, the Pearson correlation coefficient of 0.71 was obtained for
+instance, the Pearson correlation coefficient of 0.65 was obtained for
 the pairs $S$-$S_c$ (Sacred or Secular) and $V$-$I$ (Vocal or Instrumental),
 which indicate that sacred music tends to be more vocal than
-instrumental. The coefficient of 0.54 also shows it does not commonly use polyrhythms as we can see
+instrumental. The coefficient of 0.56 also shows it does not commonly use polyrhythms as we can see
 analysing the pairs $S$-$S_c$ and $R_s$-$R_c$ (Rhythmic Simplicity or Complexity).
-Negative coefficients of -0.36 for the pairs $V$-$I$ and $D_n$-$D$
+Negative coefficients of -0.33 for the pairs $V$-$I$ and $D_n$-$D$
 (Non-discursive or Discursive) indicated that composers who used
 just voices on their compositions also preferred to use programmatic
 musics techniques like baroque rhetoric.
@@ -410,7 +409,7 @@ in Table \ref{tab:tableC} in terms of percentages of total variance.
 We can note the concentration of variance along the four
 first PCA axes, a common effect also observed while analyzing
 philosophers characteristics~\cite{Fabbri}. This would usualy mean that we could
-consider just four dimensions but as we will see ahead our measurements
+consider just four dimensions but as we will see below our measurements
 differs considerably with the inclusion of all eight components.
 
 \begin{table}[ht]
@@ -437,7 +436,7 @@ $\lambda_8$ &   3 \% \\
 \subsection{Robustness to perturbation of the original scores}
 
 As done for philosophers analysis, we performed 1000 perturbations of
-the original scores by adding to each score the values -2, -1, 0, 1 and 2 with
+the original scores by adding to each score the values -2, -1, 0, 1 or 2 with
 uniform probability. In other words, we wanted to test if scoring
 errors could be sufficient to cause relevant effects
 on the PCA projections. Interestingly, the values of average and
@@ -447,7 +446,7 @@ reasonable to say that the small errors in the values assigned as scores of comp
 characteristics do not affected too much its quantification.
 
 \begin{table}%\footnotesize%\scriptsize%\tiny
-\caption{\label{tab:tableD}Average and standard deviation of the 
+\caption{\label{tab:tableD}Averages and standard deviations of the 
 deviations for each composer and for the 
 8 eigenvalues.}
 
@@ -550,15 +549,15 @@ in Beethoven; in his predecessors we find only traces of them''~\cite{Webern}. I
 could explain the proximity of Beethoven to the Renaissance  Monteverdi.
 Stockhausen is a deviating point when compared with the others and it
 could present even more detachment if we had considered
-vanguard characteristics -- e.g. timbre exploration by using
-electronic devices~\cite{Lovelock} -- not
+vanguard characteristics --- e.g.\ timbre exploration by using
+electronic devices~\cite{Lovelock} --- not
 shared by his precursors.
 
 To complement the analysis, Table \ref{tab:tableOI} gives the
 opposition and skewness indices for each of the six musical moves,
 showing the movements are driven by rather small opposition and strong
 skewness. In other words, most musical moves seems to seek more innovation
-than opposition. Dialectics is also analyzed on Table
+than opposition. Dialectics is also shown in Table
 \ref{tab:tableE} and will play a key role in the next section.
 
 \begin{table}[ht]
@@ -621,8 +620,8 @@ planar space shown at Figure \ref{fig:pca}.
 
 \section{Comparisons with Philosophers Analysis}
 
-The results of composers analysis when compared with philosophers~\cite{Fabbri}
-reveals surprising results. It is important to note that we preserved the
+The results of composers analysis are surprising when compared with philosophers~\cite{Fabbri}. 
+It is important to note that we preserved the
 number of characteristics and performed the same bootstrap method to
 generate a larger set of samples, making possible this
 comparison. The variances after PCA (Table \ref{tab:varphi}) concentrates in the four
@@ -630,7 +629,7 @@ first new axis, similar to the variances for composers shown at Table \ref{tab:t
 with the philosophical one in Figure \ref{fig:phipca} we
 identify opposite movements along all the philosophy history in contrast
 to music. This reveals a notorious characteristic of the way
-philosophers seem to have evolved their ideas, driven by opposition ($W_{i,j}$), while
+philosophers seem to have evolved their ideas, driven by opposition ($W_{i,j}$), as shown in Table \ref{tab:tablephiOI}, while
 composers tend to be more influenced by their predecessors as far as their dialectics measures are
 concerned ($1/d_{i \rightarrow k}$).
 
@@ -647,7 +646,7 @@ we could verify that a philosopher was influenced by the
 opposition of ideas from his direct predecessors, while here composers were commonly
 influenced by their predecessors. Therefore, we can argue that philosophy
 presents a \textit{memory-1} state, while music presents
-\textit{memory-2}, considering \textit{memory-N} being the number $N$
+\textit{memory-2}, considering \textit{memory-N} being as number $N$
 of past generations whose influence on a philosopher or
 composer is being considered. Considering the linearity of musical movements we can
 identify the abscissa as a ``time axis'' representing the development
@@ -686,8 +685,8 @@ $\lambda_8$ &   2 \% \\
 
 The opposition and skewness indices for philosophers listed in Table
 \ref{tab:tablephiOI} endorses the minor role of opposition in
-composers at the period considered. We can observe strong opposition and rather small skewness 
-in philosophical moves contrasted to small opposition and strong skewness in
+composers at the period considered. We can observe strong opposition
+in philosophical moves contrasted to small opposition in
 musical movements. Also, the dialectics presents a
 phase difference suggesting knownledge and aesthetics 
 transfer latency between each of these human fields.
@@ -711,8 +710,8 @@ Nietzsche $\rightarrow$ Deleuze   & 0.3584 & 2.4890 \\
 \end{table}
 
 When comparing dialectics, other curious facts arise: the dialectics
-indices in Table \ref{tab:tableE} are considerably stronger moves than for
-philosophers. Both indices are also shown in Figure
+indices for musicians in Table \ref{tab:tableE} are considerably stronger moves than for
+philosophers in Table \ref{tab:tablephiE}. Both indices are also shown in Figure
 \ref{fig:comparingdialectics} where we can see a constant decrease
 of counter-dialectics. [EXPLANATION] This makes it possible to argue
 that dialectics is stronger in music where a
@@ -852,7 +851,8 @@ so not only in music but everywhere.''
 
 \begin{acknowledgments}
 Luciano da F. Costa thanks CNPq (308231/03-1) and FAPESP (05/00587-5)
-for sponsorship. Vilson Vieira and Renato Fabbri is grateful to CAPES and 
+for sponsorship. Gonzalo Travieso thanks CNPq (308118/2010-3) for sponsorship. 
+Vilson Vieira and Renato Fabbri is grateful to CAPES and 
 the Postgrad Committee of the IFSC.
 \end{acknowledgments}
 
