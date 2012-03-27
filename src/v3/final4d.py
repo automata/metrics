@@ -19,6 +19,7 @@ caracs = ['S-P', 'S-L', 'H-C', 'V-I', 'N-D', 'M-V', 'R-P', 'T-M']
 # caracs = ['I-F','F-R','F-H','L-D','H-A','R-A','T-M','A-M']
 
 # parâmetros
+# compositores... minimo = 1.0, maximo = 9.0, qtd_aleatorios = 8000000, std = 1.1
 minimo = 1.0
 maximo = 9.0
 qtd_aleatorios = 8000000 # *** change this values to change the distribution

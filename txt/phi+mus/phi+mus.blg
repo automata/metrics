@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: phi+mus.aux
+The style file: aipnum4-1long.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: phi+musNotes.bib
+Database file #2: musimetrics.bib
+Merlin.mbs v4.21 2009-07-09. 
+Warning--can't use both author and editor fields in Webern: try using @inbook instead
+You've used 16 entries,
+            3809 wiz_defined-function locations,
+            1374 strings with 14317 characters,
+and the built_in function-call counts, 8780 in all, are:
+= -- 485
+> -- 71
+< -- 18
++ -- 34
+- -- 18
+* -- 1217
+:= -- 775
+add.period$ -- 27
+call.type$ -- 16
+change.case$ -- 13
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 1069
+empty$ -- 912
+format.name$ -- 55
+if$ -- 1641
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 184
+newline$ -- 170
+num.names$ -- 16
+pop$ -- 458
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 283
+stack$ -- 0
+substring$ -- 142
+swap$ -- 823
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 18
+warning$ -- 1
+while$ -- 21
+width$ -- 18
+write$ -- 240
+(There was 1 warning)
