@@ -27,7 +27,7 @@
  \email{renato.fabbri@gmail.com}
 
 \author{Gonzalo Travieso}
-  \email{gonzalo@ifsc.usp.br}
+  \email{gonzalo.travieso@gmail.com}
   \affiliation{ 
 Instituto de F\'isica de S\~ao Carlos, Universidade de S\~ao Paulo (IFSC/USP)
 }
@@ -63,7 +63,7 @@ quantify, for example, how much Bach and Stockhausen differ from other composers
 much Beethoven influenced Brahms.
 In addition, we compared the results with a prior investigation
 on
-philosophy~\cite{Fabbri}. Opposition, strong on
+philosophy~\cite{Fabbri}. The opposition, strong on
 philosophy, was not remarkable on music. Supporting an observation already considered by music
 theorists, strong influences were identified between
 composers by the quantification of dialectics, implying inheritance and suggesting a stronger
@@ -131,7 +131,7 @@ music history.
 This group was chosen purposely to model their
 influence on contemporaries, represented as a group of
 ``artificial composers'', sampled by a bootstrap
-method~\cite{Varian}.
+method. %FIXME: Referenciar bootstrap method
 The same statistical method used in
 philosophy~\cite{Fabbri} was applied to this set of composers and their
 characteristics, allowing us to compare the results from both fields.
@@ -146,7 +146,7 @@ theorists~\cite{Webern, Lovelock}.
 
 \section{Mathematical Description}
 
-A sequence $S$ of $C$ music composers was chosen based on their
+A sequence $S$ of $P$ music composers was chosen based on their
 relevance at each period of the classical music history.
 As done for philosophers~\cite{Fabbri}, the set of $C$ measurements
 define a $C$-dimensional space henceforth referred as the \emph{musical space}.  
@@ -163,7 +163,7 @@ sumarized in Table \ref{tab:tableRelations}.
 
 \\ Average state & $\vec{a}_i = \frac{1}{i}\sum_{k=1}^i\vec{v}_k.$ \\ \\
 
-Opposite state & $\vec{r}_i = \vec{v}_i + 2(\vec{a}_i - \vec{v}_i)$ \\ \\
+Opposite state & $\vec{r}_i = \vec{v}_i + 2(\vec{a}_i - \vec{v}_i)  = 2 \vec{a}_i - \vec{v}_i$  \\ \\
 
 Opposition vector & $\vec{D}_i=\vec{r}_i - \vec{v}_i$ \\ \\
 
@@ -173,7 +173,9 @@ Opposition index & $W_{i,j} = \frac{\left< \vec{M}_{i,j}, \vec{D}_i\right>}{||\v
 
 Skewness index & $s_{i,j} = \sqrt{\frac{|\vec{v}_i-\vec{v}_j|^2|\vec{a}_i-\vec{v}_i|^2 - [(\vec{v}_i-\vec{v}_j) . (\vec{a}_i-\vec{v}_i)]^2}{|\vec{a}_i-\vec{v}_i|^2}}$ \\ \\
 
-Counter-dialectics \\ index & $d_{i \rightarrow k} = \frac{|\left< \vec{v}_j-\vec{v}_i,\vec{v}_k \right> + \frac{1}{2}\left<\vec{v}_i-\vec{v}_j, \vec{v}_i+\vec{v}_j\right>|}{|\vec{v}_j-\vec{v}_i|}$
+Counter-dialectics \\ index & $d_{i \rightarrow k} = \frac{\left< \vec{v}_j - \vec{v}_i, \vec{v}_k \right> + \frac{\vec{v}_i^2 - \vec{v}_j^2}{2}}{\sqrt{(\vec{v}_j-\vec{v}_i)^2}}$ \\ \\ 
+
+%Counter-dialectics \\index & $\rho_{i \rightarrow k} = \frac{d_{i \rightarrow k}}{|| \vec{M}_{i,j}||}$ \\ \\
 
 \end{tabular}
 \end{ruledtabular}
@@ -372,18 +374,18 @@ Emphasized coefficients have absolute values larger than 0.5.
   the eight musical characteristics.}
 
 \begin{ruledtabular}
-\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|}
 
 %-   &  S-P  &  S-L   &  H-C   &  V-I            &  N-D  &  M-V    &  R-P           &  T-M  \\ \hline
 -    & \tiny  $S$-$S_c$ & \tiny  $D_s$-$D_l$ & \tiny  $H$-$C$ & \tiny  $V$-$I$ & \tiny  $D_n$-$D$ & \tiny  $M_s$-$M_v$ & \tiny  $R_s$-$R_c$ & \tiny  $H_s$-$H_v$  \\ \hline
-\tiny$S$-$S_c$ & -     &  -0.2 &  -0.06 &  \textbf{0.69}  & -0.18 &  0.19   &  \textbf{0.56} &  -0.16 \\
-\tiny$D_s$-$D_l$ & -     &  -     &  -0.14 &  -0.13          &  0.2  &  -0.48  &  -0.2         &  0.37 \\
-\tiny$H$-$C$ & -     &  -     &  -     &  -0.23          &  0.26  &  0.05  &  0.46          &  0.03 \\
-\tiny$V$-$I$ & -     &  -     &  -     &  -              & -0.33 &  0.17   &  0.42          &  -0.06 \\
-\tiny$D_n$-$D$ & -     &  -     &  -     &  -              &  -    &  -0.3  &  0.02          &  -0.22 \\
-\tiny$M_s$-$M_v$ & -     &  -     &  -     &  -              &  -    &  -      &  0.26          &  -0.15 \\
-\tiny$R_s$-$R_c$ & -     &  -     &  -     &  -              &  -    &  -      &  -             &  -0.02 \\
-\tiny$H_s$-$H_v$ & -     &  -     &  -     &  -              &  -    &  -      &  -             &  - \\
+$S$-$S_c$ & -     &  -0.2 &  -0.06 &  \textbf{0.69}  & -0.18 &  0.19   &  \textbf{0.56} &  -0.16 \\
+$D_s$-$D_l$ & -     &  -     &  -0.14 &  -0.13          &  0.2  &  -0.48  &  -0.2         &  0.37 \\
+$H$-$C$ & -     &  -     &  -     &  -0.23          &  0.26  &  0.05  &  0.46          &  0.03 \\
+$V$-$I$ & -     &  -     &  -     &  -              & -0.33 &  0.17   &  0.42          &  -0.06 \\
+$D_n$-$D$ & -     &  -     &  -     &  -              &  -    &  -0.3  &  0.02          &  -0.22 \\
+$M_s$-$M_v$ & -     &  -     &  -     &  -              &  -    &  -      &  0.26          &  -0.15 \\
+$R_s$-$R_c$ & -     &  -     &  -     &  -              &  -    &  -      &  -             &  -0.02 \\
+$H_s$-$H_v$ & -     &  -     &  -     &  -              &  -    &  -      &  -             &  - \\
 
 \end{tabular}
 \end{ruledtabular}
@@ -391,7 +393,7 @@ Emphasized coefficients have absolute values larger than 0.5.
 
 We can identify some interesting relations between the pairs of
 characteristics that reflect important facts in music history. For
-instance, the Pearson correlation coefficient of 0.69 was obtained for
+instance, the Pearson correlation coefficient of 0.65 was obtained for
 the pairs $S$-$S_c$ (Sacred or Secular) and $V$-$I$ (Vocal or Instrumental),
 which indicate that sacred music tends to be more vocal than
 instrumental. The coefficient of 0.56 also shows it does not commonly use polyrhythms as we can see
@@ -489,7 +491,7 @@ in defining the axes.
 the contributions from each musical characteristic on the eight
 new main axes.}
 
-\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|}
 \hline
 Musical         & \multirow{2}{*}{$C_1$} & \multirow{2}{*}{$C_2$} & \multirow{2}{*}{$C_3$} & \multirow{2}{*}{$C_4$} & \multirow{2}{*}{$C_5$} & \multirow{2}{*}{$C_6$} & \multirow{2}{*}{$C_7$} & \multirow{2}{*}{$C_8$}\\
 Charac. & & & & & & & & \\
@@ -523,7 +525,7 @@ composers.
   \label{fig:pca}
 \end{figure}
 
-Bach is found far from the rest of
+Bach is positioned far from the rest of
 composers, which suggests his key role
 acknowledged by other great composers like Beethoven and
 Webern~\cite{Webern}: ``In fact Bach composed everything, concerned
@@ -534,7 +536,7 @@ We can identify a strong relationship between
 Beethoven and Brahms, supporting the belief by the \textit{virtuosi} Hans von B\"{u}low~\cite{Bulow} when he
 stated the $1^{st}$ Symphony of Brahms as, in reality, being the \textit{$10^{th}$ Symphony of
 Beethoven}, clamming Brahms as the true successor of
-Beethoven. Stravinsky is near to Beethoven and Brahms,
+Beethoven. Stravinsky is near of Beethoven and Brahms,
 presumably due to his heterogeneity~\cite{BennettHistory,
   Lovelock}. Beethoven is also near to Mozart who deeply influenced
 Beethoven, mainly in his early works.
@@ -596,8 +598,8 @@ Musical Triple & $d_{i \rightarrow k}$ \\
 \end{tabular}
 \end{table}
 
-We performed Wards hierarchical
-clustering~\cite{Ward} to complement the analysis. This algorithm clusters the original scores taking into
+Complementing the analysis we performed Wards hierarchical
+clustering. This algorithm clusters the original scores taking into
 account their distance. The generated dendrogram in
 Figure \ref{fig:dendrogram} shows the composers
 considering their similarity. The representation supports the
@@ -605,7 +607,7 @@ observations discussed previously. It is interesting to note the cluster
 formed by Beethoven and Brahms, reflecting their heritage. Stravinsky
 and Stockhausen forms another cluster and Mozart remains in isolation,
 as like Bach and Monteverdi. Both relations were also present in the
-planar space shown in Figure \ref{fig:pca}.
+planar space shown at Figure \ref{fig:pca}.
 
 \begin{figure}[ht]
         \begin{center}
@@ -635,13 +637,13 @@ remembering the beginning of this work, it reflects the
 master-apprentice
 tradition present in music: the composers tend to build their own
 works confirming their precursors legacy, resulting in a greater
-dialectics than the philosophers related measures.
-This reveals a crucial difference
+dialectics then the philosophers related measures.
+This reveals a crucial difference %FIXME: Retirar memória... não faz mais sentido
 considering the \textit{memory treatment} along the development of
 philosophy and music: using the same techniques this article does~\cite{Fabbri},
 we could verify that a philosopher was influenced by the
-opposition of ideas from his direct predecessor, while here composers were commonly
-influenced by their both predecessors. Therefore, we can argue that philosophy
+opposition of ideas from his direct predecessors, while here composers were commonly
+influenced by their predecessors. Therefore, we can argue that philosophy
 presents a \textit{memory-1} state, while music presents
 \textit{memory-2}, considering \textit{memory-N} being as number $N$
 of past generations whose influence on a philosopher or
@@ -710,7 +712,7 @@ When comparing dialectics, other curious facts arise: the dialectics
 indices for musicians in Table \ref{tab:tableE} are considerably stronger moves than for
 philosophers in Table \ref{tab:tablephiE}. Both indices are also shown in Figure
 \ref{fig:comparingdialectics} where we can see a constant decrease
-of counter-dialectics. This makes it possible to argue
+of counter-dialectics. [EXPLANATION] This makes it possible to argue
 that dialectics is stronger in music where a
 constantly return to the origins are clearly visible. This reveals the nature of the
 musical development, based on the search for a unity. Using the words
@@ -767,8 +769,8 @@ method. A larger data set made possible the statistical analysis,
 considering not just the original scored composers, but other samples
 that respect the historical presence of the formers. This other thousand
 composers were modeled by a
-probabilistic distribution, and avoided a biasing caused by
-the use of only 7 composers.
+probabilistic distribution, and avoided a tendentious analisys caused by
+the use of scarce samples: only 7 composers.
 In order to investigate the
 relationship between this scorings we applied Pearson correlation
 analysis. The results demonstrated a strong correlation between some
@@ -809,10 +811,10 @@ composers with philosophers. While on philosophy the
 innovation is notably marked by opposition of each philosophers ideas,
 it is less present for music composers. The lack of strong %%FIXME: Retirar memória... não faz mais sentido
 opposition movements and proeminent presence of dialectics in musical space indicates the music innovation is driven by
-a constant heritage of each composer from his predecessors. We
+a constant heritage of each composer from his predecessor. We
 represented this characteristic referring to a \textit{memory state}
 where philosophers shows \textit{memory-1} -- each philosopher was
-influenced by opposite ideas of its direct predecessor -- while
+influenced by the opposite ideas of its predecessor -- while
 composers shows \textit{memory-2} -- inheriting the style of their
 both direct predecessors.
 The
@@ -820,7 +822,7 @@ analysis of both dialectics values also shown surprising
 results: on philosophy the dialectics indices are arranged on a
 increasing series -- showing a strong influence of
 dialectics to philosophy development -- the dialectics indices on
-music exhibits the same pattern, but with an offset. This behavior presumably indicates a
+music exhibits the same pattern, but with a lag, an offset. This behavior presumably indicates a
 constant quest for coherence by the composers, a fact notably observed by
 the studies of Anton Webern~\cite{Webern} should have somewhat the same
 kernel and a lattency between the effects.
