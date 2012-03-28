@@ -56,14 +56,6 @@
 \providecommand \EOS [0]{\spacefactor3000\relax}%
 \providecommand \BibitemShut [1]{\csname bibitem#1\endcsname}%
 %</preamble>
-\bibitem{Fabbri}%
-  \BibitemOpen
-  \bibfield{author}{%
-  \bibinfo {author} {\bibfnamefont{Luciano da Fontoura~Costa}\
-  \bibnamefont{Renato~Fabbri}, \bibfnamefont{Osvaldo N. Oliveira~Jr.}},\ }%
-  \enquote{\bibinfo {title} {Philosometrics},}\  (\bibinfo {month} {October}\
-  \bibinfo {year} {2010}),\ \bibinfo {note}
-  {arXiv:1010.1880v2}\BibitemShut{NoStop}%
 \bibitem{Webern}%
   \BibitemOpen
   \bibfield{author}{%
@@ -82,6 +74,15 @@
   \bibinfo {author} {\bibfnamefont{G.}~\bibnamefont{Deleuze}},\ }%
   \emph{\bibinfo {title} {Difference and Repetition}}\ (\bibinfo {publisher}
   {Continuum},\ \bibinfo {year} {1968})\BibitemShut{NoStop}%
+\bibitem{Varian}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{Hal}\ \bibnamefont{Varian}},\ }%
+  \bibfield{title}{%
+  \enquote{\bibinfo {title} {Bootstrap tutorial},}\ }%
+  \bibfield{journal}{%
+  \bibinfo {journal} {The Mathematica Journal}\ }%
+  \textbf{\bibinfo {volume} {9}} (\bibinfo {year} {2005})\BibitemShut{NoStop}%
 \bibitem{Simonton1991829}%
   \BibitemOpen
   \bibfield{author}{%
@@ -147,15 +148,6 @@
   \bibinfo {journal} {Computing In Musicology}\ }%
   \textbf{\bibinfo {volume} {15}} (\bibinfo {year}
   {2007-8})\BibitemShut{NoStop}%
-\bibitem{Varian}%
-  \BibitemOpen
-  \bibfield{author}{%
-  \bibinfo {author} {\bibfnamefont{Hal}\ \bibnamefont{Varian}},\ }%
-  \bibfield{title}{%
-  \enquote{\bibinfo {title} {Bootstrap tutorial},}\ }%
-  \bibfield{journal}{%
-  \bibinfo {journal} {The Mathematica Journal}\ }%
-  \textbf{\bibinfo {volume} {9}} (\bibinfo {year} {2005})\BibitemShut{NoStop}%
 \bibitem{BennettHistory}%
   \BibitemOpen
   \bibfield{author}{%
@@ -188,6 +180,14 @@
   \bibinfo {journal} {Journal of the American Statistical Association}\ }%
   \textbf{\bibinfo {volume} {58}},\ \bibinfo {pages} {236--244} (\bibinfo
   {year} {1963})\BibitemShut{NoStop}%
+\bibitem{Fabbri}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{Luciano da Fontoura~Costa}\
+  \bibnamefont{Renato~Fabbri}, \bibfnamefont{Osvaldo N. Oliveira~Jr.}},\ }%
+  \enquote{\bibinfo {title} {Philosometrics},}\  (\bibinfo {month} {October}\
+  \bibinfo {year} {2010}),\ \bibinfo {note}
+  {arXiv:1010.1880v2}\BibitemShut{NoStop}%
 \bibitem{Correa}%
   \BibitemOpen
   \bibfield{author}{%

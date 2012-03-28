@@ -4,11 +4,20 @@ The style file: aipnum4-1long.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: phi+musNotes.bib
 Database file #2: musimetrics.bib
+Warning--I didn't find a database entry for "Saussure"
+Warning--I didn't find a database entry for "Papoulis"
+Warning--I didn't find a database entry for "Wichern"
+Warning--I didn't find a database entry for "Therrien"
+Warning--I didn't find a database entry for "Duda"
+Warning--I didn't find a database entry for "Costa"
+Warning--I didn't find a database entry for "Russel"
+Warning--I didn't find a database entry for "Papineau"
+Warning--I didn't find a database entry for "Deleuze2"
 Merlin.mbs v4.21 2009-07-09. 
 Warning--can't use both author and editor fields in Webern: try using @inbook instead
 You've used 16 entries,
             3809 wiz_defined-function locations,
-            1374 strings with 14317 characters,
+            1392 strings with 14441 characters,
 and the built_in function-call counts, 8780 in all, are:
 = -- 485
 > -- 71
@@ -47,4 +56,4 @@ warning$ -- 1
 while$ -- 21
 width$ -- 18
 write$ -- 240
-(There was 1 warning)
+(There were 10 warnings)
