@@ -3,57 +3,48 @@ The top-level auxiliary file: phi+mus.aux
 The style file: aipnum4-1long.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: phi+musNotes.bib
-Database file #2: musimetrics.bib
-Warning--I didn't find a database entry for "Saussure"
-Warning--I didn't find a database entry for "Papoulis"
-Warning--I didn't find a database entry for "Wichern"
-Warning--I didn't find a database entry for "Therrien"
-Warning--I didn't find a database entry for "Duda"
-Warning--I didn't find a database entry for "Costa"
-Warning--I didn't find a database entry for "Russel"
-Warning--I didn't find a database entry for "Papineau"
-Warning--I didn't find a database entry for "Deleuze2"
+Database file #2: phi+mus.bib
 Merlin.mbs v4.21 2009-07-09. 
 Warning--can't use both author and editor fields in Webern: try using @inbook instead
-You've used 16 entries,
+You've used 25 entries,
             3809 wiz_defined-function locations,
-            1392 strings with 14441 characters,
-and the built_in function-call counts, 8780 in all, are:
-= -- 485
-> -- 71
-< -- 18
-+ -- 34
-- -- 18
-* -- 1217
-:= -- 775
-add.period$ -- 27
-call.type$ -- 16
+            1420 strings with 15099 characters,
+and the built_in function-call counts, 12497 in all, are:
+= -- 647
+> -- 107
+< -- 27
++ -- 52
+- -- 27
+* -- 1703
+:= -- 1108
+add.period$ -- 36
+call.type$ -- 25
 change.case$ -- 13
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 1069
-empty$ -- 912
-format.name$ -- 55
-if$ -- 1641
+cite$ -- 26
+duplicate$ -- 1564
+empty$ -- 1371
+format.name$ -- 82
+if$ -- 2370
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 184
-newline$ -- 170
-num.names$ -- 16
-pop$ -- 458
+int.to.str$ -- 25
+missing$ -- 265
+newline$ -- 215
+num.names$ -- 25
+pop$ -- 674
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 283
+skip$ -- 418
 stack$ -- 0
-substring$ -- 142
-swap$ -- 823
-text.length$ -- 18
+substring$ -- 151
+swap$ -- 1138
+text.length$ -- 27
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 18
+type$ -- 27
 warning$ -- 1
-while$ -- 21
-width$ -- 18
-write$ -- 240
-(There were 10 warnings)
+while$ -- 30
+width$ -- 27
+write$ -- 312
+(There was 1 warning)

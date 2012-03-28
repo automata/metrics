@@ -74,6 +74,12 @@
   \bibinfo {author} {\bibfnamefont{G.}~\bibnamefont{Deleuze}},\ }%
   \emph{\bibinfo {title} {Difference and Repetition}}\ (\bibinfo {publisher}
   {Continuum},\ \bibinfo {year} {1968})\BibitemShut{NoStop}%
+\bibitem{Saussure}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{F.}~\bibnamefont{de~Saussure}},\ }%
+  \emph{\bibinfo {title} {Course in General Linguistics}}\ (\bibinfo
+  {publisher} {Books LLC},\ \bibinfo {year} {1916})\BibitemShut{NoStop}%
 \bibitem{Varian}%
   \BibitemOpen
   \bibfield{author}{%
@@ -83,6 +89,44 @@
   \bibfield{journal}{%
   \bibinfo {journal} {The Mathematica Journal}\ }%
   \textbf{\bibinfo {volume} {9}} (\bibinfo {year} {2005})\BibitemShut{NoStop}%
+\bibitem{Papoulis}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{A.~Papoulis}\ \bibnamefont{\and
+  S.~U.~Pillai}},\ }%
+  \emph{\bibinfo {title} {Probability, Random Variables and Stochastic
+  Processes}}\ (\bibinfo {publisher} {McGraw Hill Higher Education},\ \bibinfo
+  {year} {2002})\BibitemShut{NoStop}%
+\bibitem{Wichern}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{R.~A.~Johnson}\ \bibnamefont{\and
+  D.~W.~Wichern}},\ }%
+  \emph{\bibinfo {title} {Applied Multivariate Statistical Analysis}}\
+  (\bibinfo {publisher} {Prentice Hall},\ \bibinfo {year}
+  {2007})\BibitemShut{NoStop}%
+\bibitem{Therrien}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{C.~W.}\ \bibnamefont{Therrien}},\ }%
+  \emph{\bibinfo {title} {Discrete Random Signals and Statistical Signal
+  Processing}}\ (\bibinfo {publisher} {Prentice Hall},\ \bibinfo {year}
+  {1992})\BibitemShut{NoStop}%
+\bibitem{Duda}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{R.~O.~Duda}\ \bibnamefont{\and P. E.
+  Hart~\and D.~G.~Stork}},\ }%
+  \emph{\bibinfo {title} {Pattern Classification}}\ (\bibinfo {publisher}
+  {Wiley-Interscience},\ \bibinfo {year} {2000})\BibitemShut{NoStop}%
+\bibitem{Costa}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{L.}~\bibnamefont{da~F. Costa~\and R.~M.
+  C.~Jr.}},\ }%
+  \emph{\bibinfo {title} {Shape Analysis and Classification: Theory and
+  Practice (Image Processing Series)}}\ (\bibinfo {publisher} {CRC Press},\
+  \bibinfo {year} {2000})\BibitemShut{NoStop}%
 \bibitem{Simonton1991829}%
   \BibitemOpen
   \bibfield{author}{%
@@ -154,6 +198,25 @@
   \bibinfo {author} {\bibfnamefont{Roy}\ \bibnamefont{Bennett}},\ }%
   \emph{\bibinfo {title} {History of Music}}\ (\bibinfo {publisher} {Cambridge
   University Press},\ \bibinfo {year} {1982})\BibitemShut{NoStop}%
+\bibitem{Russel}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{B.}~\bibnamefont{Russel}},\ }%
+  \emph{\bibinfo {title} {A History of Western Philosophy}}\ (\bibinfo
+  {publisher} {Simon and Schuster Touchstone},\ \bibinfo {year}
+  {1967})\BibitemShut{NoStop}%
+\bibitem{Papineau}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{D.}~\bibnamefont{Papineau}},\ }%
+  \emph{\bibinfo {title} {Philosophy}}\ (\bibinfo {publisher} {Oxford
+  University Press},\ \bibinfo {year} {2009})\BibitemShut{NoStop}%
+\bibitem{Deleuze2}%
+  \BibitemOpen
+  \bibfield{author}{%
+  \bibinfo {author} {\bibfnamefont{F.~G.~G.}\ \bibnamefont{Deleuze}},\ }%
+  \emph{\bibinfo {title} {What Is Philosophy?}}\ (\bibinfo {publisher} {Simon
+  and Schuster Touchstone},\ \bibinfo {year} {1991})\BibitemShut{NoStop}%
 \bibitem{Robert2011}%
   \BibitemOpen
   \bibfield{author}{%
