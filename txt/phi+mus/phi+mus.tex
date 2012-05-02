@@ -92,7 +92,7 @@ philosophical moves? Are these concepts present on other fields like music?
 
 In order to try and answer these questions, on both humanities fields in a more objective way, we resorted to a quantitative approach which turned out to provide a number of remarkable spin-offs and insights. More specifically, we
 started by identifying prominent music composers and philosophers along the history, a set of main musical and philosophical issues, and then
-assign grades to each of these issues for the chosen composers and philosophers. It is important to argue that the grades assignment was not arbitrary. The scores was not assigned on a random way but based on a historical research about techniques and styles used by both composers and philosophers. The grades reveals a \emph{tendency index} about particular characteristics of each composer or philosopher. For example, to say that Bach is more contrapuntist than the other remarkable composers is the same to give a bigger grade -- around 8.0 or 9.0 -- to the Barroque master and smaller grades to the others.
+assign grades to each of these issues for the chosen composers and philosophers. It is important to argue that the grades assignment was not arbitrary. The scores was not assigned on a random way but based on a historical research about techniques and styles used by both composers and philosophers. The grades reveals a \emph{tendency index} about particular characteristics of each composer or philosopher. For example, to say that Bach is more contrapuntist than the others remarkable composers is the same to give a bigger grade -- around 8.0 or 9.0 -- to the Barroque master and smaller grades to the others.
 
 It should be stressed that we chose a reduced set of philosophers for the
 sake of simplicity and clarity. Considering this
@@ -101,7 +101,7 @@ small number of philosophers and composers we developed a bootstrap method~\cite
 Those scores assigned to each composer - and philosopher - characteristics define a state vector in its feature space. This quantification of composers and philosophers characteristics paved the way to the application of sound concepts and methods from multivariate statistics~\cite{Papoulis, Wichern,
 Therrien} and pattern recognition~\cite{Duda, Costa}. Correlations between these characteristic vectors were identified and principal component
 analysis (PCA)~\cite{Costa} is applied to
-represent the musical - and philosophical - history as a planar space where we can follow the historical development as vectorial movements. On this planar space, concepts like dialects, innovation and opposition, originally non-quantitative, can be modeled as mathematical relations between the individual states. By proposing indices to quantify the
+represent the musical - and philosophical - history as a planar space where we can follow the historical development as vectorial movements. On this planar space, concepts like dialectics, innovation and opposition, originally non-quantitative, can be modeled as mathematical relations between the individual states. By proposing indices to quantify the
 degree of opposition, skewness and dialectics along the dynamics of
 musical and philosophical individual evolutions, we observed surprising results.
 
@@ -114,6 +114,7 @@ analyzed the productivity, but based on the measure of performance
 time of the compositions and investigated the relation between
 productivity and versatility. More recent works~\cite{Kranenburg2004, Kranenburg2007} use machine-learning
 algorithms to recognize musical styles of selected compositions. 
+
 Differently from these works, we are not interested in applying
 statistical analysis to music but on characterizing composers by the identification of scores based on their recognized styles. On the other hand, automatic information retrieval, common on music, is not common on philosophy. The method proposed here is a way to analyze both fields indenpendently of the nature of their final products -- e.g.\ music pieces and textual documents -- but based on a well-formed opinion of reviewers on these fields.
 
@@ -331,13 +332,13 @@ characteristics used or their attributed numerical values,
 which can be disputed, but on the techniques employed for the quantitative analysis.
 
 \begin{table}[ht]
-\caption{\label{tab:tableA}Quantification of the
+\caption{\label{tab:tableAmus}Quantification of the
 eight music characteristics for each of the seven composers.}
 \begin{ruledtabular}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
 \footnotesize
 % Composer    & S-P & S-L & H-C & V-I & N-D & M-V & R-P & T-M  \\
-\footnotesize Composer    & \tiny  $S$-$S_c$ & \tiny  $D_s$-$D_l$ & \tiny  $H$-$C$ & \tiny  $V$-$I$ & \tiny  $D_n$-$D$ & \tiny  $M_s$-$M_v$ & \tiny  $R_s$-$R_c$ & \tiny  $H_s$-$H_v$  \\
+\footnotesize Composers    & \tiny  $S$-$S_c$ & \tiny  $D_s$-$D_l$ & \tiny  $H$-$C$ & \tiny  $V$-$I$ & \tiny  $D_n$-$D$ & \tiny  $M_s$-$M_v$ & \tiny  $R_s$-$R_c$ & \tiny  $H_s$-$H_v$  \\
 \hline
  \footnotesize Monteverdi   & 3.0 & 8.0 & 5.0 & 3.0 & 7.0 & 5.0 & 3.0 & 7.0  \\
  \footnotesize Bach         & 2.0 & 6.0 & 9.0 & 2.0 & 8.0 & 2.0 & 1.0 & 5.0  \\
@@ -470,7 +471,7 @@ high correlation between \emph{M-D} and \emph{D-F}, which seems to be
 directly implied by religious background.
 
 PCA was applied to both data sets, yielding the new variances given
-in Table \ref{tab:tableCmus} and \ref{tab:tableCmus}, for both music and philosophy, in terms of percentages of total variance.
+in Table \ref{tab:tableCmus} and \ref{tab:tableCphi}, for both music and philosophy, in terms of percentages of total variance.
 We can note the concentration of variance along the four
 first PCA axes on composers data set, a common effect also observed while analyzing philosophers characteristics. This would usualy mean that we could
 consider just four dimensions but as we will see below our measurements
@@ -643,7 +644,7 @@ N-M & 17.86   &  5.06 & 15.03 &  8.33 & 11.96 &  9.59 & 22.62 & 15.97 \\
 \end{table}
 
 Figures \ref{fig:pcaphi} and \ref{fig:pcamus} presents a 2-dimensional space considering the first two main axes. The arrows follows the time sequence along with the seven composers and philosophers. Each of these arrows corresponds to a musical or philosophical move from one composer or philosophers state to another -- for clarity, just the lines of the arrows are preserved. 
-The bootstrap samples define clusters around the original composers.
+The bootstrap samples define clusters around the original composers and philosophers.
 
 \begin{figure}[htbp]
   \begin{center}
@@ -687,6 +688,7 @@ could present even more detachment if we had considered
 vanguard characteristics --- e.g.\ timbre exploration by using
 electronic devices~\cite{Lovelock} --- not
 shared by his precursors.
+
 To complement the analysis of musicians, Table \ref{tab:tableOImus} gives the
 opposition and skewness indices for each of the six musical moves,
 showing the movements are driven by rather small opposition and strong
@@ -775,7 +777,7 @@ In order to complement our analysis of the relationship between the composers an
 clustering~\cite{Ward} to complement the analysis. This algorithm clusters the original scores taking into
 account their distance. The generated dendrogram in
 Figure \ref{fig:dendrogrammus} shows the composers
-considering their similarity, the same to philosophers presented on Figure \ref{fig:dendrogramphi}. The representation supports the
+considering their similarity, the same to philosophers is presented on Figure \ref{fig:dendrogramphi}. The representation supports the
 observations discussed previously. It is interesting to note the cluster
 formed by Beethoven and Brahms, reflecting their heritage. Stravinsky
 and Stockhausen forms another cluster and Mozart remains in isolation,
@@ -811,6 +813,7 @@ to music. This reveals a notorious characteristic of the way
 philosophers seem to have evolved their ideas, driven by opposition ($W_{i,j}$), as shown in Table \ref{tab:tableOIphi}, while
 composers tend to be more influenced by their predecessors as far as their dialectics measures are
 concerned ($1/d_{i \rightarrow k}$).
+
 In general, the musical movements had minor opposition and,
 remembering the beginning of this work, it reflects the
 master-apprentice
@@ -826,7 +829,9 @@ influenced by their both predecessors. Therefore, we can argue that philosophy
 presents a \textit{memory-1} state, while music presents
 \textit{memory-2}, considering \textit{memory-N} being as number $N$
 of past generations whose influence on a philosopher or
-composer is being considered. Considering the linearity of musical movements we can
+composer is being considered. 
+
+Considering the linearity of musical movements we can
 identify the abscissa as a ``time axis'' representing the development
 of music along the history, with some composers
 like Beethoven returning to Monteverdi and others advancing to the
@@ -866,10 +871,17 @@ Motivated by the understanding of how humanities evolves, we proposed a quantita
 methods is nowadays commonly used for the study of music features and
 composers productivity, but analysis of
 composers characteristics modification along the music history has been less
-explored. Automatic information retrieval techniques while common in music analysis are fewer on philosophy considering the nature of final products of both fields. The method proposed here differs on the
-aspect of how the characteristics concerning composers are treated:
-scores are assigned to each feature common in musical
-works. 
+explored. Automatic information retrieval techniques while common in music analysis are fewer on philosophy considering the nature of final products of both fields. 
+The method proposed here also has a high level database,
+making it possible where other methods require corpora of musical scores and texts
+for Natural Language Processing. In this method,
+scores are assigned to each feature present in each work life production. This
+required both bootstrap and robust statistical analysis.
+
+%% The method proposed here differs on the
+%% aspect of how the characteristics concerning composers are treated:
+%% scores are assigned to each feature common in musical
+%% works. 
 
 It should be acknowledged that the scores and choice of main
 musical or philosophical characteristics adopted in the current work are largely

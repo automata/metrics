@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.25)  28 MAR 2012 16:36
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.25)  28 MAR 2012 16:57
 entering extended mode
  %&-line parsing enabled.
 **phi+mus
@@ -315,12 +315,12 @@ view \ _user = gk$\OT1/cmr/m/n/8 ;
  []
 
 [1]
-Underfull \hbox (badness 1635) in paragraph at lines 120--122
+Underfull \hbox (badness 1635) in paragraph at lines 121--123
 []\OT1/cmr/m/n/10 This work starts by pre-sent-ing the method-ol-ogy
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 142--144
+Underfull \hbox (badness 1024) in paragraph at lines 143--145
 []\OT1/cmr/m/n/10 The char-ac-ter-is-tic vec-tor $[]$ of each com-poser or
  []
 
@@ -328,38 +328,34 @@ File: phil-space-desc_.eps Graphic file (type eps)
 <phil-space-desc_.eps> [2]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 177.
+ on input line 178.
 
 File: dialetica_.eps Graphic file (type eps)
 <dialetica_.eps> [3]
-Underfull \hbox (badness 1997) in paragraph at lines 254--261
+Underfull \hbox (badness 1997) in paragraph at lines 255--262
 []\OT1/cmr/bx/it/10 Rationalism - Em-pirism \OT1/cmr/m/n/10 (\OT1/cmr/m/it/10 R
 -E\OT1/cmr/m/n/10 ): the ra-tio-nal-
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 254--261
+Underfull \hbox (badness 1565) in paragraph at lines 255--262
 \OT1/cmr/m/n/10 ists claim that the hu-man ac-quain-tance of knowl-
  []
 
 
-Underfull \hbox (badness 2744) in paragraph at lines 280--287
+Underfull \hbox (badness 2744) in paragraph at lines 281--288
 []\OT1/cmr/bx/it/10 Deductionism - Phe-nomenol-ogy \OT1/cmr/m/n/10 (\OT1/cmr/m/
 it/10 D-P\OT1/cmr/m/n/10 ): Phe-
  []
 
 
-LaTeX Warning: Reference `tab:tableAmus' on page 4 undefined on input line 326.
-
-
-
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 387.
+(Font)              using `OT1/cmss/bx/n' instead on input line 388.
 
 [4] [5]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 528.
+ on input line 529.
 
 File: g1.eps Graphic file (type eps)
 <g1.eps>
@@ -367,18 +363,18 @@ File: pca_filosofos_novo.eps Graphic file (type eps)
  <pca_filosofos_novo.eps> [6]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 696.
+ on input line 691.
 
 [7]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 784.
+ on input line 786.
 
 File: Clust_Compositores.eps Graphic file (type eps)
 <Clust_Compositores.eps>
 File: Dendrogram_.eps Graphic file (type eps)
  <Dendrogram_.eps>
-Overfull \hbox (9.0pt too wide) in paragraph at lines 795--796
+Overfull \hbox (9.0pt too wide) in paragraph at lines 797--798
  [] 
  []
 
@@ -386,7 +382,7 @@ File: compara_dialeticas2.eps Graphic file (type eps)
 <compara_dialeticas2.eps> [8]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 873.
+ on input line 880.
 
 [9] (./phi+mus.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 250--254
@@ -402,17 +398,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--254
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 4154 strings out of 495042
- 54109 string characters out of 1181920
- 161860 words of memory out of 3000000
- 7247 multiletter control sequences out of 15000+50000
+ 4153 strings out of 495042
+ 54097 string characters out of 1181920
+ 163460 words of memory out of 3000000
+ 7246 multiletter control sequences out of 15000+50000
  19244 words of font info for 70 fonts, out of 3000000 for 9000
  30 hyphenation exceptions out of 8191
  35i,12n,27p,931b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on phi+mus.dvi (10 pages, 96564 bytes).
+Output written on phi+mus.dvi (10 pages, 96740 bytes).
